@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<?import org.controlsfx.control.textfield.CustomPasswordField?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.IniciarSesion"
+           prefWidth="1280.0" prefHeight="720.0"
+           style="-fx-background-color: black;"
+           stylesheets="@style.css">
+
+    <VBox alignment="CENTER" spacing="20">
+
+        <ImageView id="logo" fitWidth="400" fitHeight="400">
+            <image>
+                <Image url="@logo.png"/>
+            </image>
+        </ImageView>
+
+        <GridPane id="login" alignment="CENTER" hgap="10" vgap="10">
+
+            <Label text="Usuario:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="usuario" styleClass="text-input" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <CustomPasswordField fx:id="contrasena" styleClass="text-input" GridPane.columnIndex="1"
+                                 GridPane.rowIndex="1"/>
+
+            <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Button text="Iniciar sesión" styleClass="button" onAction="#AccionarIniciarSesion"/>
+                <Button text="Registrarse" styleClass="button" onAction="#AccionarRegistrarse"/>
+            </HBox>
+
+        </GridPane>
+
+    </VBox>
+
+</StackPane>
