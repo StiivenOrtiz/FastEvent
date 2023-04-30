@@ -14,22 +14,6 @@ public class IniciarSesion extends Controlador {
     @FXML
     private PasswordField contrasena;
 
-    @FXML
-    private void iniciarSesion() {
-        String nombreUsuario = correoElectronico.getText();
-        String password = contrasena.getText();
-        // Aquí puedes agregar la lógica para autenticar el usuario y contraseña
-        System.out.println("Iniciar sesión con el usuario: " + nombreUsuario + " y la contraseña: " + password);
-    }
-
-    public void botonIniciarSesion(ActionEvent actionEvent) {
-        System.out.println("Iniciar sesión con el usuario: " + correoElectronico.getText() + " y la contraseña: " + contrasena.getText());
-    }
-
-    public void botonRegistrarse(ActionEvent actionEvent) {
-        System.out.println("Registrarse");
-    }
-
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
         System.out.println("Logo rectangular presionado");
     }
@@ -54,8 +38,12 @@ public class IniciarSesion extends Controlador {
         System.out.println("Boleteria");
     }
 
-    public void accionBotonRegistrarseNav(ActionEvent actionEvent) {
-        System.out.println("Registrarse Nav");
+    public void accionBotonTwitter(ActionEvent actionEvent) {
+        System.out.println("Twitter");
+    }
+
+    public void accionBotonLinkedin(ActionEvent actionEvent) {
+        System.out.println("Linkedin");
     }
 
     public void iniciarSesionConFacebook(ActionEvent actionEvent) {
@@ -90,15 +78,15 @@ public class IniciarSesion extends Controlador {
         System.out.println("Instagram");
     }
 
-    public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
-    }
-
-    public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
-    }
-
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
         System.out.println("Preguntas frecuentes");
+    }
+
+    public void botonIniciarSesion(ActionEvent actionEvent) {
+        System.out.println("Iniciar sesión con el usuario: " + correoElectronico.getText() + " y la contraseña: " + contrasena.getText());
+    }
+
+    public void botonRegistrarse(ActionEvent actionEvent) {
+        System.out.println("Registrarse");
     }
 }

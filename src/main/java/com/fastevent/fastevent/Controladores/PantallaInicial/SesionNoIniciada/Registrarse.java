@@ -2,8 +2,33 @@ package com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada;
 
 import com.fastevent.fastevent.Controladores.Controlador;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 public class Registrarse extends Controlador {
+
+    @FXML
+    public TextField correoElectronico;
+
+    @FXML
+    private PasswordField contrasena;
+
+    @FXML
+    public TextField nombres;
+
+    @FXML
+    public TextField apellidos;
+
+    @FXML
+    public TextField repetirCorreoElectronico;
+
+    @FXML
+    public PasswordField repetirContrasena;
+
+    @FXML
+    public CheckBox checkBoxAceptarTerminos;
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
         System.out.println("Logo rectangular presionado");
@@ -27,10 +52,6 @@ public class Registrarse extends Controlador {
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
         System.out.println("Boleteria");
-    }
-
-    public void accionBotonRegistrarseNav(ActionEvent actionEvent) {
-        System.out.println("Registrarse Nav");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
@@ -59,5 +80,25 @@ public class Registrarse extends Controlador {
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
         System.out.println("Preguntas frecuentes");
+    }
+
+    public void registrarseConFacebook(ActionEvent actionEvent) {
+        System.out.println("Registrarse con Facebook");
+    }
+
+    public void registrarseConTwitter(ActionEvent actionEvent) {
+        System.out.println("Registrarse con Twitter");
+    }
+
+    public void registrarseConGoogle(ActionEvent actionEvent) {
+        System.out.println("Registrarse con Google");
+    }
+
+    public void botonIniciarSesion(ActionEvent actionEvent) {
+        System.out.println("Boton iniciar sesion");
+    }
+
+    public void botonRegistrarse(ActionEvent actionEvent) {
+        System.out.println("Boton registrarse");
     }
 }

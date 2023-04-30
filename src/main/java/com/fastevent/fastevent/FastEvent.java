@@ -53,9 +53,9 @@ public class FastEvent extends Application {
          ************          Datos de entrada para probar archivos .fxml           ************
          ****************************************************************************************
          */
+
         String nombrePantalla = "";
         String direccionFXML = "";
-
 
         /*
          ****************************************************************************************

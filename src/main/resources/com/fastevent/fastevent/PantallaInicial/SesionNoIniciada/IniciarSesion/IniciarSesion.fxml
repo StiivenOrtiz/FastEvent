@@ -10,7 +10,7 @@
       fx:controller="com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.IniciarSesion"
       prefWidth="1280.0" prefHeight="720.0"
       style="-fx-background-color: black;"
-      stylesheets="@style.css"
+      stylesheets="@style_IniciarSesion.css"
       alignment="TOP_LEFT">
 
     <!-- Barra de navegación -->
@@ -37,7 +37,7 @@
 
         <!-- Botón "Registrarse" -->
         <Button text="Registrarse" styleClass="nav-button-registro" HBox.hgrow="ALWAYS"
-                onAction="#accionBotonRegistrarseNav"/>
+                onAction="#botonRegistrarse"/>
     </HBox>
 
     <!-- Contenido de la pantalla -->
@@ -144,7 +144,7 @@
 
                     <!-- Botón de "Registrarse" -->
                     <Button text="Registrarse." styleClass="button-without-backgroundv1"
-                            onAction="#botonIniciarSesion"/>
+                            onAction="#botonRegistrarse"/>
 
                 </HBox>
 
