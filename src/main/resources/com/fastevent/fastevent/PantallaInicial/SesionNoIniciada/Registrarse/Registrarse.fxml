@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import org.controlsfx.control.textfield.CustomPasswordField?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.IniciarSesion"
+      fx:controller="com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.Registrarse"
       prefWidth="1280.0" prefHeight="720.0"
       style="-fx-background-color: black;"
       stylesheets="@style.css"
@@ -47,124 +47,7 @@
             <!-- Espacio antes del contenido -->
             <Pane minHeight="50"/>
 
-            <!-- Logo de FastEvent -->
-            <ImageView id="logo" fitWidth="130" fitHeight="130">
-                <Image url="@logo1.png"/>
-            </ImageView>
-
-            <!-- Texto "Ingresar FastEvent" -->
-            <Label text="Ingresar a FastEvent" styleClass="logo-text"/>
-
-            <!-- Botón "Iniciar sesión con Facebook" -->
-            <Button styleClass="facebook-button" onAction="#iniciarSesionConFacebook">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@facebook-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Iniciar sesión con Facebook" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Botón "Iniciar sesión con Twitter" -->
-            <Button styleClass="twitter-button" onAction="#iniciarSesionConTwitter">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@twitter-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Iniciar sesión con Twitter" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Botón "Iniciar sesión con Google" -->
-            <Button styleClass="google-button" onAction="#iniciarSesionConGoogle">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@google-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Iniciar sesión con Google" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Líneas blancas y O dorada -->
-            <HBox spacing="10" alignment="CENTER">
-                <Pane minHeight="1" prefHeight="1" prefWidth="110" styleClass="separator"/>
-                <Label text="O" styleClass="or-label"/>
-                <Pane minHeight="1" prefHeight="1" prefWidth="110" styleClass="separator"/>
-            </HBox>
-
-
-            <!-- Iniciar sesión con cuenta de FastEvent -->
-            <VBox id="login" alignment="TOP_LEFT" spacing="10">
-
-                <!-- Campo de usuario personalizado -->
-                <Label text="Correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                <TextField fx:id="correoElectronico" styleClass="text-input"/>
-
-                <!-- Campo de usuario personalizado -->
-                <Label text="Contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                <CustomPasswordField fx:id="contrasena" styleClass="text-input"/>
-
-                <!-- Botón "Iniciar sesión" -->
-                <Button text="Iniciar sesión" styleClass="button-login" onAction="#botonIniciarSesion"/>
-
-                <!-- Botón "¿Necesitas ayuda?" -->
-                <HBox>
-
-                    <Pane HBox.hgrow="ALWAYS"/>
-
-                    <Button text="¿Necesitas ayuda?" styleClass="button-without-backgroundv2"
-                            onAction="#botonNecesitasAyuda"/>
-
-                </HBox>
-
-            </VBox>
-
-            <!-- ¿Eres nuevo en FastEvent? -->
-            <VBox id="new-user" alignment="CENTER" spacing="10">
-
-                <HBox alignment="CENTER">
-
-                    <!-- Campo de usuario personalizado -->
-                    <Label text="¿Eres nuevo en FastEvent?" style="-fx-font-size: 12px; -fx-text-fill: white"/>
-
-                    <!-- Botón de "Registrarse" -->
-                    <Button text="Registrarse." styleClass="button-without-backgroundv1"
-                            onAction="#botonIniciarSesion"/>
-
-                </HBox>
-
-            </VBox>
-
-            <!-- Términos y privacidad -->
-            <VBox id="terminos-privacidad" alignment="TOP_LEFT" spacing="10">
-
-                <HBox>
-
-                    <!-- Botón de "Términos" -->
-                    <Button text="Términos" styleClass="button-without-backgroundv2" onAction="#botonTerminos"/>
-                    <!-- Elemento de relleno -->
-                    <Pane HBox.hgrow="ALWAYS"/>
-                    <!-- Botón de "Privacidad" -->
-                    <Button text="Privacidad" styleClass="button-without-backgroundv2" onAction="#botonPrivacidad"/>
-
-                </HBox>
-
-            </VBox>
+            <!-- Contenido - ESCRIBIR EL CODIGO DESDE AQUÍ -->
 
             <!-- Espacio antes del footer -->
             <Pane minHeight="75"/>
@@ -177,7 +60,7 @@
 
                 <!-- Derechos de autor -->
                 <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="CENTER">
+                      alignment="TOP_CENTER">
                     <ImageView id="logo" fitWidth="100" fitHeight="100">
                         <Image url="@logo2.png"/>
                     </ImageView>

@@ -1,0 +1,162 @@
+/* Fondo negro para la ventana */
+
+#root {
+    -fx-background-color: black !important;
+    -fx-padding: 0px;
+}
+
+/* Estilo para la etiqueta ImageView que contiene el logo */
+
+#logo {
+    -fx-fit-width: 400px;
+    -fx-fit-height: 400px;
+    -fx-preserve-ratio: true;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0, 0, 0);
+    /* Transición para hacer que el logo brille cuando se coloca el cursor sobre él */
+    -fx-transition: brightness 0.5s;
+}
+
+/**
+    * Estilos para el scroll-bar y el scroll-pane
+ **/
+
+/* Estilo para el scroll pane */
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: black;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .increment-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .increment-arrow, .scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+/* Estilo para el scroll pane */
+
+.scroll-pane .viewport {
+/ -fx-background-color: black;
+    -fx-background: black;
+    -fx-control-inner-background: black;
+}
+
+.scroll-pane .content {
+    -fx-background-color: black;
+    -fx-background: black;
+    -fx-control-inner-background: black;
+}
+
+.scroll-pane {
+    -fx-background-color: black;
+    -fx-background: black;
+    -fx-control-inner-background: black;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/**
+    * Estilos para la barra de navegación
+ **/
+
+/* Estilo para la barra de navegación */
+
+.nav-bar {
+    -fx-background-color: transparent;
+    -fx-spacing: 5px;
+    -fx-padding: 0px 10px;
+}
+
+/* Estilo para los botones de la barra de navegación */
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 13px 8px;
+    -fx-font-family: "Arial";
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+}
+
+/* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button:hover {
+    -fx-text-fill: #CFB14F;
+}
+
+/* Estilo para el botón de invisible que tiene la imagen de "FastEvent" en navegación */
+
+.nav-invisible-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-radius: 0;
+}
+
+/* Estilo para el botón de "Registrarse" en navegación */
+
+.nav-button-registro {
+    -fx-background-color: #CFB14F;
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 6px 12px;
+    -fx-font-family: "Arial";
+
+    -fx-border-radius: 20;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+}
+
+/* Opacidad cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button-registro:hover {
+    -fx-opacity: 0.8;
+}
+
+/**
+    ***********************************
+ **/
+
+/* Estilo del Vbox de la linea invisible que encierra "Terminos" y "Privacidad" */
+
+#terminos-privacidad {
+    -fx-border-color: transparent;
+    -fx-max-width: 175px;
+}
+
+/* Estilo para las lineas que estarán al los lados de "o" */
+
+.separator {
+    -fx-background-color: white;
+    -fx-max-height: 0.2px;
+}
+
+/**
+    ***********************************
+    * Estilos del contenido de la página - ESCRIBIR EL CODIGO DE LOS DEMÁS ESTILOS DESDE AQUÍ
+ **/
+

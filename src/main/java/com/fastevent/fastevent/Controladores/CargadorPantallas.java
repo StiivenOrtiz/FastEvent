@@ -1,22 +1,15 @@
 package com.fastevent.fastevent.Controladores;
 
 // Controladores
-import com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.IniciarSesion;
+
 import com.fastevent.fastevent.FastEvent;
-
-// Constantes dentro del proyecto que contienen direcciones a archivos FXML, imágenes, etc.
 import com.fastevent.fastevent.Utilidades.Constantes;
-
-// Librerías de JavaFX
+import com.jfoenix.controls.JFXDecorator;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-// Librerías de JFoenix
-import com.jfoenix.controls.JFXDecorator;
-
-// Librerías de Java
 import java.io.IOException;
 import java.util.Objects;
 
@@ -24,18 +17,24 @@ import java.util.Objects;
 public interface CargadorPantallas {
     /**
      * Carga una pantalla
-     * @param stage Ventana
+     *
+     * @param stage          Ventana
      * @param nombrePantalla Nombre de la pantalla
      * @throws IOException Excepción de entrada y salida
      */
     static void cargarPantalla(Stage stage, String nombrePantalla) throws IOException {
         // Crear el controlador
+
+        /*
         Controlador controller;
 
         // Obtener el controlador
         switch (nombrePantalla) {
             case "IniciarSesion" -> { // Pantalla de inicio de sesión
                 controller = new IniciarSesion();
+            }
+            case "Registrarse" -> { // Pantalla de registro
+                controller = new Registrarse();
             }
             default -> { // Pantalla no encontrada
                 controller = null;
@@ -44,6 +43,8 @@ public interface CargadorPantallas {
 
         // Verificar que el controlador no sea nulo
         assert controller != null;
+
+         */
 
         // Crear la escena
 
@@ -58,7 +59,7 @@ public interface CargadorPantallas {
         Scene scene = new Scene(loader.load(), 1280, 720);
 
         // Obtener el controlador
-        controller = loader.getController();
+        Controlador controller = loader.getController();
 
         // Crear la ventana
         Stage nStage = new Stage();
@@ -70,7 +71,7 @@ public interface CargadorPantallas {
         nStage.setScene(scene);
 
         // Agregar el logo a la ventana
-        nStage.getIcons().add(new Image(Objects.requireNonNull(FastEvent.class.getResourceAsStream(Constantes.logo))));
+        nStage.getIcons().add(new Image(Objects.requireNonNull(FastEvent.class.getResourceAsStream(Constantes.icono))));
 
         // Establecer la ventana en el controlador
         controller.setStage(nStage);

@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class Controlador {
     public Stage stage;
+
     public void cargarPantalla(String nombrePantalla, Stage stageActual) {
         try {
             CargadorPantallas.cargarPantalla(stageActual, nombrePantalla);
