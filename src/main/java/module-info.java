@@ -8,6 +8,6 @@ module com.fastevent.fastevent {
     exports com.fastevent.fastevent;
     exports com.fastevent.fastevent.Controladores;
     opens com.fastevent.fastevent.Controladores to javafx.fxml;
-    exports com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada;
-    opens com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada to javafx.fxml;
+    exports com.fastevent.fastevent.Controladores.SesionNoIniciada;
+    opens com.fastevent.fastevent.Controladores.SesionNoIniciada to javafx.fxml;
 }

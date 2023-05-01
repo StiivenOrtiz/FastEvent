@@ -7,10 +7,10 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.fastevent.fastevent.Controladores.PantallaInicial.SesionNoIniciada.IniciarSesion"
+      fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.Registrarse"
       prefWidth="1280.0" prefHeight="720.0"
       style="-fx-background-color: black;"
-      stylesheets="@style_IniciarSesion.css"
+      stylesheets="@style_Registrarse.css"
       alignment="TOP_LEFT">
 
     <!-- Barra de navegación -->
@@ -36,8 +36,8 @@
         <Pane HBox.hgrow="ALWAYS"/>
 
         <!-- Botón "Registrarse" -->
-        <Button text="Registrarse" styleClass="nav-button-registro" HBox.hgrow="ALWAYS"
-                onAction="#botonRegistrarse"/>
+        <Button text="Iniciar Sesión" styleClass="nav-button-registro" HBox.hgrow="ALWAYS"
+                onAction="#botonIniciarSesion"/>
     </HBox>
 
     <!-- Contenido de la pantalla -->
@@ -47,16 +47,17 @@
             <!-- Espacio antes del contenido -->
             <Pane minHeight="50"/>
 
+            <!-- Contenido - ESCRIBIR EL CODIGO DESDE AQUÍ -->
             <!-- Logo de FastEvent -->
             <ImageView id="logo" fitWidth="130" fitHeight="130">
                 <Image url="@logo1.png"/>
             </ImageView>
 
-            <!-- Texto "Ingresar FastEvent" -->
-            <Label text="Ingresar a FastEvent" styleClass="logo-text"/>
+            <!-- Texto "Registrarse en FastEvent" -->
+            <Label text="Registrarse en FastEvent" styleClass="logo-text"/>
 
-            <!-- Botón "Iniciar sesión con Facebook" -->
-            <Button styleClass="facebook-button" onAction="#iniciarSesionConFacebook">
+            <!-- Botón "Registrarse con Facebook" -->
+            <Button styleClass="facebook-button" onAction="#registrarseConFacebook">
                 <graphic>
                     <HBox spacing="10" alignment="CENTER">
 
@@ -64,14 +65,14 @@
                             <Image url="@facebook-logo.png"/>
                         </ImageView>
 
-                        <Label text="Iniciar sesión con Facebook" styleClass="buttons-text"/>
+                        <Label text="Registrarse con Facebook" styleClass="buttons-text"/>
 
                     </HBox>
                 </graphic>
             </Button>
 
-            <!-- Botón "Iniciar sesión con Twitter" -->
-            <Button styleClass="twitter-button" onAction="#iniciarSesionConTwitter">
+            <!-- Botón "Registrarse con Twitter" -->
+            <Button styleClass="twitter-button" onAction="#registrarseConTwitter">
                 <graphic>
                     <HBox spacing="10" alignment="CENTER">
 
@@ -79,14 +80,14 @@
                             <Image url="@twitter-logo.png"/>
                         </ImageView>
 
-                        <Label text="Iniciar sesión con Twitter" styleClass="buttons-text"/>
+                        <Label text="Registrarse con Twitter" styleClass="buttons-text"/>
 
                     </HBox>
                 </graphic>
             </Button>
 
-            <!-- Botón "Iniciar sesión con Google" -->
-            <Button styleClass="google-button" onAction="#iniciarSesionConGoogle">
+            <!-- Botón "Registrarse con Google" -->
+            <Button styleClass="google-button" onAction="#registrarseConGoogle">
                 <graphic>
                     <HBox spacing="10" alignment="CENTER">
 
@@ -94,7 +95,7 @@
                             <Image url="@google-logo.png"/>
                         </ImageView>
 
-                        <Label text="Iniciar sesión con Google" styleClass="buttons-text"/>
+                        <Label text="Registrarse con Google" styleClass="buttons-text"/>
 
                     </HBox>
                 </graphic>
@@ -108,43 +109,73 @@
             </HBox>
 
 
-            <!-- Iniciar sesión con cuenta de FastEvent -->
-            <VBox id="login" alignment="TOP_LEFT" spacing="10">
+            <!-- Registrar cuenta en FastEvent -->
+            <VBox id="register" alignment="CENTER" spacing="10">
 
-                <!-- Campo de usuario personalizado -->
-                <Label text="Correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                <TextField fx:id="correoElectronico" styleClass="text-input"/>
+                <HBox alignment="CENTER_LEFT" spacing="10">
 
-                <!-- Campo de usuario personalizado -->
-                <Label text="Contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                <CustomPasswordField fx:id="contrasena" styleClass="text-input"/>
+                    <VBox alignment="CENTER_LEFT" spacing="10">
 
-                <!-- Botón "Iniciar sesión" -->
-                <Button text="Iniciar sesión" styleClass="button-login" onAction="#botonIniciarSesion"/>
+                        <!-- Campo de nombres personalizado -->
+                        <Label text="Nombre(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <TextField fx:id="nombres" styleClass="text-input"/>
 
-                <!-- Botón "¿Necesitas ayuda?" -->
-                <HBox>
+                        <!-- Campo de correo electronico  -->
+                        <Label text="Correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <TextField fx:id="correoElectronico" styleClass="text-input"/>
+
+                        <!-- Campo de usuario personalizado -->
+                        <Label text="Contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <CustomPasswordField fx:id="contrasena" styleClass="text-input"/>
+
+                    </VBox>
 
                     <Pane HBox.hgrow="ALWAYS"/>
 
-                    <Button text="¿Necesitas ayuda?" styleClass="button-without-backgroundv2"
-                            onAction="#botonNecesitasAyuda"/>
+                    <VBox spacing="10">
+
+                        <!-- Campo de apellidos personalizado -->
+                        <Label text="Apellido(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <TextField fx:id="apellidos" styleClass="text-input"/>
+
+                        <!-- Campo de repetir correo electronico -->
+                        <Label text="Repetir correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <TextField fx:id="repetirCorreoElectronico" styleClass="text-input"/>
+
+                        <!-- Campo de repetir contraseña -->
+                        <Label text="Repetir contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <CustomPasswordField fx:id="repetirContrasena" styleClass="text-input"/>
+
+                    </VBox>
 
                 </HBox>
 
+                <!-- Checkbox de aceptar terminos y condiciones -->
+                <HBox alignment="CENTER">
+
+                    <Button text="Acepto términos y condiciones" styleClass="button-without-backgroundv1"
+                            onAction="#botonTerminos"/>
+
+                    <CheckBox fx:id="checkBoxAceptarTerminos" styleClass="check-box-Aceptar-Terminos"/>
+
+                </HBox>
+
+                <!-- Botón "Registrarse" -->
+                <Button text="Registrarse" styleClass="button-login" onAction="#botonRegistrarse"/>
+
             </VBox>
 
-            <!-- ¿Eres nuevo en FastEvent? -->
+            <!-- ¿Ya estás registrado? -->
             <VBox id="new-user" alignment="CENTER" spacing="10">
 
                 <HBox alignment="CENTER">
 
                     <!-- Campo de usuario personalizado -->
-                    <Label text="¿Eres nuevo en FastEvent?" style="-fx-font-size: 12px; -fx-text-fill: white"/>
+                    <Label text="¿Ya estás registrado?" style="-fx-font-size: 12px; -fx-text-fill: white"/>
 
-                    <!-- Botón de "Registrarse" -->
-                    <Button text="Registrarse." styleClass="button-without-backgroundv1"
-                            onAction="#botonRegistrarse"/>
+                    <!-- Botón de "Iniciar Sesión" -->
+                    <Button text="Iniciar Sesión." styleClass="button-without-backgroundv1"
+                            onAction="#botonIniciarSesion"/>
 
                 </HBox>
 
@@ -177,7 +208,7 @@
 
                 <!-- Derechos de autor -->
                 <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="CENTER">
+                      alignment="TOP_CENTER">
                     <ImageView id="logo" fitWidth="100" fitHeight="100">
                         <Image url="@logo2.png"/>
                     </ImageView>
@@ -227,6 +258,7 @@
                             onAction="#accionBotonPreguntasFrecuentes"/>
 
                 </VBox>
+
             </HBox>
 
         </VBox>
