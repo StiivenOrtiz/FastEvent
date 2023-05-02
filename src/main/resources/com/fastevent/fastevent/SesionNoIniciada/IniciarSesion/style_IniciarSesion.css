@@ -27,7 +27,7 @@
 }
 
 .scroll-bar {
-    -fx-background-color: black;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb {
@@ -54,21 +54,21 @@
 /* Estilo para el scroll pane */
 
 .scroll-pane .viewport {
-/ -fx-background-color: black;
-    -fx-background: black;
-    -fx-control-inner-background: black;
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
 }
 
 .scroll-pane .content {
-    -fx-background-color: black;
-    -fx-background: black;
-    -fx-control-inner-background: black;
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
 }
 
 .scroll-pane {
-    -fx-background-color: black;
-    -fx-background: black;
-    -fx-control-inner-background: black;
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
     -fx-background-insets: 0;
     -fx-padding: 0;
 }
@@ -80,9 +80,9 @@
 /* Estilo para la barra de navegación */
 
 .nav-bar {
-    -fx-background-color: transparent;
-    -fx-spacing: 5px;
-    -fx-padding: 0px 10px;
+    -fx-background-color: black;
+    -fx-spacing: 12px;
+    -fx-padding: 0px 25px;
 }
 
 /* Estilo para los botones de la barra de navegación */
@@ -91,12 +91,8 @@
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-padding: 13px 8px;
+    -fx-padding: 0px 0px;
     -fx-font-family: "Arial";
-
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-border-color: #CFB14F;
     -fx-border-width: 0;
     -fx-font-weight: bold;
 }
@@ -115,14 +111,14 @@
     -fx-background-radius: 0;
 }
 
-/* Estilo para el botón de "Registrarse" en navegación */
+/* Estilo para el botónes de "Iniciar Sesion" o "Registrarse" en navegación */
 
-.nav-button-registro {
+.nav-button-log-reg {
     -fx-background-color: #CFB14F;
     -fx-background-radius: 12;
     -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-padding: 6px 12px;
+    -fx-padding: 5px 10px;
     -fx-font-family: "Arial";
 
     -fx-border-radius: 20;
@@ -133,7 +129,7 @@
 
 /* Opacidad cuando los botones de navegación se les coloca encima el mouse */
 
-.nav-button-registro:hover {
+.nav-button-log-reg:hover {
     -fx-opacity: 0.8;
 }
 
@@ -145,7 +141,7 @@
 
 #terminos-privacidad {
     -fx-border-color: transparent;
-    -fx-max-width: 175px;
+    -fx-max-width: 275px;
 }
 
 /**
@@ -158,7 +154,6 @@
 #login {
     -fx-font-family: "Arial";
     -fx-background-color: black;
-    -fx-max-width: 275px;
     -fx-border-color: #CFB14F;
     -fx-padding: 10px;
     -fx-border-radius: 20px;
@@ -226,7 +221,7 @@
     -fx-border-radius: 20;
     -fx-border-color: #1877F2;
     -fx-border-width: 0;
-    -fx-padding: 6px 16px;
+    -fx-padding: 0px 0px;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Facebook" en login */
@@ -251,7 +246,7 @@
     -fx-border-radius: 20;
     -fx-border-color: #00AEEF;
     -fx-border-width: 0;
-    -fx-padding: 5px 25px;
+    -fx-padding: 0px 0px;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Twitter" en login */
@@ -268,7 +263,7 @@
     -fx-border-radius: 20;
     -fx-border-color: #DB4437;
     -fx-border-width: 0;
-    -fx-padding: 5px 24px;
+    -fx-padding: 0px 0px;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Google" en login */
@@ -300,7 +295,7 @@
     -fx-border-radius: 20;
     -fx-border-color: black;
     -fx-border-width: 0;
-    -fx-padding: 0px 4px;
+    -fx-padding: 0px 0px;
     -fx-font-size: 12px;
     -fx-text-fill: #CFB14F;
 }
@@ -319,7 +314,7 @@
     -fx-border-radius: 20;
     -fx-border-color: black;
     -fx-border-width: 0;
-    -fx-padding: 0px 4px;
+    -fx-padding: 0px 0px;
     -fx-font-size: 11px;
     -fx-text-fill: #CFB14F;
 }

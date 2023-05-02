@@ -5,19 +5,282 @@
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.textfield.CustomPasswordField?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.Registrarse"
-      prefWidth="1280.0" prefHeight="720.0"
-      style="-fx-background-color: black;"
-      stylesheets="@style_Registrarse.css"
-      alignment="TOP_LEFT">
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.Registrarse"
+            style="-fx-background-color: black;"
+            stylesheets="@style_Registrarse.css">
+
+    <!-- Margen del contenido de la pantalla -->
+    <VBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          style="-fx-background-color: transparent; -fx-border-color: transparent;">
+
+        <!-- ScrollBar -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-bar">
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: transparent;">
+
+                <!-- Espacio antes del contenido -->
+                <Pane minHeight="50"/>
+
+                <!-- Contenido - ESCRIBIR EL CODIGO DESDE AQUÍ -->
+                <!-- Logo de FastEvent -->
+                <ImageView id="logo" fitWidth="130" fitHeight="130">
+                    <Image url="@logo1.png"/>
+                </ImageView>
+
+                <!-- Texto "Registrarse en FastEvent" -->
+                <Label text="Registrarse en FastEvent" styleClass="logo-text"/>
+
+                <!-- Botón "Registrarse con Facebook" -->
+                <Button styleClass="facebook-button" onAction="#registrarseConFacebook" maxWidth="211" minHeight="28">
+                    <graphic>
+                        <HBox alignment="CENTER_LEFT">
+
+                            <!-- Espacio antes del logo -->
+                            <Pane minWidth="9"/>
+
+                            <!-- Logo de Facebook -->
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <Image url="@facebook-logo.png"/>
+                            </ImageView>
+
+                            <!-- Espacio después del logo -->
+                            <Pane minWidth="6"/>
+
+                            <Label text="Registrarse con Facebook" styleClass="buttons-text"/>
+
+                        </HBox>
+                    </graphic>
+                </Button>
+
+                <!-- Botón "Registrarse con Twitter" -->
+                <Button styleClass="twitter-button" onAction="#registrarseConTwitter" maxWidth="211" minHeight="28">
+                    <graphic>
+                        <HBox alignment="CENTER_LEFT">
+
+                            <!-- Espacio antes del logo -->
+                            <Pane minWidth="10"/>
+
+                            <!-- Logo de Twitter -->
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <Image url="@twitter-logo.png"/>
+                            </ImageView>
+
+                            <!-- Espacio después del logo -->
+                            <Pane minWidth="5"/>
+
+                            <Label text="Registrarse con Twitter" styleClass="buttons-text"/>
+
+                        </HBox>
+                    </graphic>
+                </Button>
+
+                <!-- Botón "Registrarse con Google" -->
+                <Button styleClass="google-button" onAction="#registrarseConGoogle" maxWidth="211" minHeight="28">
+                    <graphic>
+                        <HBox alignment="CENTER_LEFT">
+
+                            <!-- Espacio antes del logo -->
+                            <Pane minWidth="10"/>
+
+                            <!-- Logo de Google -->
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <Image url="@google-logo.png"/>
+                            </ImageView>
+
+                            <!-- Espacio después del logo -->
+                            <Pane minWidth="5"/>
+
+                            <!-- Texto "Registrarse con Google" -->
+                            <Label text="Registrarse con Google" styleClass="buttons-text"/>
+
+                        </HBox>
+                    </graphic>
+                </Button>
+
+                <!-- Líneas blancas y O dorada -->
+                <HBox spacing="10" alignment="CENTER">
+
+                    <!-- Línea blanca -->
+                    <Pane minHeight="1" maxHeight="1" minWidth="110" maxWidth="110" styleClass="separator"/>
+
+                    <!-- "O" dorada -->
+                    <Label text="O" styleClass="or-label"/>
+
+                    <!-- Línea blanca -->
+                    <Pane minHeight="1" maxHeight="1" minWidth="110" maxWidth="110" styleClass="separator"/>
+
+                </HBox>
+
+
+                <!-- Registrar cuenta en FastEvent -->
+                <VBox id="register" alignment="CENTER" spacing="10">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+
+                        <VBox alignment="CENTER_LEFT" spacing="10">
+
+                            <!-- Campo de nombres personalizado -->
+                            <Label text="Nombre(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <TextField fx:id="nombres" styleClass="text-input"/>
+
+                            <!-- Campo de correo electronico  -->
+                            <Label text="Correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <TextField fx:id="correoElectronico" styleClass="text-input"/>
+
+                            <!-- Campo de usuario personalizado -->
+                            <Label text="Contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <CustomPasswordField fx:id="contrasena" styleClass="text-input"/>
+
+                        </VBox>
+
+                        <Pane HBox.hgrow="ALWAYS"/>
+
+                        <VBox alignment="CENTER_LEFT" spacing="10">
+
+                            <!-- Campo de apellidos personalizado -->
+                            <Label text="Apellido(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <TextField fx:id="apellidos" styleClass="text-input"/>
+
+                            <!-- Campo de repetir correo electronico -->
+                            <Label text="Repetir correo electrónico"
+                                   style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <TextField fx:id="repetirCorreoElectronico" styleClass="text-input"/>
+
+                            <!-- Campo de repetir contraseña -->
+                            <Label text="Repetir contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
+                            <CustomPasswordField fx:id="repetirContrasena" styleClass="text-input"/>
+
+                        </VBox>
+
+                    </HBox>
+
+                    <!-- Checkbox de aceptar terminos y condiciones -->
+                    <HBox alignment="CENTER">
+
+                        <!-- Botón de "Acepto términos y condiciones" -->
+                        <Button text="Acepto términos y condiciones " styleClass="button-without-backgroundv1"
+                                onAction="#botonTerminos"/>
+
+                        <!-- Checkbox de "Acepto términos y condiciones" -->
+                        <CheckBox fx:id="checkBoxAceptarTerminos" styleClass="check-box-Aceptar-Terminos"/>
+
+                    </HBox>
+
+                    <!-- Botón "Registrarse" -->
+                    <HBox alignment="CENTER">
+                        <Button text="Registrarse" styleClass="button-register" onAction="#botonRegistrarse"
+                                minWidth="100" minHeight="24"/>
+                    </HBox>
+
+                </VBox>
+
+                <!-- ¿Ya estás registrado? -->
+                <VBox id="existing-user" alignment="CENTER" spacing="10">
+                    <HBox alignment="CENTER">
+
+                        <!-- Campo de usuario personalizado -->
+                        <Label text="¿Ya estás registrado? " style="-fx-font-size: 12px; -fx-text-fill: white"/>
+
+                        <!-- Botón de "Iniciar Sesión" -->
+                        <Button text="Iniciar Sesión" styleClass="button-without-backgroundv1"
+                                onAction="#botonIniciarSesion"/>
+
+                        <!-- Texto -->
+                        <Label text="." style="-fx-font-size: 12px; -fx-text-fill: white"/>
+
+                    </HBox>
+                </VBox>
+
+                <!-- Términos y privacidad -->
+                <VBox id="terminos-privacidad" spacing="10">
+                    <HBox spacing="60" alignment="CENTER">
+
+                        <!-- Botón de "Términos" -->
+                        <Button text="Términos" styleClass="button-without-backgroundv2" onAction="#botonTerminos"/>
+
+                        <!-- Botón de "Privacidad" -->
+                        <Button text="Privacidad" styleClass="button-without-backgroundv2" onAction="#botonPrivacidad"/>
+
+                    </HBox>
+                </VBox>
+
+                <!-- Espacio antes de la linea separadora -->
+                <Pane minHeight="75"/>
+
+                <!-- Línea separadora -->
+                <Pane minHeight="1" styleClass="separator" maxWidth="1000"/>
+
+                <!-- Espacio antes del footer -->
+                <Pane minHeight="20"/>
+
+                <!-- Footer -->
+                <HBox alignment="CENTER" maxWidth="900" spacing="50">
+
+                    <!-- Derechos de autor -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="0"
+                          alignment="TOP_CENTER">
+
+                        <!-- Logo -->
+                        <ImageView id="logo" fitWidth="100" fitHeight="100">
+                            <Image url="@logo2.png"/>
+                        </ImageView>
+
+                        <!-- Texto de derechos de autor -->
+                        <Label text="© 2023 FastEvent" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                        <Label text="Todos los derechos reservados." style="-fx-text-fill: white;"/>
+
+                    </VBox>
+
+                    <!-- Navegación -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de navegación -->
+                        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+                        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+                        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+                        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+                        <Button text="Boleteria" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+
+                    </VBox>
+
+                    <!-- Redes sociales -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de redes sociales -->
+                        <Button text="Facebook" styleClass="nav-button" onAction="#accionBotonFacebook"/>
+                        <Button text="Instagram" styleClass="nav-button" onAction="#accionBotonInstagram"/>
+                        <Button text="Twitter" styleClass="nav-button" onAction="#accionBotonTwitter"/>
+                        <Button text="Linkedin" styleClass="nav-button" onAction="#accionBotonLinkedin"/>
+
+                    </VBox>
+
+                    <!-- Información -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de información -->
+                        <Button text="Términos y Condiciones" styleClass="nav-button" onAction="#botonTerminos"/>
+                        <Button text="Políticas de Privacidad" styleClass="nav-button" onAction="#botonPrivacidad"/>
+                        <Button text="Preguntas Frecuentes" styleClass="nav-button"
+                                onAction="#accionBotonPreguntasFrecuentes"/>
+
+                    </VBox>
+                </HBox>
+
+                <!-- Relleno -->
+                <Pane style="-fx-background-color: transparent;" minWidth="100" minHeight="100"/>
+
+            </VBox>
+        </ScrollPane>
+
+    </VBox>
 
     <!-- Barra de navegación -->
-    <HBox styleClass="nav-bar">
-        <!-- Logo rectangular en la barra de navegación -->
+    <HBox styleClass="nav-bar" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
         <!-- Botón invisible encima del logo rectangular -->
         <Button styleClass="nav-invisible-button" onAction="#botonLogoRectangularPresionado">
+
+            <!-- Logo rectangular en la barra de navegación -->
             <graphic>
                 <ImageView fitWidth="165" fitHeight="40" HBox.hgrow="ALWAYS">
                     <Image url="@logo_rectangular.png"/>
@@ -26,243 +289,24 @@
         </Button>
 
         <!-- Botones de la barra de navegación -->
+
+        <!-- Botón "Inicio" -->
         <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+        <!-- Botón "Precios" -->
         <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+        <!-- Botón "Nosotros" -->
         <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+        <!-- Botón "Contáctenos" -->
         <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-        <Button text="Boleteria" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+        <!-- Botón "Boletería" -->
+        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
 
         <!-- Elemento de relleno -->
         <Pane HBox.hgrow="ALWAYS"/>
 
         <!-- Botón "Registrarse" -->
-        <Button text="Iniciar Sesión" styleClass="nav-button-registro" HBox.hgrow="ALWAYS"
-                onAction="#botonIniciarSesion"/>
+        <Button text="Iniciar Sesion" styleClass="nav-button-log-reg" onAction="#botonIniciarSesion"/>
+
     </HBox>
 
-    <!-- Contenido de la pantalla -->
-    <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-bar">
-
-        <VBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS" style="-fx-background-color: black;">
-            <!-- Espacio antes del contenido -->
-            <Pane minHeight="50"/>
-
-            <!-- Contenido - ESCRIBIR EL CODIGO DESDE AQUÍ -->
-            <!-- Logo de FastEvent -->
-            <ImageView id="logo" fitWidth="130" fitHeight="130">
-                <Image url="@logo1.png"/>
-            </ImageView>
-
-            <!-- Texto "Registrarse en FastEvent" -->
-            <Label text="Registrarse en FastEvent" styleClass="logo-text"/>
-
-            <!-- Botón "Registrarse con Facebook" -->
-            <Button styleClass="facebook-button" onAction="#registrarseConFacebook">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@facebook-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Registrarse con Facebook" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Botón "Registrarse con Twitter" -->
-            <Button styleClass="twitter-button" onAction="#registrarseConTwitter">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@twitter-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Registrarse con Twitter" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Botón "Registrarse con Google" -->
-            <Button styleClass="google-button" onAction="#registrarseConGoogle">
-                <graphic>
-                    <HBox spacing="10" alignment="CENTER">
-
-                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                            <Image url="@google-logo.png"/>
-                        </ImageView>
-
-                        <Label text="Registrarse con Google" styleClass="buttons-text"/>
-
-                    </HBox>
-                </graphic>
-            </Button>
-
-            <!-- Líneas blancas y O dorada -->
-            <HBox spacing="10" alignment="CENTER">
-                <Pane minHeight="1" prefHeight="1" prefWidth="110" styleClass="separator"/>
-                <Label text="O" styleClass="or-label"/>
-                <Pane minHeight="1" prefHeight="1" prefWidth="110" styleClass="separator"/>
-            </HBox>
-
-
-            <!-- Registrar cuenta en FastEvent -->
-            <VBox id="register" alignment="CENTER" spacing="10">
-
-                <HBox alignment="CENTER_LEFT" spacing="10">
-
-                    <VBox alignment="CENTER_LEFT" spacing="10">
-
-                        <!-- Campo de nombres personalizado -->
-                        <Label text="Nombre(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <TextField fx:id="nombres" styleClass="text-input"/>
-
-                        <!-- Campo de correo electronico  -->
-                        <Label text="Correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <TextField fx:id="correoElectronico" styleClass="text-input"/>
-
-                        <!-- Campo de usuario personalizado -->
-                        <Label text="Contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <CustomPasswordField fx:id="contrasena" styleClass="text-input"/>
-
-                    </VBox>
-
-                    <Pane HBox.hgrow="ALWAYS"/>
-
-                    <VBox spacing="10">
-
-                        <!-- Campo de apellidos personalizado -->
-                        <Label text="Apellido(s)" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <TextField fx:id="apellidos" styleClass="text-input"/>
-
-                        <!-- Campo de repetir correo electronico -->
-                        <Label text="Repetir correo electrónico" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <TextField fx:id="repetirCorreoElectronico" styleClass="text-input"/>
-
-                        <!-- Campo de repetir contraseña -->
-                        <Label text="Repetir contraseña" style="-fx-font-size: 13px; -fx-font-weight: bold;"/>
-                        <CustomPasswordField fx:id="repetirContrasena" styleClass="text-input"/>
-
-                    </VBox>
-
-                </HBox>
-
-                <!-- Checkbox de aceptar terminos y condiciones -->
-                <HBox alignment="CENTER">
-
-                    <Button text="Acepto términos y condiciones" styleClass="button-without-backgroundv1"
-                            onAction="#botonTerminos"/>
-
-                    <CheckBox fx:id="checkBoxAceptarTerminos" styleClass="check-box-Aceptar-Terminos"/>
-
-                </HBox>
-
-                <!-- Botón "Registrarse" -->
-                <Button text="Registrarse" styleClass="button-login" onAction="#botonRegistrarse"/>
-
-            </VBox>
-
-            <!-- ¿Ya estás registrado? -->
-            <VBox id="new-user" alignment="CENTER" spacing="10">
-
-                <HBox alignment="CENTER">
-
-                    <!-- Campo de usuario personalizado -->
-                    <Label text="¿Ya estás registrado?" style="-fx-font-size: 12px; -fx-text-fill: white"/>
-
-                    <!-- Botón de "Iniciar Sesión" -->
-                    <Button text="Iniciar Sesión." styleClass="button-without-backgroundv1"
-                            onAction="#botonIniciarSesion"/>
-
-                </HBox>
-
-            </VBox>
-
-            <!-- Términos y privacidad -->
-            <VBox id="terminos-privacidad" alignment="TOP_LEFT" spacing="10">
-
-                <HBox>
-
-                    <!-- Botón de "Términos" -->
-                    <Button text="Términos" styleClass="button-without-backgroundv2" onAction="#botonTerminos"/>
-                    <!-- Elemento de relleno -->
-                    <Pane HBox.hgrow="ALWAYS"/>
-                    <!-- Botón de "Privacidad" -->
-                    <Button text="Privacidad" styleClass="button-without-backgroundv2" onAction="#botonPrivacidad"/>
-
-                </HBox>
-
-            </VBox>
-
-            <!-- Espacio antes del footer -->
-            <Pane minHeight="75"/>
-
-            <!-- Línea separadora -->
-            <Pane minHeight="1" styleClass="separator" maxWidth="1000"/>
-
-            <!-- Footer -->
-            <HBox alignment="CENTER" maxWidth="900">
-
-                <!-- Derechos de autor -->
-                <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="TOP_CENTER">
-                    <ImageView id="logo" fitWidth="100" fitHeight="100">
-                        <Image url="@logo2.png"/>
-                    </ImageView>
-                    <Label text="© 2023 FastEvent" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
-                    <Label text="Todos los derechos reservados." style="-fx-text-fill: white;"/>
-                </VBox>
-
-                <!-- Relleno -->
-                <Pane minWidth="50"/>
-
-                <!-- Navegación -->
-                <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="TOP_LEFT">
-
-                    <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
-                    <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
-                    <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
-                    <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-                    <Button text="Boleteria" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
-
-                </VBox>
-
-                <!-- Relleno -->
-                <Pane minWidth="50"/>
-
-                <!-- Redes sociales -->
-                <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="TOP_LEFT">
-
-                    <Button text="Facebook" styleClass="nav-button" onAction="#accionBotonFacebook"/>
-                    <Button text="Instagram" styleClass="nav-button" onAction="#accionBotonInstagram"/>
-                    <Button text="Twitter" styleClass="nav-button" onAction="#accionBotonTwitter"/>
-                    <Button text="Linkedin" styleClass="nav-button" onAction="#accionBotonLinkedin"/>
-
-                </VBox>
-
-                <!-- Relleno -->
-                <Pane minWidth="50"/>
-
-                <!-- Información -->
-                <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="300"
-                      alignment="TOP_LEFT">
-
-                    <Button text="Términos y Condiciones" styleClass="nav-button" onAction="#botonTerminos"/>
-                    <Button text="Políticas de Privacidad" styleClass="nav-button" onAction="#botonPrivacidad"/>
-                    <Button text="Preguntas Frecuentes" styleClass="nav-button"
-                            onAction="#accionBotonPreguntasFrecuentes"/>
-
-                </VBox>
-
-            </HBox>
-
-        </VBox>
-
-    </ScrollPane>
-
-</VBox>
+</AnchorPane>

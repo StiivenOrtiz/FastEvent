@@ -10,22 +10,22 @@ import javafx.scene.control.TextField;
 public class Registrarse extends Controlador {
 
     @FXML
-    public TextField correoElectronico;
-
-    @FXML
-    private PasswordField contrasena;
-
-    @FXML
     public TextField nombres;
 
     @FXML
     public TextField apellidos;
 
     @FXML
+    public TextField correoElectronico;
+
+    @FXML
     public TextField repetirCorreoElectronico;
 
     @FXML
     public PasswordField repetirContrasena;
+
+    @FXML
+    public PasswordField contrasena;
 
     @FXML
     public CheckBox checkBoxAceptarTerminos;
