@@ -203,7 +203,7 @@
                         <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
                         <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
                         <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-                        <Button text="Boleteria" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
 
                     </VBox>
 

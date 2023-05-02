@@ -1,0 +1,338 @@
+/* Fondo negro para la ventana */
+
+#root {
+    -fx-background-color: black !important;
+    -fx-padding: 0px;
+}
+
+/* Estilo para la etiqueta ImageView que contiene el logo */
+
+#logo {
+    -fx-fit-width: 400px;
+    -fx-fit-height: 400px;
+    -fx-preserve-ratio: true;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0, 0, 0);
+    /* Transición para hacer que el logo brille cuando se coloca el cursor sobre él */
+    -fx-transition: brightness 0.5s;
+}
+
+/**
+    * Estilos para el scroll-bar y el scroll-pane
+ **/
+
+/* Estilo para el scroll pane */
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .increment-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .increment-arrow, .scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+/* Estilo para el scroll pane */
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/**
+    * Estilos para la barra de navegación
+ **/
+
+/* Estilo para la barra de navegación */
+
+.nav-bar {
+    -fx-background-color: black;
+    -fx-spacing: 12px;
+    -fx-padding: 0px 25px;
+}
+
+/* Estilo para los botones de la barra de navegación */
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 0px;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+}
+
+/* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button:hover {
+    -fx-text-fill: #CFB14F;
+}
+
+/* Estilo para el boton de la navegación correspondiente a la pantalla actual. */
+
+.nav-button-actualPage {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CFB14F;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 0px;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para el botón de invisible que tiene la imagen de "FastEvent" en navegación */
+
+.nav-invisible-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-radius: 0;
+}
+
+/* Estilo para el botónes de "Iniciar Sesion" o "Registrarse" en navegación */
+
+.nav-button-log-reg {
+    -fx-background-color: #CFB14F;
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-font-family: "Arial";
+
+    -fx-border-radius: 20;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+}
+
+/* Opacidad cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button-log-reg:hover {
+    -fx-opacity: 0.8;
+}
+
+/**
+    ***********************************
+ **/
+
+/* Estilo del Vbox de la linea invisible que encierra "Terminos" y "Privacidad" */
+
+#terminos-privacidad {
+    -fx-border-color: transparent;
+    -fx-max-width: 275px;
+}
+
+/**
+    ***********************************
+    * Estilos del contenido de la página
+ **/
+
+/* Estilo del VBox que encierra el iniciar sesión con cuenta de FastEvent */
+
+#login {
+    -fx-font-family: "Arial";
+    -fx-background-color: black;
+    -fx-border-color: #CFB14F;
+    -fx-padding: 10px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+
+/* Estilo del rectangulo que encierra el registrarse */
+
+#new-user {
+    -fx-font-family: "Arial";
+    -fx-background-color: black;
+    -fx-max-width: 275px;
+    -fx-border-color: #CFB14F;
+    -fx-padding: 10px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
+
+/* Estilo para los campos de texto y botones */
+
+.text-input {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+    -fx-font-family: "Arial";
+    -fx-border-color: white;
+    -fx-border-radius: 40;
+    -fx-pref-height: 20px;
+}
+
+/* Botón de Login */
+
+.button-login {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: #CFB14F;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 0;
+    -fx-padding: 5px 81px;
+    -fx-font-weight: bold;
+}
+
+/* Opacidad cuando se coloca el mouse encima del botón */
+
+.button-login:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Estilo para el texto de "Ingresar a FastEvent" en login */
+
+.logo-text {
+    -fx-font-family: "Arial";
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+/* Estilo para el botón de "Iniciar sesión con Facebook" en login */
+
+.facebook-button {
+    -fx-background-color: #1877F2;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #1877F2;
+    -fx-border-width: 0;
+    -fx-padding: 0px 0px;
+}
+
+/* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Facebook" en login */
+
+.facebook-button:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Estilo para los botones de para iniciar sesión con las redes sociales */
+
+.buttons-text {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+/* Estilo para el botón de "Iniciar sesión con Twitter" en login */
+
+.twitter-button {
+    -fx-background-color: #00AEEF;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #00AEEF;
+    -fx-border-width: 0;
+    -fx-padding: 0px 0px;
+}
+
+/* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Twitter" en login */
+
+.twitter-button:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Estilo para el botón de "Iniciar sesión con Google" en login */
+
+.google-button {
+    -fx-background-color: #DB4437;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #DB4437;
+    -fx-border-width: 0;
+    -fx-padding: 0px 0px;
+}
+
+/* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Google" en login */
+
+.google-button:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Estilo para las lineas que estarán al los lados de "o" */
+
+.separator {
+    -fx-background-color: white;
+    -fx-max-height: 0.2px;
+}
+
+/* Estilo el letrero de "o" que esta entre las lineas blancas antes de login */
+
+.or-label {
+    -fx-text-fill: #CFB14F;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para el botón de "Registrarse" en login */
+
+.button-without-backgroundv1 {
+    -fx-background-color: black;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-padding: 0px 0px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #CFB14F;
+}
+
+/* Opacidad cuando se posiciona el mouse encima del botón de "Registrarse" en login */
+
+.button-without-backgroundv1:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Estilo para el botón de "¿Necesitas ayuda?" */
+
+.button-without-backgroundv2 {
+    -fx-background-color: black;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: black;
+    -fx-border-width: 0;
+    -fx-padding: 0px 0px;
+    -fx-font-size: 11px;
+    -fx-text-fill: #CFB14F;
+}
+
+/* Opacidad cuando se posiciona el mouse encima del botón de "¿Necesitas ayuda?" */
+
+.button-without-backgroundv2:hover {
+    -fx-opacity: 0.8;
+}

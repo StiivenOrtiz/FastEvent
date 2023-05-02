@@ -182,7 +182,7 @@
                         <Label text="¿Ya estás registrado? " style="-fx-font-size: 12px; -fx-text-fill: white"/>
 
                         <!-- Botón de "Iniciar Sesión" -->
-                        <Button text="Iniciar Sesión" styleClass="button-without-backgroundv1"
+                        <Button text="Iniciar sesión" styleClass="button-without-backgroundv1"
                                 onAction="#botonIniciarSesion"/>
 
                         <!-- Texto -->
@@ -239,7 +239,7 @@
                         <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
                         <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
                         <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-                        <Button text="Boleteria" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
 
                     </VBox>
 
@@ -286,6 +286,7 @@
                     <Image url="@logo_rectangular.png"/>
                 </ImageView>
             </graphic>
+
         </Button>
 
         <!-- Botones de la barra de navegación -->
@@ -304,8 +305,8 @@
         <!-- Elemento de relleno -->
         <Pane HBox.hgrow="ALWAYS"/>
 
-        <!-- Botón "Registrarse" -->
-        <Button text="Iniciar Sesion" styleClass="nav-button-log-reg" onAction="#botonIniciarSesion"/>
+        <!-- Botón "Iniciar sesión" -->
+        <Button text="Iniciar sesión" styleClass="nav-button-log-reg" onAction="#botonIniciarSesion"/>
 
     </HBox>
 

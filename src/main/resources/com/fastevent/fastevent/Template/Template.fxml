@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fastevent.fastevent.Controladores.TemplateController"
+            style="-fx-background-color: black;"
+            stylesheets="@style_Template.css">
+
+    <!-- Margen del contenido de la pantalla -->
+    <VBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          style="-fx-background-color: transparent; -fx-border-color: transparent;">
+
+        <!-- ScrollBar -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-bar">
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: transparent;">
+
+                <!-- Espacio antes del contenido -->
+                <Pane minHeight="50"/>
+
+                <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
+
+
+                <!-- NO ESCRIBIR A PARTIR DE AQUI -->
+
+                <!-- Espacio antes de la linea separadora -->
+                <Pane minHeight="75"/>
+
+                <!-- Línea separadora -->
+                <Pane minHeight="1" styleClass="separator" maxWidth="1000"/>
+
+                <!-- Espacio antes del footer -->
+                <Pane minHeight="20"/>
+
+                <!-- Footer -->
+                <HBox alignment="CENTER" maxWidth="900" spacing="50">
+
+                    <!-- Derechos de autor -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="0"
+                          alignment="TOP_CENTER">
+
+                        <!-- Logo -->
+                        <ImageView id="logo" fitWidth="100" fitHeight="100">
+                            <Image url="@logo2.png"/>
+                        </ImageView>
+
+                        <!-- Texto de derechos de autor -->
+                        <Label text="© 2023 FastEvent" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                        <Label text="Todos los derechos reservados." style="-fx-text-fill: white;"/>
+
+                    </VBox>
+
+                    <!-- Navegación -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de navegación -->
+                        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+                        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+                        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+                        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+
+                    </VBox>
+
+                    <!-- Redes sociales -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de redes sociales -->
+                        <Button text="Facebook" styleClass="nav-button" onAction="#accionBotonFacebook"/>
+                        <Button text="Instagram" styleClass="nav-button" onAction="#accionBotonInstagram"/>
+                        <Button text="Twitter" styleClass="nav-button" onAction="#accionBotonTwitter"/>
+                        <Button text="Linkedin" styleClass="nav-button" onAction="#accionBotonLinkedin"/>
+
+                    </VBox>
+
+                    <!-- Información -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de información -->
+                        <Button text="Términos y Condiciones" styleClass="nav-button" onAction="#botonTerminos"/>
+                        <Button text="Políticas de Privacidad" styleClass="nav-button" onAction="#botonPrivacidad"/>
+                        <Button text="Preguntas Frecuentes" styleClass="nav-button"
+                                onAction="#accionBotonPreguntasFrecuentes"/>
+
+                    </VBox>
+                </HBox>
+
+                <!-- Relleno -->
+                <Pane style="-fx-background-color: transparent;" minWidth="100" minHeight="100"/>
+
+            </VBox>
+        </ScrollPane>
+
+    </VBox>
+
+    <!-- Barra de navegación -->
+    <HBox styleClass="nav-bar" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- Botón invisible encima del logo rectangular -->
+        <Button styleClass="nav-invisible-button" onAction="#botonLogoRectangularPresionado">
+
+            <!-- Logo rectangular en la barra de navegación -->
+            <graphic>
+                <ImageView fitWidth="165" fitHeight="40" HBox.hgrow="ALWAYS">
+                    <Image url="@logo_rectangular.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <!-- Botones de la barra de navegación -->
+
+        <!-- Botón "Inicio" -->
+        <Button text="Inicio" styleClass="nav-button-actualPage" onAction="#accionBotonInicio"/>
+        <!-- Botón "Precios" -->
+        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+        <!-- Botón "Nosotros" -->
+        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+        <!-- Botón "Contáctenos" -->
+        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+        <!-- Botón "Boletería" -->
+        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+
+        <!-- Elemento de relleno -->
+        <Pane HBox.hgrow="ALWAYS"/>
+
+        <!-- Botón "Boletería" -->
+        <Button text="Iniciar sesión" styleClass="nav-button" onAction="#botonIniciarSesion"/>
+        <!-- Botón "Registrarse" -->
+        <Button text="Registrarse" styleClass="nav-button-log-reg" onAction="#botonRegistrarse"/>
+
+    </HBox>
+
+</AnchorPane>
