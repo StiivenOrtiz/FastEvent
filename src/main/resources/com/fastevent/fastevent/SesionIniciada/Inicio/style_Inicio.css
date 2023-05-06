@@ -145,6 +145,47 @@
     -fx-opacity: 0.8;
 }
 
+
+/* botón de notificacion */
+
+.nav-bar-boton-notificacion {
+    -fx-background-image: url("nav-bar/icono_notificacion.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* boton de notificación cuando tiene el cursor encima */
+
+.nav-bar-boton-notificacion:hover {
+    -fx-background-image: url("nav-bar/icono_notificacion_seleccionada.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* botón de notificacion cuando tiene una notifiacion */
+
+.nav-bar-boton-notificacion.notification {
+    -fx-background-image: url("nav-bar/icono_notificacion_activa.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* botón de notificación cuando tiene una notifiación y el cursor encima */
+
+.nav-bar-boton-notificacion.notification:hover {
+    -fx-background-image: url("nav-bar/icono_notificacion_activa_seleccionada.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
 /**
     ***********************************
  **/
@@ -244,15 +285,3 @@
     ***********************************
     * Estilos del contenido de la página
  **/
-
-
-.button-notif {
-    -fx-background-color: white;
-    -fx-background-radius: 20px;
-    -fx-padding: 10px 20px;
-    -fx-text-fill: black;
-}
-
-.button-notif.notification {
-    -fx-background-color: red;
-}
