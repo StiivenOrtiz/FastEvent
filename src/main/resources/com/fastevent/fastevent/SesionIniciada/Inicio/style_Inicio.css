@@ -16,6 +16,13 @@
     -fx-transition: brightness 0.5s;
 }
 
+/* Estilo para las lineas que estarán al los lados de "o" */
+
+.separator {
+    -fx-background-color: white;
+    -fx-max-height: 0.2px;
+}
+
 /**
     * Estilos para el scroll-bar y el scroll-pane
  **/
@@ -186,6 +193,27 @@
     -fx-background-color: transparent;
 }
 
+/* botón de perfil de usuario */
+
+.nav-vertical-boton-perfil-de-usuario {
+    -fx-background-image: url("nav-bar/icono_perfil-usuario.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* botón de perfil de usuario seleccionado */
+
+.nav-vertical-boton-perfil-de-usuario:hover {
+    -fx-background-image: url("nav-bar/icono_perfil-usuario_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+
 /**
     ***********************************
  **/
@@ -223,6 +251,10 @@
 
 .nav-vertical-boton-inicio:hover {
     -fx-background-image: url("nav-bar-vertical/icono_inicio_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 /* Botón de usuarios */
@@ -237,6 +269,10 @@
 
 .nav-vertical-boton-usuarios:hover {
     -fx-background-image: url("nav-bar-vertical/icono_usuarios_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 /* Botón de mercado */
@@ -251,6 +287,10 @@
 
 .nav-vertical-boton-mercado:hover {
     -fx-background-image: url("nav-bar-vertical/icono_mercado_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 /* Botón de mis-boletas */
@@ -265,6 +305,10 @@
 
 .nav-vertical-boton-mis-boletas:hover {
     -fx-background-image: url("nav-bar-vertical/icono_mis-boletas_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 /* Botón de mis-eventos */
@@ -277,11 +321,57 @@
     -fx-background-color: transparent;
 }
 
+/* Botón de mis-eventos seleccionado */
+
 .nav-vertical-boton-mis-eventos:hover {
     -fx-background-image: url("nav-bar-vertical/icono_mis-eventos_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+.nav-vertical-boton-mis-finanzas {
+    -fx-background-image: url("../../../../../icono_finanzas.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+.nav-vertical-boton-mis-finanzas:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_finanzas_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 /**
     ***********************************
     * Estilos del contenido de la página
  **/
+
+
+.lista-mis-eventos {
+    -fx-background-color: white;
+    -fx-accent: #CFB14F;
+    -fx-padding: 0px 0px 0px 0px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-border-insets: 0px;
+    -fx-border-radius: 0px;
+}
+
+.lista-mis-eventos .scroll-bar:vertical{
+    -fx-background-color: gray;
+    -fx-background-radius: 30px;
+    -fx-padding: 0px 0px 0px 0px;
+    -fx-border-color: gray;
+    -fx-border-radius: 30px;
+}
+
+.lista-mis-eventos .scroll-bar:vertical .thumb {
+    -fx-background-color: black;
+
+}

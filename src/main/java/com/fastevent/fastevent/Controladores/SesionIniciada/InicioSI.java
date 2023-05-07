@@ -5,14 +5,18 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class InicioSI extends Controlador {
@@ -55,6 +59,10 @@ public class InicioSI extends Controlador {
         System.out.println("Registrarse");
     }
 
+    public void accionPerfilDeUsuario(ActionEvent actionEvent) {
+        System.out.println("Perfil de usuario");
+    }
+
     // Métodos del footer
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
@@ -85,6 +93,8 @@ public class InicioSI extends Controlador {
         System.out.println("Preguntas frecuentes");
     }
 
+    // Métodos de la barra de navegación vertical
+
     public void accionBotonUsuarios(ActionEvent actionEvent) {
         System.out.println("Usuarios");
     }
@@ -105,6 +115,10 @@ public class InicioSI extends Controlador {
         estadoDeNotifaciones.set(true);
     }
 
+    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
+        System.out.println("Mis finanzas");
+    }
+
     /*
         Metodos de la interfaz
      */
@@ -119,6 +133,41 @@ public class InicioSI extends Controlador {
     public Button botonBorrarNotificaciones;
 
     private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+
+    @FXML
+    private ListView<Usuario> listaMisEventos;
+
+    public void imprimirMiEventoSeleccionado(MouseEvent mouseEvent) {
+        // Obtener el índice del elemento seleccionado
+        int indice = listaMisEventos.getSelectionModel().getSelectedIndex();
+        // Imprimir el número del índice del elemento seleccionado
+        System.out.println("Elemento seleccionado en el índice: " + listaMisEventos.getItems().get(indice).getNombre());
+    }
+
+    public void imprimirNotificacionSeleccionada(MouseEvent mouseEvent) {
+        // Obtener el índice del elemento seleccionado
+        int indice = listaDeNotificaciones.getSelectionModel().getSelectedIndex();
+        // Imprimir el número del índice del elemento seleccionado
+        System.out.println("Elemento seleccionado en el índice: " + listaDeNotificaciones.getItems().get(indice).getDireccion());
+    }
+
+    public static class Usuario {
+        private Image imagen;
+        private String nombre;
+
+        public Usuario(Image imagen, String nombre) {
+            this.imagen = imagen;
+            this.nombre = nombre;
+        }
+
+        public Image getImagen() {
+            return imagen;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+    }
 
     public void initialize() {
         // Agregar el ChangeListener al estado de la notificación
@@ -138,6 +187,49 @@ public class InicioSI extends Controlador {
         // Agregar imagen al boton de borrar notificaciones
         agregarImagenBotonBorrarNotificaciones();
 
+        listaMisEventos.setCellFactory(param -> new ListCell<Usuario>() {
+            private final ImageView imageView = new ImageView();
+            private final Label label = new Label();
+
+            @Override
+            protected void updateItem(Usuario usuario, boolean empty) {
+                super.updateItem(usuario, empty);
+                if (empty || usuario == null) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    imageView.setImage(usuario.getImagen());
+                    // indicamos que la imagen es de 75x75
+                    imageView.setFitWidth(75);
+                    imageView.setFitHeight(75);
+
+                    VBox contenedorDeImagen = new VBox(imageView);
+                    contenedorDeImagen.setStyle("-fx-border-color: black; -fx-border-width: 2; -fx-padding: 5; -fx-alignment: center; -fx-background-color: grey;");
+
+                    // le colocamos un grosor a la imagen
+                    label.setText(usuario.getNombre());
+                    label.setFont(new Font("Arial", 18));
+                    label.setStyle("-fx-text-fill: black;");
+
+                    HBox hbox = new HBox(contenedorDeImagen, label);
+                    hbox.setSpacing(15);
+                    hbox.setAlignment(Pos.CENTER_LEFT);
+                    hbox.setStyle("-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1 0; -fx-padding: 5 0 5 0;");
+                    setGraphic(hbox);
+                }
+            }
+        });
+
+        // Crear objetos Usuario y agregarlos a la lista
+        List<Usuario> usuarios = new ArrayList<>();
+
+        for (int i = 0; i < 12; i++) {
+            usuarios.add(new Usuario(new Image("icono_finanzas.png"), "Usuario " + i));
+        }
+
+        // Agregar la lista de usuarios al ListView
+        listaMisEventos.getItems().addAll(usuarios);
+
     }
 
     public void mostrarNotificaciones(ActionEvent actionEvent) {
@@ -148,13 +240,6 @@ public class InicioSI extends Controlador {
 
     public void borrarNotificaciones(ActionEvent actionEvent) {
         listaDeNotificaciones.getItems().clear();
-    }
-
-    public void imprimirNumeroDeElementoSeleccionado(MouseEvent mouseEvent) {
-        // Obtener el índice del elemento seleccionado
-        int indice = listaDeNotificaciones.getSelectionModel().getSelectedIndex();
-        // Imprimir el número del índice del elemento seleccionado
-        System.out.println("Elemento seleccionado en el índice: " + listaDeNotificaciones.getItems().get(indice).getDireccion());
     }
 
     protected void agregarImagenBotonBorrarNotificaciones() {
