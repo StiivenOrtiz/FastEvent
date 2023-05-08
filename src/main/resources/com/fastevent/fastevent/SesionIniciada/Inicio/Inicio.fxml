@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SearchableComboBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -28,11 +31,27 @@
                 <Label text="Mis eventos" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
 
                 <!-- Lista de eventos realizados por el usuario -->
-                <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
-                    <ListView fx:id="listaMisEventos" prefHeight="200" minHeight="200" HBox.hgrow="ALWAYS" onMouseClicked="#imprimirMiEventoSeleccionado" styleClass="lista-mis-eventos"/>
+                <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
+                      AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
+                    <ListView fx:id="listaMisEventos" prefHeight="200" minHeight="200" HBox.hgrow="ALWAYS"
+                              maxWidth="1200" onMouseClicked="#accionSeleccionarMiEventos"
+                              styleClass="lista-inicioSI"/>
                 </HBox>
 
+                <!-- Espacio antes de la siguiente lista -->
+                <Pane minHeight="25"/>
 
+
+                <!-- Titulo: Mis eventos -->
+                <Label text="Mis boletas" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+
+                <!-- Lista de eventos realizados por el usuario -->
+                <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
+                      AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
+                    <ListView fx:id="listaMisBoletas" prefHeight="200" minHeight="200" HBox.hgrow="ALWAYS"
+                              maxWidth="1200" onMouseClicked="#accionSeleccionarMiBoletas"
+                              styleClass="lista-inicioSI"/>
+                </HBox>
 
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->
@@ -68,11 +87,11 @@
                     <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
 
                         <!-- Botones de navegación -->
-                        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
-                        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
-                        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
-                        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+                        <JFXButton text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+                        <JFXButton text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+                        <JFXButton text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+                        <JFXButton text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+                        <JFXButton text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
 
                     </VBox>
 
@@ -109,22 +128,29 @@
 
     <!-- Barra de navegación vertical -->
 
-    <VBox styleClass="nav-bar-vertical" alignment="TOP_CENTER" maxWidth="38" minWidth="38"  AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0">
+    <VBox styleClass="nav-bar-vertical" alignment="TOP_CENTER" maxWidth="38" minWidth="38" AnchorPane.leftAnchor="0"
+          AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0">
 
         <!-- Botones de la barra de navegación -->
 
         <!-- Botón Inicio -->
-        <Button styleClass="nav-vertical-boton-inicio" onAction="#accionBotonInicio" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-inicio" onAction="#accionBotonInicio" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
         <!-- Botón Usuarios -->
-        <Button styleClass="nav-vertical-boton-usuarios" onAction="#accionBotonUsuarios" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-usuarios" onAction="#accionBotonUsuarios" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
         <!-- Botón Mercado -->
-        <Button styleClass="nav-vertical-boton-mercado" onAction="#accionBotonMercado" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-mercado" onAction="#accionBotonMercado" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
         <!-- Botón Mis boletas -->
-        <Button styleClass="nav-vertical-boton-mis-boletas" onAction="#accionBotonMisBoletas" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-mis-boletas" onAction="#accionBotonMisBoletas" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
         <!-- Botón Mis eventos -->
-        <Button styleClass="nav-vertical-boton-mis-eventos" onAction="#accionBotonMisEventos" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-mis-eventos" onAction="#accionBotonMisEventos" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
         <!-- Botón Mis finanzas -->
-        <Button styleClass="nav-vertical-boton-mis-finanzas" onAction="#accionBotonMisFinanzas" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-mis-finanzas" onAction="#accionBotonMisFinanzas" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
 
     </VBox>
 
@@ -143,38 +169,41 @@
 
         </Button>
 
-        <!-- Botones de la barra de navegación -->
+        <!-- Relleno -->
+        <Pane minWidth="100"/>
 
-        <!-- Botón "Inicio" -->
-        <Button text="Inicio" styleClass="nav-button-actualPage" onAction="#accionBotonInicio"/>
-        <!-- Botón "Precios" -->
-        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
-        <!-- Botón "Nosotros" -->
-        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
-        <!-- Botón "Contáctenos" -->
-        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-        <!-- Botón "Boletería" -->
-        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+        <!-- Barra de busqueda -->
+        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+            <HBox spacing="10" styleClass="barra-de-busqueda" alignment="CENTER">
+                <SearchableComboBox fx:id="barraDeBusqueda" promptText="Buscar en FastEvent" HBox.hgrow="ALWAYS"
+                                    maxWidth="700" styleClass="searchable-combo-box"/>
+                <JFXButton styleClass="nav-boton-buscar" onAction="#accionBuscarBarraDeBusqueda" minWidth="20"
+                           minHeight="20" maxWidth="20" maxHeight="20"/>
+                <Pane minWidth="90"/>
+            </HBox>
+        </VBox>
 
-        <!-- Elemento de relleno -->
-        <Pane HBox.hgrow="ALWAYS"/>
+        <!-- Relleno para ajustar la barra de navegación y quede central-->
+        <Pane minWidth="100"/>
 
-        <!-- Botón "Boletería" -->
-        <Button text="Iniciar sesión" styleClass="nav-button" onAction="#botonIniciarSesion"/>
-        <!-- Botón "Registrarse" -->
-        <Button text="Registrarse" styleClass="nav-button-log-reg" onAction="#botonRegistrarse"/>
+        <!-- Botón de notificaciones -->
+        <JFXButton fx:id="botonDeNotificacion" text="" styleClass="nav-bar-boton-notificacion"
+                   onAction="#mostrarNotificaciones" minHeight="26" minWidth="26" maxWidth="26" maxHeight="26">
 
-        <Button fx:id="botonDeNotificacion" text="" styleClass="nav-bar-boton-notificacion" onAction="#mostrarNotificaciones" minHeight="26" minWidth="26" maxWidth="26" maxHeight="26">
-            <ContextMenu fx:id="notificaciones" style="-fx-accent: transparent; -fx-border-color: white; -fx-background-color: black; -fx-border-radius: 30; -fx-background-radius: 30; -fx-pref-height: 250; -fx-pref-width: 300;" >
+            <!-- Ventana que sale al presionar el botón de notificaciones -->
+            <ContextMenu fx:id="notificaciones"
+                         style="-fx-accent: transparent; -fx-border-color: white; -fx-background-color: black; -fx-border-radius: 30; -fx-background-radius: 30; -fx-pref-height: 250; -fx-pref-width: 300;">
                 <items>
-                    <CustomMenuItem >
+                    <CustomMenuItem>
                         <content>
                             <HBox alignment="CENTER">
                                 <Pane style="-fx-background-color: transparent;" minWidth="8"/>
-                                    <VBox>
-                                        <Pane style="-fx-background-color: transparent;"  minHeight="15"/>
-                                        <ListView fx:id="listaDeNotificaciones" prefWidth="270" prefHeight="182" style="-fx-accent: transparent; -fx-background-color: black; -fx-progress-color: black; -fx-border-color: white; -fx-control-inner-background: black;" onMouseClicked="#imprimirNotificacionSeleccionada"/>
-                                    </VBox>
+                                <VBox>
+                                    <Pane style="-fx-background-color: transparent;" minHeight="15"/>
+                                    <ListView fx:id="listaDeNotificaciones" prefWidth="270" prefHeight="182"
+                                              style="-fx-accent: transparent; -fx-background-color: black; -fx-progress-color: black; -fx-border-color: white; -fx-control-inner-background: black;"
+                                              onMouseClicked="#imprimirNotificacionSeleccionada"/>
+                                </VBox>
                             </HBox>
                         </content>
                     </CustomMenuItem>
@@ -182,16 +211,19 @@
                         <content>
                             <HBox alignment="CENTER">
                                 <Pane style="-fx-background-color: transparent;" minWidth="130" minHeight="0"/>
-                                <Button fx:id="botonBorrarNotificaciones" onAction="#borrarNotificaciones" minHeight="26" minWidth="26" maxWidth="26" maxHeight="26" style="-fx-background-color: transparent;"/>
+                                <Button fx:id="botonBorrarNotificaciones" onAction="#borrarNotificaciones"
+                                        minHeight="26" minWidth="26" maxWidth="26" maxHeight="26"
+                                        style="-fx-background-color: transparent; -fx-cursor: hand;"/>
                             </HBox>
                         </content>
                     </CustomMenuItem>
                 </items>
             </ContextMenu>
-        </Button>
+        </JFXButton>
 
         <!-- Botón "Perfil de Usuario" -->
-        <Button styleClass="nav-vertical-boton-perfil-de-usuario" onAction="#accionPerfilDeUsuario" minWidth="26" minHeight="26" maxWidth="26" maxHeight="26"/>
+        <JFXButton styleClass="nav-vertical-boton-perfil-de-usuario" onAction="#accionPerfilDeUsuario" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
 
     </HBox>
 

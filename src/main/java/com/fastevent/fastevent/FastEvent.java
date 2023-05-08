@@ -54,8 +54,8 @@ public class FastEvent extends Application {
          ****************************************************************************************
          */
 
-        String nombrePantalla = "Inicio Sesión Iniciada";
-        String direccionFXML = "SesionIniciada/Inicio/Inicio.fxml";
+        String nombrePantalla = "";
+        String direccionFXML = "";
 
         /*
          ****************************************************************************************

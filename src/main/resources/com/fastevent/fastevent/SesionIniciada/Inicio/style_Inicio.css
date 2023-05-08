@@ -27,7 +27,7 @@
     * Estilos para el scroll-bar y el scroll-pane
  **/
 
-/* Estilo para el scroll pane */
+/* Estilo para el scroll bar */
 
 .scroll-bar:vertical .track {
     -fx-background-color: transparent;
@@ -102,6 +102,7 @@
     -fx-font-family: "Arial";
     -fx-border-width: 0;
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
 
 /* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
@@ -110,46 +111,86 @@
     -fx-text-fill: #CFB14F;
 }
 
-/* Estilo para el boton de la navegación correspondiente a la pantalla actual. */
-
-.nav-button-actualPage {
-    -fx-background-color: transparent;
-    -fx-text-fill: #CFB14F;
-    -fx-font-size: 14px;
-    -fx-padding: 0px 0px;
-    -fx-font-family: "Arial";
-    -fx-border-width: 0;
-    -fx-font-weight: bold;
-}
-
 /* Estilo para el botón de invisible que tiene la imagen de "FastEvent" en navegación */
 
 .nav-invisible-button {
     -fx-background-color: transparent;
     -fx-padding: 0;
     -fx-background-radius: 0;
+    -fx-cursor: hand;
 }
 
-/* Estilo para el botónes de "Iniciar Sesion" o "Registrarse" en navegación */
 
-.nav-button-log-reg {
-    -fx-background-color: #CFB14F;
-    -fx-background-radius: 12;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-padding: 5px 10px;
-    -fx-font-family: "Arial";
+/* Estilo del Hbox la barra de busqueda */
 
-    -fx-border-radius: 20;
-    -fx-border-color: #CFB14F;
-    -fx-border-width: 0;
-    -fx-font-weight: bold;
+.barra-de-busqueda {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
 
-/* Opacidad cuando los botones de navegación se les coloca encima el mouse */
+/* Estilo del se searchable-combo-box */
 
-.nav-button-log-reg:hover {
-    -fx-opacity: 0.8;
+.searchable-combo-box {
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+/* Estilo de la lista del se searchable-combo-box */
+
+.searchable-combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: gray;
+    -fx-border-color: transparent;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+/* Estilo del se searchable-combo-box para quitar la felcha de la derecha */
+
+.searchable-combo-box .combo-box-base .arrow-button .arrow {
+    -fx-background-color: transparent;
+}
+
+/* Estilo de la ventana que sale al escribir del se searchable-combo-box */
+
+.combo-box-base:showing .text-field {
+    -fx-background-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+/* Estilo de ventana que sale al clickear el searchable-combo-box */
+
+.searchable-combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-opacity: 0.9;
+}
+
+/* Estilo del boton buscar */
+
+.nav-boton-buscar {
+    -fx-background-image: url("nav-bar/icono_lupa-buscar.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 20px 20px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo del boton buscar al colocar el mouse encima */
+
+.nav-boton-buscar:hover {
+    -fx-background-image: url("nav-bar/icono_lupa-buscar_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 20px 20px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
 }
 
 
@@ -161,6 +202,7 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
 
 /* boton de notificación cuando tiene el cursor encima */
@@ -181,6 +223,7 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
 
 /* botón de notificación cuando tiene una notifiación y el cursor encima */
@@ -201,6 +244,7 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
 
 /* botón de perfil de usuario seleccionado */
@@ -247,7 +291,10 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Botón de inicio seleccionado */
 
 .nav-vertical-boton-inicio:hover {
     -fx-background-image: url("nav-bar-vertical/icono_inicio_seleccionado.png");
@@ -265,7 +312,10 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Botón de usuarios seleccionado */
 
 .nav-vertical-boton-usuarios:hover {
     -fx-background-image: url("nav-bar-vertical/icono_usuarios_seleccionado.png");
@@ -283,7 +333,10 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Botón de mercado seleccionado */
 
 .nav-vertical-boton-mercado:hover {
     -fx-background-image: url("nav-bar-vertical/icono_mercado_seleccionado.png");
@@ -301,7 +354,10 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Botón de mis boletas seleccionado */
 
 .nav-vertical-boton-mis-boletas:hover {
     -fx-background-image: url("nav-bar-vertical/icono_mis-boletas_seleccionado.png");
@@ -319,6 +375,7 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
 
 /* Botón de mis-eventos seleccionado */
@@ -331,13 +388,18 @@
     -fx-background-color: transparent;
 }
 
+/* Botón de mis-finanzas */
+
 .nav-vertical-boton-mis-finanzas {
-    -fx-background-image: url("../../../../../icono_finanzas.png");
+    -fx-background-image: url("Ejemplo.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Botón de mis-finanzas seleccionado */
 
 .nav-vertical-boton-mis-finanzas:hover {
     -fx-background-image: url("nav-bar-vertical/icono_finanzas_seleccionado.png");
@@ -353,7 +415,9 @@
  **/
 
 
-.lista-mis-eventos {
+/* Listas de la pantalla */
+
+.lista-inicioSI {
     -fx-background-color: white;
     -fx-accent: #CFB14F;
     -fx-padding: 0px 0px 0px 0px;
@@ -363,7 +427,9 @@
     -fx-border-radius: 0px;
 }
 
-.lista-mis-eventos .scroll-bar:vertical{
+/* Barra de navegación de las Listas de la pantalla */
+
+.lista-inicioSI .scroll-bar:vertical {
     -fx-background-color: gray;
     -fx-background-radius: 30px;
     -fx-padding: 0px 0px 0px 0px;
@@ -371,7 +437,20 @@
     -fx-border-radius: 30px;
 }
 
-.lista-mis-eventos .scroll-bar:vertical .thumb {
-    -fx-background-color: black;
+/* Boton pequeño de la Barra de navegación de las Listas de la pantalla */
 
+.lista-inicioSI .scroll-bar:vertical .thumb {
+    -fx-background-color: black;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 3);
+    -fx-transition: opacity 0.3s;
+    -fx-cursor: hand;
+}
+
+/* Boton pequeño de la Barra de navegación de las Listas de la pantalla cuando se le coloce mouse encima */
+
+.lista-inicioSI .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: black;
+    -fx-opacity: 0.5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 3);
 }
