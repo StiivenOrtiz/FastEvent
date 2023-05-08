@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -25,14 +26,14 @@
                 <!-- Contenido - ESCRIBIR EL CODIGO DESDE AQUÍ -->
                 <!-- Logo de FastEvent -->
                 <ImageView id="logo" fitWidth="130" fitHeight="130">
-                    <Image url="@logo1.png"/>
+                    <Image url="@contenido/logo1.png"/>
                 </ImageView>
 
                 <!-- Texto "Registrarse en FastEvent" -->
                 <Label text="Registrarse en FastEvent" styleClass="logo-text"/>
 
                 <!-- Botón "Registrarse con Facebook" -->
-                <Button styleClass="facebook-button" onAction="#registrarseConFacebook" maxWidth="211" minHeight="28">
+                <JFXButton styleClass="facebook-button" onAction="#registrarseConFacebook" maxWidth="211" minHeight="28">
                     <graphic>
                         <HBox alignment="CENTER_LEFT">
 
@@ -41,7 +42,7 @@
 
                             <!-- Logo de Facebook -->
                             <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                                <Image url="@facebook-logo.png"/>
+                                <Image url="@contenido/facebook-logo.png"/>
                             </ImageView>
 
                             <!-- Espacio después del logo -->
@@ -51,10 +52,10 @@
 
                         </HBox>
                     </graphic>
-                </Button>
+                </JFXButton>
 
                 <!-- Botón "Registrarse con Twitter" -->
-                <Button styleClass="twitter-button" onAction="#registrarseConTwitter" maxWidth="211" minHeight="28">
+                <JFXButton styleClass="twitter-button" onAction="#registrarseConTwitter" maxWidth="211" minHeight="28">
                     <graphic>
                         <HBox alignment="CENTER_LEFT">
 
@@ -63,7 +64,7 @@
 
                             <!-- Logo de Twitter -->
                             <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                                <Image url="@twitter-logo.png"/>
+                                <Image url="@contenido/twitter-logo.png"/>
                             </ImageView>
 
                             <!-- Espacio después del logo -->
@@ -73,10 +74,10 @@
 
                         </HBox>
                     </graphic>
-                </Button>
+                </JFXButton>
 
                 <!-- Botón "Registrarse con Google" -->
-                <Button styleClass="google-button" onAction="#registrarseConGoogle" maxWidth="211" minHeight="28">
+                <JFXButton styleClass="google-button" onAction="#registrarseConGoogle" maxWidth="211" minHeight="28">
                     <graphic>
                         <HBox alignment="CENTER_LEFT">
 
@@ -85,7 +86,7 @@
 
                             <!-- Logo de Google -->
                             <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
-                                <Image url="@google-logo.png"/>
+                                <Image url="@contenido/google-logo.png"/>
                             </ImageView>
 
                             <!-- Espacio después del logo -->
@@ -96,7 +97,7 @@
 
                         </HBox>
                     </graphic>
-                </Button>
+                </JFXButton>
 
                 <!-- Líneas blancas y O dorada -->
                 <HBox spacing="10" alignment="CENTER">
@@ -168,7 +169,7 @@
 
                     <!-- Botón "Registrarse" -->
                     <HBox alignment="CENTER">
-                        <Button text="Registrarse" styleClass="button-register" onAction="#botonRegistrarse"
+                        <JFXButton text="Registrarse" styleClass="button-register" onAction="#botonRegistrarse"
                                 minWidth="100" minHeight="24"/>
                     </HBox>
 
@@ -222,7 +223,7 @@
 
                         <!-- Logo -->
                         <ImageView id="logo" fitWidth="100" fitHeight="100">
-                            <Image url="@logo2.png"/>
+                            <Image url="@footer/logo2.png"/>
                         </ImageView>
 
                         <!-- Texto de derechos de autor -->
@@ -283,7 +284,7 @@
             <!-- Logo rectangular en la barra de navegación -->
             <graphic>
                 <ImageView fitWidth="165" fitHeight="40" HBox.hgrow="ALWAYS">
-                    <Image url="@logo_rectangular.png"/>
+                    <Image url="@nav-bar/logo_rectangular.png"/>
                 </ImageView>
             </graphic>
 
@@ -306,7 +307,7 @@
         <Pane HBox.hgrow="ALWAYS"/>
 
         <!-- Botón "Iniciar sesión" -->
-        <Button text="Iniciar sesión" styleClass="nav-button-log-reg" onAction="#botonIniciarSesion"/>
+        <JFXButton text="Iniciar sesión" styleClass="nav-button-log-reg" onAction="#botonIniciarSesion"/>
 
     </HBox>
 

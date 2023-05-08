@@ -1,12 +1,8 @@
 package com.fastevent.fastevent.Controladores;
 
-import com.fastevent.fastevent.Controladores.Controlador;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
-public class TemplateController extends Controlador {
+public class TemplateSNIController extends Controlador {
 
     /*
         Variables

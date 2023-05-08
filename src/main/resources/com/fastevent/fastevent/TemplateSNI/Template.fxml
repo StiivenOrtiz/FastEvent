@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.textfield.CustomPasswordField?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fastevent.fastevent.Controladores.TemplateController"
+            fx:controller="com.fastevent.fastevent.Controladores.TemplateSNIController"
             style="-fx-background-color: black;"
             stylesheets="@style_Template.css">
 
@@ -22,7 +23,10 @@
                 <!-- Espacio antes del contenido -->
                 <Pane minHeight="50"/>
 
-                <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
+                <!-- CONTENIDO DE LA PAGINA (ESCRIBIR CODIGO DESDE AQUI) -->
+
+
+
 
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->
@@ -45,7 +49,7 @@
 
                         <!-- Logo -->
                         <ImageView id="logo" fitWidth="100" fitHeight="100">
-                            <Image url="@logo2.png"/>
+                            <Image url="@footer/logo2.png"/>
                         </ImageView>
 
                         <!-- Texto de derechos de autor -->
@@ -106,7 +110,7 @@
             <!-- Logo rectangular en la barra de navegación -->
             <graphic>
                 <ImageView fitWidth="165" fitHeight="40" HBox.hgrow="ALWAYS">
-                    <Image url="@logo_rectangular.png"/>
+                    <Image url="@nav-bar/logo_rectangular.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -114,7 +118,7 @@
         <!-- Botones de la barra de navegación -->
 
         <!-- Botón "Inicio" -->
-        <Button text="Inicio" styleClass="nav-button-actualPage" onAction="#accionBotonInicio"/>
+        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
         <!-- Botón "Precios" -->
         <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
         <!-- Botón "Nosotros" -->
@@ -127,10 +131,8 @@
         <!-- Elemento de relleno -->
         <Pane HBox.hgrow="ALWAYS"/>
 
-        <!-- Botón "Boletería" -->
-        <Button text="Iniciar sesión" styleClass="nav-button" onAction="#botonIniciarSesion"/>
         <!-- Botón "Registrarse" -->
-        <Button text="Registrarse" styleClass="nav-button-log-reg" onAction="#botonRegistrarse"/>
+        <JFXButton text="Registrarse" styleClass="nav-button-log-reg" onAction="#botonRegistrarse"/>
 
     </HBox>
 

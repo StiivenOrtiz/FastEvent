@@ -391,7 +391,7 @@
 /* Botón de mis-finanzas */
 
 .nav-vertical-boton-mis-finanzas {
-    -fx-background-image: url("main/resources/Ejemplo.png");
+    -fx-background-image: url("nav-bar-vertical/icono_finanzas.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -414,43 +414,4 @@
     * Estilos del contenido de la página
  **/
 
-
-/* Listas de la pantalla */
-
-.lista-inicioSI {
-    -fx-background-color: white;
-    -fx-accent: #CFB14F;
-    -fx-padding: 0px 0px 0px 0px;
-    -fx-border-color: transparent;
-    -fx-border-width: 0px;
-    -fx-border-insets: 0px;
-    -fx-border-radius: 0px;
-}
-
-/* Barra de navegación de las Listas de la pantalla */
-
-.lista-inicioSI .scroll-bar:vertical {
-    -fx-background-color: gray;
-    -fx-background-radius: 30px;
-    -fx-padding: 0px 0px 0px 0px;
-    -fx-border-color: gray;
-    -fx-border-radius: 30px;
-}
-
-/* Boton pequeño de la Barra de navegación de las Listas de la pantalla */
-
-.lista-inicioSI .scroll-bar:vertical .thumb {
-    -fx-background-color: black;
-    -fx-opacity: 1;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 3);
-    -fx-transition: opacity 0.3s;
-    -fx-cursor: hand;
-}
-
-/* Boton pequeño de la Barra de navegación de las Listas de la pantalla cuando se le coloce mouse encima */
-
-.lista-inicioSI .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: black;
-    -fx-opacity: 0.5;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 3);
-}
+/* ESCRIBIR CODIGO APARTIR DE AQUÍ */

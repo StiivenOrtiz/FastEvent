@@ -95,6 +95,7 @@
     -fx-font-family: "Arial";
     -fx-border-width: 0;
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
 
 /* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
@@ -109,6 +110,7 @@
     -fx-background-color: transparent;
     -fx-padding: 0;
     -fx-background-radius: 0;
+    -fx-cursor: hand;
 }
 
 /* Estilo para el botónes de "Iniciar Sesion" o "Registrarse" en navegación */
@@ -125,12 +127,20 @@
     -fx-border-color: #CFB14F;
     -fx-border-width: 0;
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando los botones de navegación se les coloca encima el mouse */
 
 .nav-button-log-reg:hover {
     -fx-opacity: 0.8;
+}
+
+/* Boton log-reg efecto rippler */
+
+.nav-button-log-reg .jfx-rippler {
+    -jfx-rippler-fill: white;
+    -jfx-rippler-size: 80;
 }
 
 /**
@@ -197,12 +207,21 @@
     -fx-border-width: 0;
     -fx-padding: 5px 81px;
     -fx-font-weight: bold;
+    -fx-cursor: hand;
 }
+
 
 /* Opacidad cuando se coloca el mouse encima del botón */
 
 .button-login:hover {
     -fx-opacity: 0.8;
+}
+
+/* Botón de Login efecto rippler */
+
+.button-login .jfx-rippler {
+    -jfx-rippler-fill: white;
+    -jfx-rippler-size: 80;
 }
 
 /* Estilo para el texto de "Ingresar a FastEvent" en login */
@@ -211,6 +230,15 @@
     -fx-font-family: "Arial";
     -fx-font-size: 20px;
     -fx-text-fill: white;
+}
+
+/* Estilo para los botones de para iniciar sesión con las redes sociales */
+
+.buttons-text {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 /* Estilo para el botón de "Iniciar sesión con Facebook" en login */
@@ -222,6 +250,7 @@
     -fx-border-color: #1877F2;
     -fx-border-width: 0;
     -fx-padding: 0px 0px;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Facebook" en login */
@@ -230,12 +259,11 @@
     -fx-opacity: 0.8;
 }
 
-/* Estilo para los botones de para iniciar sesión con las redes sociales */
+/* Estilo para el botón de "Iniciar sesión con Facebook" en login efecto rippler */
 
-.buttons-text {
-    -fx-font-family: "Arial";
-    -fx-font-size: 14px;
-    -fx-text-fill: white;
+.facebook-button .jfx-rippler {
+    -jfx-rippler-fill: white;
+    -jfx-rippler-size: 80;
 }
 
 /* Estilo para el botón de "Iniciar sesión con Twitter" en login */
@@ -247,12 +275,20 @@
     -fx-border-color: #00AEEF;
     -fx-border-width: 0;
     -fx-padding: 0px 0px;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Twitter" en login */
 
 .twitter-button:hover {
     -fx-opacity: 0.8;
+}
+
+/* Estilo para el botón de "Iniciar sesión con Twitter" en login efecto rippler */
+
+.twitter-button .jfx-rippler {
+    -jfx-rippler-fill: white;
+    -jfx-rippler-size: 80;
 }
 
 /* Estilo para el botón de "Iniciar sesión con Google" en login */
@@ -264,12 +300,20 @@
     -fx-border-color: #DB4437;
     -fx-border-width: 0;
     -fx-padding: 0px 0px;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Iniciar sesión con Google" en login */
 
 .google-button:hover {
     -fx-opacity: 0.8;
+}
+
+/* Estilo para el botón de "Iniciar sesión con Google" en login efecto rippler */
+
+.google-button .jfx-rippler {
+    -jfx-rippler-fill: white;
+    -jfx-rippler-size: 80;
 }
 
 /* Estilo para las lineas que estarán al los lados de "o" */
@@ -298,6 +342,7 @@
     -fx-padding: 0px 0px;
     -fx-font-size: 12px;
     -fx-text-fill: #CFB14F;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "Registrarse" en login */
@@ -317,6 +362,7 @@
     -fx-padding: 0px 0px;
     -fx-font-size: 11px;
     -fx-text-fill: #CFB14F;
+    -fx-cursor: hand;
 }
 
 /* Opacidad cuando se posiciona el mouse encima del botón de "¿Necesitas ayuda?" */
