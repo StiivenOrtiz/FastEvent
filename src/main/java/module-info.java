@@ -2,6 +2,7 @@ module com.fastevent.fastevent {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;
+    requires org.controlsfx.controls;
 
 
     opens com.fastevent.fastevent to javafx.fxml;
