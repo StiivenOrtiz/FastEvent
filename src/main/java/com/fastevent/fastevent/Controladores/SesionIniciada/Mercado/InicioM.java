@@ -3,6 +3,7 @@ package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 // imports de FastEvent
 
 import com.fastevent.fastevent.Controladores.Controlador;
+import com.fastevent.fastevent.Modelo.Categoria;
 import com.fastevent.fastevent.Modelo.Notificacion;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.BooleanProperty;
