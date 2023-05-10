@@ -1,26 +1,30 @@
-package com.fastevent.fastevent.Controladores.SesionIniciada;
+package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 
 // imports de FastEvent
 
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Modelo.Notificacion;
+import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import org.controlsfx.control.SearchableComboBox;
 
+import java.util.ArrayList;
 
-public class Mercado extends Controlador {
+
+public class InicioM extends Controlador {
 
     /*
         Variables
@@ -37,6 +41,24 @@ public class Mercado extends Controlador {
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
     private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+
+    @FXML
+    JFXButton botonCategoria1;
+
+    @FXML
+    JFXButton botonCategoria2;
+
+    @FXML
+    JFXButton botonCategoria3;
+
+    @FXML
+    JFXButton botonCategoria4;
+
+    @FXML
+    JFXButton botonCategoria5;
+
+    @FXML
+    JFXButton botonCategoria6;
 
     // Métodos de la barra de navegación
 
@@ -145,6 +167,37 @@ public class Mercado extends Controlador {
         listaDeNotificaciones.getItems().clear();
     }
 
+    public void accionBotonSerProveedor(ActionEvent actionEvent) {
+        System.out.println("Ser proveedor");
+    }
+
+    public void botonCategoria1(ActionEvent actionEvent) {
+        System.out.println("Categoria 1");
+    }
+
+    public void botonCategoria2(ActionEvent actionEvent) {
+        System.out.println("Categoria 2");
+    }
+
+
+    public void botonCategoria3(ActionEvent actionEvent) {
+        System.out.println("Categoria 3");
+    }
+
+
+    public void botonCategoria4(ActionEvent actionEvent) {
+        System.out.println("Categoria 4");
+    }
+
+
+    public void botonCategoria5(ActionEvent actionEvent) {
+        System.out.println("Categoria 5");
+    }
+
+    public void botonCategoria6(ActionEvent actionEvent) {
+        System.out.println("Categoria 6");
+    }
+
 
     /*
         Metodos de la interfaz
@@ -231,6 +284,109 @@ public class Mercado extends Controlador {
         });
     }
 
+    private void estiloBotonesCategoria(){
+        ArrayList<JFXButton> botones = new ArrayList<>();
+        botones.add(botonCategoria1);
+        botones.add(botonCategoria2);
+        botones.add(botonCategoria3);
+        botones.add(botonCategoria4);
+        botones.add(botonCategoria5);
+        botones.add(botonCategoria6);
+
+        // Ejemplo
+        String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
+        String direccionImagenHover = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones_seleccionado.png";
+
+        // Ejemplo
+        ArrayList<Categoria> categorias = new ArrayList<>();
+        categorias.add(new Categoria("Categoria 1", "Texto de la categoria 1", direccionImagen, direccionImagenHover));
+        categorias.add(new Categoria("Categoria 2", "Texto de la categoria 2", direccionImagen, direccionImagenHover));
+        categorias.add(new Categoria("Categoria 3", "Texto de la categoria 3", direccionImagen, direccionImagenHover));
+        categorias.add(new Categoria("Categoria 4", "Texto de la categoria 4", direccionImagen, direccionImagenHover));
+        categorias.add(new Categoria("Categoria 5", "Texto de la categoria 5", direccionImagen, direccionImagenHover));
+        categorias.add(new Categoria("Categoria 6", "Texto de la categoria 6", direccionImagen, direccionImagenHover));
+
+
+        botones.forEach(boton -> {
+            Categoria categoria;
+            try {
+                categoria = categorias.get(botones.indexOf(boton));
+                estiloBotonCategoria(boton, categoria.getDireccionImagen(), categoria.getDireccionImagenHover(), categoria.getTitulo(), categoria.getTexto());
+            }catch (Exception e){
+                System.out.println("No hay mas categorias");
+            };
+        });
+    }
+
+    private void estiloBotonCategoria(JFXButton boton, String direccionImagen, String direccionImagenHover, String titulo, String texto) {
+        HBox hbox = crearContenedorHBox(direccionImagen, titulo, texto, false);
+        HBox hboxHover = crearContenedorHBox(direccionImagenHover, titulo, texto, true);
+
+        boton.setGraphic(hbox);
+
+        // Agregar el listener para cambiar la imagen cuando el mouse entra y sale del botón
+        boton.hoverProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                boton.setGraphic(hboxHover);
+            } else {
+                boton.setGraphic(hbox);
+            }
+        });
+    }
+
+    private ImageView crearImagenCategoria(String direccionImagen){
+        ImageView imagenCategoria = new ImageView(new Image(direccionImagen));
+
+        imagenCategoria.setFitWidth(200);
+        imagenCategoria.setFitHeight(140);
+
+        imagenCategoria.minWidth(200);
+        imagenCategoria.minHeight(140);
+
+        imagenCategoria.maxWidth(200);
+        imagenCategoria.maxHeight(140);
+
+
+        return imagenCategoria;
+    }
+
+    private Label crearTituloCategoria(String titulo, boolean hover){
+        Label tituloCategoria = new Label(titulo);
+
+        if(hover)
+            tituloCategoria.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #CFB14F;");
+        else
+            tituloCategoria.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;");
+
+        return tituloCategoria;
+    }
+
+    private Label crearTextoCategoria(String texto){
+        Label textoCategoria = new Label(texto);
+
+        textoCategoria.setStyle("-fx-font-size: 14px; -fx-text-fill: white;");
+
+        return textoCategoria;
+    }
+
+    private VBox crearContenedorVBox(String titulo, String texto, boolean hover){
+        VBox contenedorVbox = new VBox(crearTituloCategoria(titulo, hover), crearTextoCategoria(texto));
+        contenedorVbox.setAlignment(Pos.CENTER_LEFT);
+
+        return contenedorVbox;
+    }
+
+    private HBox crearContenedorHBox(String direccionImagen, String titulo, String texto, boolean hover){
+        HBox hHbox = new HBox(crearImagenCategoria(direccionImagen), crearContenedorVBox(titulo, texto, hover));
+        hHbox.setSpacing(20);
+        hHbox.setAlignment(Pos.CENTER_LEFT);
+        hHbox.setPadding(new Insets(5, 5, 5, 5));
+        hHbox.setMinWidth(450);
+        hHbox.maxWidth(450);
+
+        return hHbox;
+    }
+
     public void initialize() {
         /* Notificaciones */
         // Agregar el ChangeListener al estado de la notificación
@@ -249,6 +405,11 @@ public class Mercado extends Controlador {
         /* Ejemplo */
         // Genera un ejemplo de la generación de listas y barra de búsqueda
         generarEjemplo();
+
+        // añadido
+
+        estiloBotonesCategoria();
+
     }
 
 }
