@@ -1,0 +1,417 @@
+/* Fondo negro para la ventana */
+
+#root {
+    -fx-background-color: black !important;
+    -fx-padding: 0px;
+}
+
+/* Estilo para la etiqueta ImageView que contiene el logo */
+
+#logo {
+    -fx-fit-width: 400px;
+    -fx-fit-height: 400px;
+    -fx-preserve-ratio: true;
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 20, 0, 0, 0);
+    /* Transición para hacer que el logo brille cuando se coloca el cursor sobre él */
+    -fx-transition: brightness 0.5s;
+}
+
+/* Estilo para las lineas que estarán al los lados de "o" */
+
+.separator {
+    -fx-background-color: white;
+    -fx-max-height: 0.2px;
+}
+
+/**
+    * Estilos para el scroll-bar y el scroll-pane
+ **/
+
+/* Estilo para el scroll bar */
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .increment-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .increment-arrow, .scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+/* Estilo para el scroll pane */
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/**
+    * Estilos para la barra de navegación
+ **/
+
+/* Estilo para la barra de navegación */
+
+.nav-bar {
+    -fx-background-color: black;
+    -fx-spacing: 12px;
+    -fx-padding: 0px 0px;
+}
+
+/* Estilo para los botones de la barra de navegación */
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 0px;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button:hover {
+    -fx-text-fill: #CFB14F;
+}
+
+/* Estilo para el botón de invisible que tiene la imagen de "FastEvent" en navegación */
+
+.nav-invisible-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+
+/* Estilo del Hbox la barra de busqueda */
+
+.barra-de-busqueda {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Estilo del se searchable-combo-box */
+
+.searchable-combo-box {
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+/* Estilo de la lista del se searchable-combo-box */
+
+.searchable-combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: gray;
+    -fx-border-color: transparent;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+/* Estilo del se searchable-combo-box para quitar la felcha de la derecha */
+
+.searchable-combo-box .combo-box-base .arrow-button .arrow {
+    -fx-background-color: transparent;
+}
+
+/* Estilo de la ventana que sale al escribir del se searchable-combo-box */
+
+.combo-box-base:showing .text-field {
+    -fx-background-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+/* Estilo de ventana que sale al clickear el searchable-combo-box */
+
+.searchable-combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-opacity: 0.9;
+}
+
+/* Estilo del boton buscar */
+
+.nav-boton-buscar {
+    -fx-background-image: url("nav-bar/icono_lupa-buscar.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 20px 20px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo del boton buscar al colocar el mouse encima */
+
+.nav-boton-buscar:hover {
+    -fx-background-image: url("nav-bar/icono_lupa-buscar_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 20px 20px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+
+/* botón de notificacion */
+
+.nav-bar-boton-notificacion {
+    -fx-background-image: url("nav-bar/icono_notificacion.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* boton de notificación cuando tiene el cursor encima */
+
+.nav-bar-boton-notificacion:hover {
+    -fx-background-image: url("nav-bar/icono_notificacion_seleccionada.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* botón de notificacion cuando tiene una notifiacion */
+
+.nav-bar-boton-notificacion.notification {
+    -fx-background-image: url("nav-bar/icono_notificacion_activa.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* botón de notificación cuando tiene una notifiación y el cursor encima */
+
+.nav-bar-boton-notificacion.notification:hover {
+    -fx-background-image: url("nav-bar/icono_notificacion_activa_seleccionada.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* botón de perfil de usuario */
+
+.nav-vertical-boton-perfil-de-usuario {
+    -fx-background-image: url("nav-bar/icono_perfil-usuario.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* botón de perfil de usuario seleccionado */
+
+.nav-vertical-boton-perfil-de-usuario:hover {
+    -fx-background-image: url("nav-bar/icono_perfil-usuario_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+
+/**
+    ***********************************
+ **/
+
+/* Estilo del Vbox de la linea invisible que encierra "Terminos" y "Privacidad" */
+
+#terminos-privacidad {
+    -fx-border-color: transparent;
+    -fx-max-width: 275px;
+}
+
+
+/*
+    ***********************************
+    * Estilos de la barra de navegación vertical
+ */
+
+/* Estilo para la barra de navegación vertical */
+
+.nav-bar-vertical {
+    -fx-background-color: black;
+    -fx-spacing: 15px;
+    -fx-padding: 55px 1px 0px 1px;
+}
+
+/* Botón de inicio */
+
+.nav-vertical-boton-inicio {
+    -fx-background-image: url("nav-bar-vertical/icono_inicio.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de inicio seleccionado */
+
+.nav-vertical-boton-inicio:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_inicio_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Botón de usuarios */
+
+.nav-vertical-boton-usuarios {
+    -fx-background-image: url("nav-bar-vertical/icono_usuarios.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de usuarios seleccionado */
+
+.nav-vertical-boton-usuarios:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_usuarios_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Botón de mercado */
+
+.nav-vertical-boton-mercado {
+    -fx-background-image: url("nav-bar-vertical/icono_mercado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de mercado seleccionado */
+
+.nav-vertical-boton-mercado:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_mercado_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Botón de mis-boletas */
+
+.nav-vertical-boton-mis-boletas {
+    -fx-background-image: url("nav-bar-vertical/icono_mis-boletas.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de mis boletas seleccionado */
+
+.nav-vertical-boton-mis-boletas:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_mis-boletas_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Botón de mis-eventos */
+
+.nav-vertical-boton-mis-eventos {
+    -fx-background-image: url("nav-bar-vertical/icono_mis-eventos.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de mis-eventos seleccionado */
+
+.nav-vertical-boton-mis-eventos:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_mis-eventos_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Botón de mis-finanzas */
+
+.nav-vertical-boton-mis-finanzas {
+    -fx-background-image: url("nav-bar-vertical/icono_finanzas.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de mis-finanzas seleccionado */
+
+.nav-vertical-boton-mis-finanzas:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_finanzas_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/**
+    ***********************************
+    * Estilos del contenido de la página
+ **/
+
+/* ESCRIBIR CODIGO APARTIR DE AQUÍ */
