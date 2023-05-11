@@ -286,22 +286,12 @@
 /* Botón de inicio */
 
 .nav-vertical-boton-inicio {
-    -fx-background-image: url("nav-bar-vertical/icono_inicio.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 26px 26px;
-    -fx-background-position: center;
-    -fx-background-color: transparent;
-    -fx-cursor: hand;
-}
-
-/* Botón de inicio seleccionado */
-
-.nav-vertical-boton-inicio:hover {
     -fx-background-image: url("nav-bar-vertical/icono_inicio_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
 
 /* Botón de usuarios */

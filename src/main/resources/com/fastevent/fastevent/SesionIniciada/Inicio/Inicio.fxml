@@ -87,11 +87,11 @@
                     <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
 
                         <!-- Botones de navegación -->
-                        <JFXButton text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
-                        <JFXButton text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
-                        <JFXButton text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
-                        <JFXButton text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
-                        <JFXButton text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+                        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+                        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+                        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+                        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
 
                     </VBox>
 
