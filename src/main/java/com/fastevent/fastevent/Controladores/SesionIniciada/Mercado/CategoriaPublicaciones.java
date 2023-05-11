@@ -4,6 +4,7 @@ package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Modelo.Notificacion;
+import com.fastevent.fastevent.Modelo.Publicacion;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
