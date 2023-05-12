@@ -1,6 +1,8 @@
 package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 
 import com.fastevent.fastevent.Controladores.Controlador;
+import com.fastevent.fastevent.Interfaces.IAutenticacion;
+import com.fastevent.fastevent.Logica.Autenticacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -99,6 +101,20 @@ public class Registrarse extends Controlador {
     }
 
     public void botonRegistrarse(ActionEvent actionEvent) {
-        System.out.println("Boton registrarse");
+        if (nombres.getText().isEmpty() || apellidos.getText().isEmpty() || correoElectronico.getText().isEmpty() || repetirCorreoElectronico.getText().isEmpty() || contrasena.getText().isEmpty() || repetirContrasena.getText().isEmpty()) {
+            System.out.println("Campos vacios");
+        }else{
+            //Verificar que los correos y contraseñas sean iguales
+            if (!correoElectronico.getText().equals(repetirCorreoElectronico.getText())) {
+                System.out.println("Los correos no coinciden");
+            }else if(!contrasena.getText().equals(repetirContrasena.getText())) {
+                System.out.println("Las contraseñas no coinciden");
+            }else if(!checkBoxAceptarTerminos.isSelected()){
+                System.out.println("No se han aceptado los terminos y condiciones");
+            }else{
+                IAutenticacion autenticacion = new Autenticacion();
+                autenticacion.registrarse(nombres.getText(), apellidos.getText(), correoElectronico.getText(), contrasena.getText());
+            }
+        }
     }
 }

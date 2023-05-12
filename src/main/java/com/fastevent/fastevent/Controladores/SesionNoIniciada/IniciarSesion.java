@@ -1,6 +1,8 @@
 package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 
 import com.fastevent.fastevent.Controladores.Controlador;
+import com.fastevent.fastevent.Interfaces.IAutenticacion;
+import com.fastevent.fastevent.Logica.Autenticacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -83,7 +85,12 @@ public class IniciarSesion extends Controlador {
     }
 
     public void botonIniciarSesion(ActionEvent actionEvent) {
-        System.out.println("Iniciar sesión con el usuario: " + correoElectronico.getText() + " y la contraseña: " + contrasena.getText());
+        if(!correoElectronico.getText().isEmpty() && !contrasena.getText().isEmpty()){
+            IAutenticacion autenticacion = new Autenticacion();
+            autenticacion.iniciarSesion(correoElectronico.getText(), contrasena.getText());
+        }else{
+            System.out.println("Campos vacios");
+        }
     }
 
     public void botonRegistrarse(ActionEvent actionEvent) {
