@@ -8,9 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.text.Text?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.InicioSI"
+            fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.InicioM"
             style="-fx-background-color: black;"
             stylesheets="@style_Inicio.css">
 
@@ -27,30 +29,22 @@
 
                 <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
 
-                <!-- Titulo: Mis eventos -->
-                <Label text="Mis eventos" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
 
-                <!-- Lista de eventos realizados por el usuario -->
-                <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
-                      AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
-                    <ListView fx:id="listaMisEventos" prefHeight="200" minHeight="200" HBox.hgrow="ALWAYS"
-                              maxWidth="1200" onMouseClicked="#accionSeleccionarMiEventos"
-                              styleClass="lista-inicioSI"/>
+                <!-- Titulo: Categorias -->
+                <Label text="Categorias" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+
+                <!-- Categorias -->
+                <HBox alignment="CENTER">
+                    <JFXButton fx:id="botonCategoria1" styleClass="boton-categoria" onAction="#botonCategoria1" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
+                    <JFXButton fx:id="botonCategoria2" styleClass="boton-categoria" onAction="#botonCategoria2" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
                 </HBox>
-
-                <!-- Espacio antes de la siguiente lista -->
-                <Pane minHeight="25"/>
-
-
-                <!-- Titulo: Mis eventos -->
-                <Label text="Mis boletas" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
-
-                <!-- Lista de eventos realizados por el usuario -->
-                <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
-                      AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
-                    <ListView fx:id="listaMisBoletas" prefHeight="200" minHeight="200" HBox.hgrow="ALWAYS"
-                              maxWidth="1200" onMouseClicked="#accionSeleccionarMiBoletas"
-                              styleClass="lista-inicioSI"/>
+                <HBox alignment="CENTER">
+                    <JFXButton fx:id="botonCategoria3" styleClass="boton-categoria" onAction="#botonCategoria3" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
+                    <JFXButton fx:id="botonCategoria4" styleClass="boton-categoria" onAction="#botonCategoria4" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <JFXButton fx:id="botonCategoria5" styleClass="boton-categoria" onAction="#botonCategoria5" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
+                    <JFXButton fx:id="botonCategoria6" styleClass="boton-categoria" onAction="#botonCategoria6" maxWidth="450" minWidth="450" maxHeight="225" minHeight="225"/>
                 </HBox>
 
 
@@ -152,6 +146,16 @@
         <JFXButton styleClass="nav-vertical-boton-mis-finanzas" onAction="#accionBotonMisFinanzas" minWidth="26"
                    minHeight="26" maxWidth="26" maxHeight="26"/>
 
+        <!-- Relleno -->
+        <Pane style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS"/>
+
+        <!-- Botón Ser Proveedor -->
+        <JFXButton styleClass="nav-vertical-boton-ser-proveedor" onAction="#accionBotonSerProveedor" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
+
+        <!-- Relleno -->
+        <Pane style="-fx-background-color: transparent;" minHeight="1"/>
+
     </VBox>
 
     <!-- Barra de navegación -->
@@ -175,7 +179,7 @@
         <!-- Barra de busqueda -->
         <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
             <HBox spacing="10" styleClass="barra-de-busqueda" alignment="CENTER">
-                <SearchableComboBox fx:id="barraDeBusqueda" promptText="Buscar en FastEvent" HBox.hgrow="ALWAYS"
+                <SearchableComboBox fx:id="barraDeBusqueda" promptText="Buscar en Mercado" HBox.hgrow="ALWAYS"
                                     maxWidth="700" styleClass="searchable-combo-box"/>
                 <JFXButton styleClass="nav-boton-buscar" onAction="#accionBuscarBarraDeBusqueda" minWidth="20"
                            minHeight="20" maxWidth="20" maxHeight="20"/>
