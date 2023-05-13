@@ -1,6 +1,6 @@
 package com.fastevent.fastevent.Logica;
 
-public class ManejoRegistrarse {
+public class ManejoRegistrarse {/*
 
     public boolean registrarse(String nombres, String apellidos, String correo, String contrasena){
         System.out.println("Datos guardados: " + nombres + " " + apellidos + " " + correo + " " + contrasena);
@@ -15,5 +15,5 @@ public class ManejoRegistrarse {
 
         return false;
     }
-
+*/
 }
