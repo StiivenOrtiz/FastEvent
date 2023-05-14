@@ -27,7 +27,7 @@
                 <!-- CONTENIDO DE LA PAGINA (ESCRIBIR CODIGO DESDE AQUI) -->
                 <Pane minHeight="75"/>
 
-                <GridPane hgap="10">
+                <GridPane hgap="10" styleClass = "grid-pane">
                     <columnConstraints>
                         <ColumnConstraints percentWidth="50" />
                         <ColumnConstraints percentWidth="50" />
@@ -36,18 +36,13 @@
 
                     </rowConstraints>
                     <Pane GridPane.columnIndex="0">
-                        <children>
-                            <Text>
-                                <Text styleClass="text1" text="El éxito de tu evento está asegurado" />
-                            </Text>
-                            <Text>
-                                <Text styleClass="text2" text="Organiza eventos mediante la seleccion de uno
-                                    o varios proveedores" />
-                            </Text>
+                        <VBox>
+                            <Label styleClass="text1" text="El éxito de tu evento está asegurado" />
+                            <Label styleClass="text2" text="Organiza eventos mediante la seleccion de uno o varios proveedores" />
                             <Button>
                                 <Button styleClass="boton" text="Crear evento" />
                             </Button>
-                        </children>
+                        </VBox>
                     </Pane>
                     <Pane GridPane.columnIndex="1">
                         <children>

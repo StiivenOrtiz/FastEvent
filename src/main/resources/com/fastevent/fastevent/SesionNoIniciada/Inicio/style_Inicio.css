@@ -171,13 +171,27 @@
      -fx-weight: bold;
      -fx-size: 32sp;
  }
-  .text1{
+  .text2{
       -fx-text-fill: white;
       -fx-size: 16sp;
   }
 
  .boton{
-    -fx-background-color: gold;
-    -fx-background-radius: 20px;
-    -fx-text-fill: white;
+    -fx-background-color: #CFB14F;
+        -fx-background-radius: 12;
+        -fx-text-fill: white;
+        -fx-font-size: 14px;
+        -fx-padding: 5px 10px;
+        -fx-font-family: "Arial";
+
+        -fx-border-radius: 20;
+        -fx-border-color: #CFB14F;
+        -fx-border-width: 0;
+        -fx-font-weight: bold;
+        -fx-cursor: hand;
+}
+
+.grid-pane {
+    -fx-hgap: 10;
+    -fx-background-color: white;
 }
