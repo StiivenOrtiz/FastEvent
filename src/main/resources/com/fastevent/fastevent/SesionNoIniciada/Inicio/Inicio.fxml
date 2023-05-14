@@ -38,7 +38,8 @@
                             <font>
                                 <Font size="15.0" />
                             </font></Text>
-                        <Button layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="Organizar evento" textFill="WHITE" />
+                        <JFXButton text="Organizar evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg" textFill="WHITE" />
+                       <!-- <Button layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="Organizar evento" textFill="WHITE" /> -->
                         <Pane HBox.hgrow="ALWAYS"/>
                         <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="398.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
