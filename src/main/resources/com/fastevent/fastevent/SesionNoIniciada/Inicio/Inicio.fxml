@@ -7,6 +7,7 @@
 <?import org.controlsfx.control.textfield.CustomPasswordField?>
 
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.fastevent.fastevent.Controladores.TemplateSNIController"
@@ -25,35 +26,34 @@
                 <Pane minHeight="50"/>
 
                 <!-- CONTENIDO DE LA PAGINA (ESCRIBIR CODIGO DESDE AQUI) -->
-                <Pane minHeight="75"/>
 
-                <GridPane hgap="10" styleClass = "grid-pane">
-                    <columnConstraints>
-                        <ColumnConstraints percentWidth="50" />
-                        <ColumnConstraints percentWidth="50" />
-                    </columnConstraints>
-                    <rowConstraints>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <Text fill="WHITE" layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="EL ÉXITO DE TU EVENTO ESTÁ ASEGURADO" wrappingWidth="344.8466796875">
+                            <font>
+                                <Font size="44.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="26.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organiza eventos mediante la seleccion y coordinacion de uno o varios proveedores" wrappingWidth="273.212890625">
+                            <font>
+                                <Font size="15.0" />
+                            </font></Text>
+                        <Button layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="Organizar evento" textFill="WHITE" />
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="398.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="https://wallpapercave.com/wp/wp2848043.jpg" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="428.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="https://wallpaper-house.com/data/out/7/wallpaper2you_155333.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
 
-                    </rowConstraints>
-                    <Pane GridPane.columnIndex="0">
-                        <VBox>
-                            <Label styleClass="text1" text="El éxito de tu evento está asegurado" />
-                            <Label styleClass="text2" text="Organiza eventos mediante la seleccion de uno o varios proveedores" />
-                            <Button>
-                                <Button styleClass="boton" text="Crear evento" />
-                            </Button>
-                        </VBox>
-                    </Pane>
-                    <Pane GridPane.columnIndex="1">
-                        <children>
-                            <ImageView fitWidth="200" fitHeight="200" preserveRatio="true">
-                                <image>
-                                    <Image url="https://i.ytimg.com/vi/y2kKlutUgGs/hqdefault.jpg" />
-                                </image>
-                            </ImageView>
-                        </children>
-                    </Pane>
-                </GridPane>
+                <Label text="Miles de proveedores alrededor del mundo esperando para servir en tu evento" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
 
 
