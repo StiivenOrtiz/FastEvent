@@ -6,7 +6,6 @@ import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Modelo.Notificacion;
 import com.fastevent.fastevent.Modelo.Publicacion;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
@@ -21,7 +20,7 @@ import org.controlsfx.control.Rating;
 import org.controlsfx.control.SearchableComboBox;
 
 
-public class mostrarPublicacion extends Controlador {
+public class MostrarPublicacion extends Controlador {
 
     /*
         Variables
