@@ -445,7 +445,7 @@
 /* Estilo para el botón de anterior de paginación */
 
 .boton-anterior {
-    -fx-background-image: url("categoriaPublicaciones/icono_anterior.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_anterior.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -456,7 +456,7 @@
 /* Estilo para el botón de anterior de paginación seleccionado */
 
 .boton-anterior:hover {
-    -fx-background-image: url("categoriaPublicaciones/icono_anterior_seleccionado.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_anterior_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -466,7 +466,7 @@
 /* Estilo para el botón de siguiente de paginación */
 
 .boton-siguiente {
-    -fx-background-image: url("categoriaPublicaciones/icono_siguiente.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_siguiente.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -477,7 +477,7 @@
 /* Estilo para el botón de siguiente de paginación seleccionado */
 
 .boton-siguiente:hover {
-    -fx-background-image: url("categoriaPublicaciones/icono_siguiente_seleccionado.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_siguiente_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -487,7 +487,7 @@
 /* Estilo para el botón de ordenar alfabeticamente */
 
 .boton-ordenar-alfabeticamente {
-    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_ordenar-alfabeticamente.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -498,7 +498,7 @@
 /* Estilo para el botón de ordenar alfabeticamente A->Z */
 
 .boton-ordenar-alfabeticamente.AZ {
-    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente-A-Z.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_ordenar-alfabeticamente-A-Z.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -509,7 +509,7 @@
 /* Estilo para el botón de ordenar alfabeticamente Z->A */
 
 .boton-ordenar-alfabeticamente.ZA{
-    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente-Z-A.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_ordenar-alfabeticamente-Z-A.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -520,7 +520,7 @@
 /* Estilo para el botón de ordenar alfabeticamente seleccionado */
 
 .boton-ordenar-alfabeticamente:hover {
-    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente_seleccionado.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_ordenar-alfabeticamente_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -575,7 +575,7 @@
 /* Estilo para el botón retirar filtros */
 
 .boton-retirar-filtros {
-    -fx-background-image: url("categoriaPublicaciones/icono_retirar-filtros.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_retirar-filtros.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -586,7 +586,7 @@
 /* Estilo para el botón retirar filtros seleccionado */
 
 .boton-retirar-filtros:hover {
-    -fx-background-image: url("categoriaPublicaciones/icono_retirar-filtros_seleccionado.png");
+    -fx-background-image: url("CategoriaPublicaciones/icono_retirar-filtros_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;

@@ -419,7 +419,7 @@
 /* Botón volver */
 
 .boton-volver {
-    -fx-background-image: url("crearPublicacion/icono_volver.png");
+    -fx-background-image: url("CrearPublicacion/icono_volver.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -430,7 +430,7 @@
 /* Botón volver */
 
 .boton-volver:hover {
-    -fx-background-image: url("crearPublicacion/icono_volver_seleccionado.png");
+    -fx-background-image: url("CrearPublicacion/icono_volver_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -510,7 +510,7 @@
 /* Estilo boton subir imagen */
 
 .boton-subir-imagen {
-    -fx-background-image: url("crearPublicacion/icono_subir-imagen.png");
+    -fx-background-image: url("CrearPublicacion/icono_subir-imagen.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 200px 200px;
     -fx-background-position: center;
@@ -523,6 +523,6 @@
 }
 
 .boton-subir-imagen:hover {
-    -fx-background-image: url("crearPublicacion/icono_subir-imagen_seleccionado.png");
+    -fx-background-image: url("CrearPublicacion/icono_subir-imagen_seleccionado.png");
     -fx-opacity: 1;
 }

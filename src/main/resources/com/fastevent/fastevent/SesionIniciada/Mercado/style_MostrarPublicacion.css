@@ -419,7 +419,7 @@
 /* Botón volver */
 
 .boton-volver {
-    -fx-background-image: url("mostrarPublicacion/icono_volver.png");
+    -fx-background-image: url("MostrarPublicacion/icono_volver.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
@@ -430,7 +430,7 @@
 /* Botón volver */
 
 .boton-volver:hover {
-    -fx-background-image: url("mostrarPublicacion/icono_volver_seleccionado.png");
+    -fx-background-image: url("MostrarPublicacion/icono_volver_seleccionado.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
