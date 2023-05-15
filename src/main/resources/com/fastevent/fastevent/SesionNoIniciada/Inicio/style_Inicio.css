@@ -195,3 +195,11 @@
     -fx-hgap: 10;
     -fx-background-color: white;
 }
+.imagenes{
+    -fx-border-radius: 10px;
+}
+
+.separatorG{
+    -fx-background-color: #808080;
+    -fx-max-height: 0.2px;
+}
