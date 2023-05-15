@@ -5,11 +5,11 @@ import com.fastevent.fastevent.Modelo.Usuario;
 public class Sesion {
     private static Usuario usuarioActual;
 
-    public static Usuario getCurrentUser() {
+    public static Usuario getUsuarioActual() {
         return usuarioActual;
     }
 
-    public static void setCurrentUser(Usuario user) {
+    public static void setUsuarioActual(Usuario user) {
         usuarioActual = user;
     }
 }
