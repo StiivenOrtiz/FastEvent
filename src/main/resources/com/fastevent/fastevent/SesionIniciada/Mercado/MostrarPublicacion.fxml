@@ -3,16 +3,11 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.Rating?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<?import javafx.scene.text.Text?>
-<?import com.sun.javafx.scene.control.EmbeddedTextContextMenuContent?>
-<?import javafx.scene.text.TextFlow?>
-<?import javafx.geometry.Insets?>
-<?import org.controlsfx.control.Rating?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.MostrarPublicacion"
@@ -37,7 +32,8 @@
                         <JFXButton styleClass="boton-volver" onAction="#accionBotonVolver" minWidth="26" minHeight="26"
                                    maxWidth="26" maxHeight="26"/>
                         <Pane HBox.hgrow="ALWAYS"/>
-                        <Label fx:id="tituloPublicacion" style="-fx-text-fill: white; -fx-font-size: 24px;" wrapText="true"/>
+                        <Label fx:id="tituloPublicacion" style="-fx-text-fill: white; -fx-font-size: 24px;"
+                               wrapText="true"/>
                         <Pane HBox.hgrow="ALWAYS"/>
                     </HBox>
 
@@ -51,25 +47,33 @@
                         </VBox>
 
                         <VBox alignment="TOP_CENTER" spacing="10" HBox.hgrow="ALWAYS">
-                            <Label text="Calificación" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                            <Label text="Calificación"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
                             <Rating fx:id="ratingPublicacion"/>
 
-                            <Label fx:id="precioPublicacion" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                            <Label fx:id="precioPublicacion"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
                             <HBox alignment="CENTER">
-                                <Label text="Proveedor: " style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                <Label text="Proveedor: "
+                                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
                                 <Label fx:id="proveedorPublicacion" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
                             </HBox>
 
-                            <Label text="Descripción" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                            <Label text="Descripción"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
-                            <Label fx:id="descripcionPublicacion" style="-fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 0px 10px 0px 10px;" wrapText="true" alignment="CENTER"/>
+                            <Label fx:id="descripcionPublicacion"
+                                   style="-fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 0px 10px 0px 10px;"
+                                   wrapText="true" alignment="CENTER"/>
 
                             <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 0px 10px 0px 10px;">
                                 <HBox alignment="CENTER">
-                                    <Label text="Categoria: " style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                                    <Label fx:id="categoriaPublicacion" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                                    <Label text="Categoria: "
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                    <Label fx:id="categoriaPublicacion"
+                                           style="-fx-text-fill: white; -fx-font-size: 14px;"/>
                                     <Pane minWidth="10"/>
                                 </HBox>
                             </HBox>
@@ -77,7 +81,8 @@
                         </VBox>
                     </HBox>
                     <Pane VBox.vgrow="ALWAYS"/>
-                    <JFXButton fx:id="botonComprar" styleClass="boton-comprar" maxHeight="33" minHeight="33" minWidth="110" maxWidth="110" alignment="CENTER"/>
+                    <JFXButton fx:id="botonComprar" styleClass="boton-comprar" maxHeight="33" minHeight="33"
+                               minWidth="110" maxWidth="110" alignment="CENTER"/>
                 </VBox>
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->

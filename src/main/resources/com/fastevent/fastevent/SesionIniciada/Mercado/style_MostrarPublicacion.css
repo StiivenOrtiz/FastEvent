@@ -439,7 +439,7 @@
 
 /* Configurar rippler */
 
-.boton-volver .jfx-rippler{
+.boton-volver .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
 
@@ -466,6 +466,6 @@
 
 /* Configurar rippler */
 
-.boton-comprar .jfx-rippler{
+.boton-comprar .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }

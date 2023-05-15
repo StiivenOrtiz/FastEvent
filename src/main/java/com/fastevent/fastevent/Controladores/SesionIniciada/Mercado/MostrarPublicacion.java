@@ -311,7 +311,7 @@ public class MostrarPublicacion extends Controlador {
         proveedorPublicacion.setText(publicacion.getProveedor());
     }
 
-    private void configurarPublicacion(){
+    private void configurarPublicacion() {
         crearImagenPublicacion();
         crearTituloPublicacion();
         crearDescripcionPublicacion();
