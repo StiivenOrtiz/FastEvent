@@ -427,7 +427,7 @@
 
 /* ESCRIBIR CODIGO APARTIR DE AQUÍ */
 
-/* Estilo para los botones de categoria */
+/* Estilo para los botones de publicaciones */
 
 .boton-publicacion {
     -fx-background-color: transparent;
@@ -436,9 +436,13 @@
     -fx-cursor: hand;
 }
 
+/* Configuracion del rippler */
+
 .boton-publicacion .jfx-rippler{
     -jfx-rippler-fill: #CFB14F;
 }
+
+/* Estilo para el botón de anterior de paginación */
 
 .boton-anterior {
     -fx-background-image: url("categoriaPublicaciones/icono_anterior.png");
@@ -446,7 +450,10 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Estilo para el botón de anterior de paginación seleccionado */
 
 .boton-anterior:hover {
     -fx-background-image: url("categoriaPublicaciones/icono_anterior_seleccionado.png");
@@ -456,13 +463,18 @@
     -fx-background-color: transparent;
 }
 
+/* Estilo para el botón de siguiente de paginación */
+
 .boton-siguiente {
     -fx-background-image: url("categoriaPublicaciones/icono_siguiente.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+    -fx-cursor: hand;
 }
+
+/* Estilo para el botón de siguiente de paginación seleccionado */
 
 .boton-siguiente:hover {
     -fx-background-image: url("categoriaPublicaciones/icono_siguiente_seleccionado.png");
@@ -470,4 +482,114 @@
     -fx-background-size: 26px 26px;
     -fx-background-position: center;
     -fx-background-color: transparent;
+}
+
+/* Estilo para el botón de ordenar alfabeticamente */
+
+.boton-ordenar-alfabeticamente {
+    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botón de ordenar alfabeticamente A->Z */
+
+.boton-ordenar-alfabeticamente.AZ {
+    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente-A-Z.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botón de ordenar alfabeticamente Z->A */
+
+.boton-ordenar-alfabeticamente.ZA{
+    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente-Z-A.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botón de ordenar alfabeticamente seleccionado */
+
+.boton-ordenar-alfabeticamente:hover {
+    -fx-background-image: url("categoriaPublicaciones/icono_ordenar-alfabeticamente_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Configuracion del rippler */
+
+.boton-ordenar-alfabeticamente .jfx-rippler{
+    -jfx-rippler-fill: #CFB14F;
+}
+
+/* Estilo para el botones de filtros */
+
+.boton-filtro {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botones de filtros seleccionado */
+
+.boton-filtro:hover {
+    -fx-text-fill: #CFB14F;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botones de filtros aplicado*/
+
+.boton-filtro.aplicado {
+    -fx-text-fill: #CFB14F;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-border-color: #CFB14F;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+/* Configuracion del rippler */
+
+.boton-filtro .jfx-rippler{
+    -jfx-rippler-fill: #CFB14F;
+}
+
+/* Estilo para el botón retirar filtros */
+
+.boton-retirar-filtros {
+    -fx-background-image: url("categoriaPublicaciones/icono_retirar-filtros.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Estilo para el botón retirar filtros seleccionado */
+
+.boton-retirar-filtros:hover {
+    -fx-background-image: url("categoriaPublicaciones/icono_retirar-filtros_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
 }

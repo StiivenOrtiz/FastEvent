@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,6 +24,7 @@ import org.controlsfx.control.Rating;
 import org.controlsfx.control.SearchableComboBox;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class CategoriaPublicaciones extends Controlador {
@@ -60,12 +60,24 @@ public class CategoriaPublicaciones extends Controlador {
     Label paginaMaxCopia;
 
     @FXML
+    public Label resultados;
+
+    @FXML
     public Label titulo;
 
     @FXML
     JFXButton botonPublicacion1, botonPublicacion2, botonPublicacion3, botonPublicacion4, botonPublicacion5,
             botonPublicacion6, botonPublicacion7, botonPublicacion8, botonPublicacion9, botonPublicacion10,
             botonPublicacion11, botonPublicacion12;
+
+    ArrayList<Publicacion> publicaciones = new ArrayList<>();
+
+    @FXML
+    public JFXButton botonOrdenarAlf, botonMenorPrecio, botonMayorPrecio, botonMenorCalificacion, botonMayorCalificacion;
+
+    boolean ordenarAlfabeticamente = false;
+
+    int orden = 0; // 0 = Sin ordenar, 1 = Menor precio, 2 = Mayor precio, 3 = Menor calificacion, 4 = Mayor calificacion
 
     // Métodos de la barra de navegación
 
@@ -234,7 +246,7 @@ public class CategoriaPublicaciones extends Controlador {
         if (intPaginaActual > 1) {
             intPaginaActual--;
             paginaActual.setText(String.valueOf(intPaginaActual));
-            estiloBotonesCategoria();
+            estiloBotonesPublicaciones();
         }
     }
 
@@ -247,13 +259,105 @@ public class CategoriaPublicaciones extends Controlador {
         if (intPaginaActual < intPaginaMax) {
             intPaginaActual++;
             paginaActual.setText(String.valueOf(intPaginaActual));
-            estiloBotonesCategoria();
+            estiloBotonesPublicaciones();
         }
+    }
+
+    public void botonOrdenarAlfabeticamente(ActionEvent actionEvent) {
+        botonOrdenarAlf.getStyleClass().remove("AZ");
+        botonOrdenarAlf.getStyleClass().remove("ZA");
+
+        if (!ordenarAlfabeticamente) {
+            publicaciones.sort(Comparator.comparing(Publicacion::getTitulo).reversed());
+            ordenarAlfabeticamente = true;
+            botonOrdenarAlf.getStyleClass().add("ZA");
+        }else {
+            publicaciones.sort(Comparator.comparing(Publicacion::getTitulo));
+            ordenarAlfabeticamente = false;
+            botonOrdenarAlf.getStyleClass().add("AZ");
+        }
+
+        switch (orden) {
+            case 1 -> ordenarPrecioMenorMayor();
+            case 2 -> ordenarPrecioMayorMenor();
+            case 3 -> ordenarCalifiacionMenorMayor();
+            case 4 -> ordenarCalifiacionMayorMenor();
+        }
+
+        estiloBotonesPublicaciones();
+    }
+
+    public void botonOrdenarPrecioMenorMayor(ActionEvent actionEvent) {
+        ordenarPrecioMenorMayor();
+        orden = 1;
+    }
+
+    public void botonOrdenarPrecioMayorMenor(ActionEvent actionEvent) {
+        ordenarPrecioMayorMenor();
+        orden = 2;
+    }
+
+    public void botonOrdenarCalifiacionMenorMayor(ActionEvent actionEvent) {
+        ordenarCalifiacionMenorMayor();
+        orden = 3;
+    }
+
+    public void botonOrdenarCalifiacionMayorMenor(ActionEvent actionEvent) {
+        ordenarCalifiacionMayorMenor();
+        orden = 4;
+    }
+
+    public void botonRetirarFiltros(ActionEvent actionEvent) {
+        retirarFiltros();
+        orden = 0;
+        estiloBotonesPublicaciones();
     }
 
     /*
         Metodos de la interfaz
      */
+
+    private void ordenarPrecioMenorMayor(){
+        retirarFiltros();
+        publicaciones.sort(Comparator.comparingDouble(Publicacion::getPrecio));
+        botonMenorPrecio.getStyleClass().add("aplicado");
+        estiloBotonesPublicaciones();
+    }
+
+    private void ordenarPrecioMayorMenor(){
+        retirarFiltros();
+        publicaciones.sort(Comparator.comparingDouble(Publicacion::getPrecio).reversed());
+        botonMayorPrecio.getStyleClass().add("aplicado");
+        estiloBotonesPublicaciones();
+    }
+
+    private void ordenarCalifiacionMenorMayor(){
+        retirarFiltros();
+        publicaciones.sort(Comparator.comparingDouble(Publicacion::getCalificacion));
+        botonMenorCalificacion.getStyleClass().add("aplicado");
+        estiloBotonesPublicaciones();
+    }
+
+    private void ordenarCalifiacionMayorMenor(){
+        retirarFiltros();
+        // Ordenar publicaciones por calificacion de mayor a menor
+        publicaciones.sort(Comparator.comparingDouble(Publicacion::getCalificacion).reversed());
+        botonMayorCalificacion.getStyleClass().add("aplicado");
+        estiloBotonesPublicaciones();
+    }
+
+    private void retirarFiltros(){
+        botonMenorPrecio.getStyleClass().remove("aplicado");
+        botonMayorPrecio.getStyleClass().remove("aplicado");
+        botonMenorCalificacion.getStyleClass().remove("aplicado");
+        botonMayorCalificacion.getStyleClass().remove("aplicado");
+
+        if(!ordenarAlfabeticamente){
+            publicaciones.sort(Comparator.comparing(Publicacion::getTitulo));
+        }else{
+            publicaciones.sort(Comparator.comparing(Publicacion::getTitulo).reversed());
+        }
+    }
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
@@ -273,6 +377,38 @@ public class CategoriaPublicaciones extends Controlador {
     private void generarEjemplo() {
         // Agregar elementos a la lista de busqueda
         barraDeBusqueda.getItems().addAll("Manzana", "Banana", "Cereza", "Durazno", "Uva");
+
+        // Ejemplo
+        String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
+
+        // Ejemplo
+        publicaciones.add(new Publicacion("Publicacion a", "Descripcion a", 0.0, direccionImagen, "Categoria a", "Proveedor a", 0.0));
+        publicaciones.add(new Publicacion("Publicacion b", "Descripcion b", 1.0, direccionImagen, "Categoria b", "Proveedor b", 1.0));
+        publicaciones.add(new Publicacion("Publicacion c", "Descripcion c", 2.0, direccionImagen, "Categoria c", "Proveedor c", 2.0));
+        publicaciones.add(new Publicacion("Publicacion d", "Descripcion d", 3.0, direccionImagen, "Categoria d", "Proveedor d", 3.0));
+        publicaciones.add(new Publicacion("Publicacion e", "Descripcion e", 4.0, direccionImagen, "Categoria e", "Proveedor e", 4.0));
+        publicaciones.add(new Publicacion("Publicacion f", "Descripcion f", 5.0, direccionImagen, "Categoria f", "Proveedor f", 5.0));
+        publicaciones.add(new Publicacion("Publicacion g", "Descripcion g", 6.0, direccionImagen, "Categoria g", "Proveedor g", 0.0));
+        publicaciones.add(new Publicacion("Publicacion h", "Descripcion h", 7.0, direccionImagen, "Categoria h", "Proveedor h", 1.0));
+        publicaciones.add(new Publicacion("Publicacion i", "Descripcion i", 8.0, direccionImagen, "Categoria i", "Proveedor i", 2.0));
+        publicaciones.add(new Publicacion("Publicacion j", "Descripcion j", 9.0, direccionImagen, "Categoria j", "Proveedor j", 3.0));
+        publicaciones.add(new Publicacion("Publicacion k", "Descripcion k", 10.0, direccionImagen, "Categoria k", "Proveedor k", 4.0));
+        publicaciones.add(new Publicacion("Publicacion l", "Descripcion l", 11.0, direccionImagen, "Categoria l", "Proveedor l", 5.0));
+        publicaciones.add(new Publicacion("Publicacion n", "Descripcion m", 12.0, direccionImagen, "Categoria m", "Proveedor m", 0.0));
+        publicaciones.add(new Publicacion("Publicacion m", "Descripcion n", 13.0, direccionImagen, "Categoria n", "Proveedor n", 1.0));
+        publicaciones.add(new Publicacion("Publicacion o", "Descripcion o", 14.0, direccionImagen, "Categoria o", "Proveedor o", 2.0));
+        publicaciones.add(new Publicacion("Publicacion p", "Descripcion p", 15.0, direccionImagen, "Categoria p", "Proveedor p", 3.0));
+        publicaciones.add(new Publicacion("Publicacion q", "Descripcion q", 16.0, direccionImagen, "Categoria q", "Proveedor q", 4.0));
+        publicaciones.add(new Publicacion("Publicacion r", "Descripcion r", 17.0, direccionImagen, "Categoria r", "Proveedor r", 5.0));
+        publicaciones.add(new Publicacion("Publicacion s", "Descripcion s", 18.0, direccionImagen, "Categoria s", "Proveedor s", 0.0));
+        publicaciones.add(new Publicacion("Publicacion t", "Descripcion t", 19.0, direccionImagen, "Categoria t", "Proveedor t", 1.0));
+        publicaciones.add(new Publicacion("Publicacion u", "Descripcion u", 20.0, direccionImagen, "Categoria u", "Proveedor u", 2.0));
+        publicaciones.add(new Publicacion("Publicacion v", "Descripcion v", 21.0, direccionImagen, "Categoria v", "Proveedor v", 3.0));
+        publicaciones.add(new Publicacion("Publicacion w", "Descripcion w", 22.0, direccionImagen, "Categoria w", "Proveedor w", 4.0));
+        publicaciones.add(new Publicacion("Publicacion x", "Descripcion x", 23.0, direccionImagen, "Categoria x", "Proveedor x", 5.0));
+        publicaciones.add(new Publicacion("Publicacion y", "Descripcion y", 24.0, direccionImagen, "Categoria y", "Proveedor y", 0.0));
+        publicaciones.add(new Publicacion("Publicacion z", "Descripcion z", 25.0, direccionImagen, "Categoria z", "Proveedor z", 1.0));
+
     }
 
     private void configurarEstadoNotificaciones() {
@@ -340,7 +476,7 @@ public class CategoriaPublicaciones extends Controlador {
         });
     }
 
-    private void estiloBotonesCategoria() {
+    private void estiloBotonesPublicaciones() {
         ArrayList<JFXButton> botones = new ArrayList<>();
         botones.add(botonPublicacion1);
         botones.add(botonPublicacion2);
@@ -354,30 +490,6 @@ public class CategoriaPublicaciones extends Controlador {
         botones.add(botonPublicacion10);
         botones.add(botonPublicacion11);
         botones.add(botonPublicacion12);
-
-        // Ejemplo
-        String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
-
-        // Ejemplo
-        ArrayList<Publicacion> publicaciones = new ArrayList<>();
-        publicaciones.add(new Publicacion("Publicacion 1", "Descripcion 1", 5.0, direccionImagen, "Categoria 1", "Proveedor 1", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 2", "Descripcion 2", 5.0, direccionImagen, "Categoria 2", "Proveedor 2", 2.0));
-        publicaciones.add(new Publicacion("Publicacion 3", "Descripcion 3", 5.0, direccionImagen, "Categoria 3", "Proveedor 3", 3.0));
-        publicaciones.add(new Publicacion("Publicacion 4", "Descripcion 4", 3.0, direccionImagen, "Categoria 4", "Proveedor 4", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 5", "Descripcion 5", 5.0, direccionImagen, "Categoria 5", "Proveedor 5", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 6", "Descripcion 6", 5.0, direccionImagen, "Categoria 6", "Proveedor 6", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 7", "Descripcion 7", 5.0, direccionImagen, "Categoria 7", "Proveedor 7", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 8", "Descripcion 8", 5.0, direccionImagen, "Categoria 8", "Proveedor 8", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 9", "Descripcion 9", 5.0, direccionImagen, "Categoria 9", "Proveedor 9", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 10", "Descripcion 10", 5.0, direccionImagen, "Categoria 10", "Proveedor 10", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 11", "Descripcion 11", 5.0, direccionImagen, "Categoria 11", "Proveedor 11", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 12", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 13", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 14", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 15", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 16", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 17", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
-        publicaciones.add(new Publicacion("Publicacion 18", "Descripcion 12", 5.0, direccionImagen, "Categoria 12", "Proveedor 12", 5.0));
 
         botones.forEach(boton -> {
             boton.setGraphic(null);
@@ -508,7 +620,7 @@ public class CategoriaPublicaciones extends Controlador {
         // añadido
 
         setCategoria("Categoria 1");
-        titulo.setText("Publicaciones de " + categoria);
+        titulo.setText(categoria);
         paginaActual.setText("1");
         paginaActualCopia.setText("1");
 
@@ -517,8 +629,11 @@ public class CategoriaPublicaciones extends Controlador {
             paginaActualCopia.setText(newValue);
         });
 
-        paginaMax.setText("2");
-        paginaMaxCopia.setText("2");
-        estiloBotonesCategoria();
+        int paginas = (int) Math.ceil(publicaciones.size() / 12.0);
+
+        paginaMax.setText(String.valueOf(paginas));
+        paginaMaxCopia.setText(String.valueOf(paginas));
+        resultados.setText(String.valueOf(publicaciones.size()));
+        estiloBotonesPublicaciones();
     }
 }
