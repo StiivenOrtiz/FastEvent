@@ -1,12 +1,14 @@
 package com.fastevent.fastevent.Modelo;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
     private String nombres;
     private String apellidos;
     private String correo;
     private String contrasena;
 
-    Usuario(String nombres, String apellidos, String correo, String contrasena){
+    public Usuario(String nombres, String apellidos, String correo, String contrasena){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;

@@ -4,7 +4,7 @@ import com.fastevent.fastevent.Interfaces.IAutenticacion;
 
 public class Autenticacion implements IAutenticacion {
     private final ManejoIniciarSesion manejoIniciarSesion = new ManejoIniciarSesion();
-   private final ManejoRegistrarse manejoRegistrarse  = new ManejoRegistrarse();
+    private final ManejoRegistrarse manejoRegistrarse  = new ManejoRegistrarse();
 
     @Override
     public Boolean iniciarSesion(String correo, String contrasena){
