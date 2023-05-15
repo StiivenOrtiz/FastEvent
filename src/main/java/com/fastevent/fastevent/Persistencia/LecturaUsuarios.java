@@ -5,36 +5,39 @@ import com.fastevent.fastevent.Modelo.Usuario;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class LecturaUsuarios {
+
     public Usuario buscarUsuario(String correo) {
         try {
-            FileInputStream fileInputStream = new FileInputStream("usuario.dat");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            if (Files.exists(Paths.get("Base de Datos/Usuarios.dat"))) {
+                FileInputStream fileInputStream = new FileInputStream("Base de Datos/Usuarios.dat");
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            Usuario usuario;
-
-            while (true) {
-                try {
-                    usuario = (Usuario) objectInputStream.readObject();
-                    if (usuario.getCorreo().equals(correo)) {
-                        objectInputStream.close();
-                        fileInputStream.close();
-                        return usuario;
+                while (true) {
+                    try {
+                        Usuario usuario = (Usuario) objectInputStream.readObject();
+                        if (usuario.getCorreo().equals(correo)) {
+                            objectInputStream.close();
+                            fileInputStream.close();
+                            return usuario;
+                        }
+                    } catch (EOFException e) {
+                        break;
                     }
-                } catch (EOFException e) {
-                    break;
                 }
-            }
 
-            objectInputStream.close();
-            fileInputStream.close();
+                objectInputStream.close();
+                fileInputStream.close();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
+
 
     public boolean verificarExistencia(String correo){
         return buscarUsuario(correo) != null;
