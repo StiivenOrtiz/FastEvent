@@ -460,13 +460,13 @@
 
 /* Estilo boton comprar seleccionado */
 
-.boton-comprar:hover {
+.boton-crear-publicacion:hover {
     -fx-background-color: transparent;
 }
 
 /* Configurar rippler */
 
-.boton-comprar .jfx-rippler {
+.boton-crear-publicacion .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
 
