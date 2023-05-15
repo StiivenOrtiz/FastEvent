@@ -62,7 +62,7 @@ public class CrearPublicacion extends Controlador {
     public JFXComboBox<String> categoriaPublicacion;
 
     @FXML
-    public JFXButton botonComprar, botonSubirImagen;
+    public JFXButton botonCrearPublicacion, botonSubirImagen;
 
     // Métodos de la barra de navegación
 
@@ -403,14 +403,14 @@ public class CrearPublicacion extends Controlador {
 
         // añadido
 
-        botonComprar.setText("Guardar");
-        botonComprar.setOnAction(e -> {
+        botonCrearPublicacion.setText("Crear Publicación");
+        botonCrearPublicacion.setOnAction(e -> {
             if (validarPublicacion()) {
                 System.out.println("Guardar");
                 // mostramos un mensaje de exito
                 Alert alerta = new Alert(Alert.AlertType.INFORMATION);
                 alerta.setTitle("Éxito");
-                alerta.setHeaderText("Publicación guardada con éxito");
+                alerta.setHeaderText("Publicación se ha creado con éxito");
                 alerta.showAndWait();
             }
         });
