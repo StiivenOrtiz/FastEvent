@@ -6,11 +6,12 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.SearchableComboBox?>
+
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.CrearPublicacion"
             style="-fx-background-color: black;"
-            stylesheets="@style_crearPublicacion.css">
+            stylesheets="@style_CrearPublicacion.css">
 
     <!-- Margen del contenido de la pantalla -->
     <VBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
@@ -42,9 +43,12 @@
 
                     <HBox alignment="TOP_CENTER" spacing="30">
                         <VBox alignment="CENTER">
-                            <StackPane minWidth="404" minHeight="284" maxWidth="404" maxHeight="284" style="-fx-border-width: 2; -fx-border-color: #CFB14F;">
+                            <StackPane minWidth="404" minHeight="284" maxWidth="404" maxHeight="284"
+                                       style="-fx-border-width: 2; -fx-border-color: #CFB14F;">
                                 <ImageView fx:id="imageViewPublicacion"/>
-                                <JFXButton fx:id="botonSubirImagen" styleClass="boton-subir-imagen" onAction="#accionBotonSubirImagen" minWidth="400" minHeight="280" maxWidth="400" maxHeight="280"/>
+                                <JFXButton fx:id="botonSubirImagen" styleClass="boton-subir-imagen"
+                                           onAction="#accionBotonSubirImagen" minWidth="400" minHeight="280"
+                                           maxWidth="400" maxHeight="280"/>
                             </StackPane>
 
                         </VBox>

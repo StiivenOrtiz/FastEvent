@@ -201,7 +201,7 @@ public class CrearPublicacion extends Controlador {
                 Files.createDirectories(Path.of(nuevaCarpeta));
                 Files.copy(origen, destino, StandardCopyOption.REPLACE_EXISTING);
 
-                String rutaRelativa  = "Base De Datos/" + "Test" + "/" + "imagen_publicacion" + ".png";
+                String rutaRelativa = "Base De Datos/" + "Test" + "/" + "imagen_publicacion" + ".png";
                 Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(rutaRelativa);
                 String direccion = rutaAbsoluta.toUri().toURL().toString();
 
@@ -328,49 +328,49 @@ public class CrearPublicacion extends Controlador {
             mostrarError = true;
         }
 
-        if(precioPublicacion.getText().isEmpty()) {
+        if (precioPublicacion.getText().isEmpty()) {
             mensajeError += "No se ha ingresado un precio para la publicación\n";
             instrucciones += "Por favor, ingrese un precio para la publicación\n";
             mostrarError = true;
-        }else{
-            try{
+        } else {
+            try {
                 Double.parseDouble(precioPublicacion.getText());
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 mensajeError += "El precio ingresado no es númerico\n";
                 instrucciones += "Por favor, ingrese un precio númerico para la publicación\n";
                 mostrarError = true;
             }
 
-            if(Double.parseDouble(precioPublicacion.getText()) < 0){
+            if (Double.parseDouble(precioPublicacion.getText()) < 0) {
                 mensajeError += "El precio ingresado no puede ser negativo\n";
                 instrucciones += "Por favor, ingrese un precio positivo para la publicación\n";
                 mostrarError = true;
-            } else if (Double.parseDouble(precioPublicacion.getText()) < 5000){
+            } else if (Double.parseDouble(precioPublicacion.getText()) < 5000) {
                 mensajeError += "El precio ingresado no puede ser menor a 5000\n";
                 instrucciones += "Por favor, ingrese un precio mayor o igual a 5000 para la publicación\n";
                 mostrarError = true;
             }
         }
 
-        if(descripcionPublicacion.getText().isEmpty()) {
+        if (descripcionPublicacion.getText().isEmpty()) {
             mensajeError += "No se ha ingresado una descripción para la publicación\n";
             instrucciones += "Por favor, ingrese una descripción para la publicación\n";
             mostrarError = true;
         }
 
-        if(categoriaPublicacion.getSelectionModel().getSelectedItem() == null) {
+        if (categoriaPublicacion.getSelectionModel().getSelectedItem() == null) {
             mensajeError += "No se ha seleccionado una categoría para la publicación\n";
             instrucciones += "Por favor, seleccione una categoría para la publicación\n";
             mostrarError = true;
         }
 
-        if(imageViewPublicacion.getImage() == null) {
+        if (imageViewPublicacion.getImage() == null) {
             mensajeError += "No se ha cargado una imagen para la publicación\n";
             instrucciones += "Por favor, cargue una imagen para la publicación\n";
             mostrarError = true;
         }
 
-        if(mostrarError){
+        if (mostrarError) {
             // Mostramos un mensaje de error
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
@@ -405,7 +405,7 @@ public class CrearPublicacion extends Controlador {
 
         botonComprar.setText("Guardar");
         botonComprar.setOnAction(e -> {
-            if(validarPublicacion()) {
+            if (validarPublicacion()) {
                 System.out.println("Guardar");
                 // mostramos un mensaje de exito
                 Alert alerta = new Alert(Alert.AlertType.INFORMATION);
