@@ -15,7 +15,7 @@
 <?import org.controlsfx.control.Rating?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fastevent.fastevent.Controladores.TemplateSNIController"
+            fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.InicioSNI"
             style="-fx-background-color: black;"
             stylesheets="@style_Inicio.css">
 
@@ -45,7 +45,7 @@
                             <font>
                                 <Font size="15.0" />
                             </font></Text>
-                        <JFXButton text="Organizar evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg" textFill="WHITE" />
+                        <JFXButton text="Organizar evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg" textFill="WHITE" onAction="#accionBotonInicioSNI"/>
                         <!-- <Button layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="Organizar evento" textFill="WHITE" /> -->
                         <Pane HBox.hgrow="ALWAYS"/>
                         <ImageView styleClass="imagenes" fitHeight="300.0" fitWidth="400.0" layoutX="398.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
@@ -78,7 +78,7 @@
                             <font>
                                 <Font size="11.0" />
                             </font></Text>
-                        <JFXButton text="Crear Evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg" textFill="WHITE" />
+                        <JFXButton text="Crear Evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg" textFill="WHITE" onAction="#accionBotonInicioSNI"/>
                         <VBox layoutX="440.0" layoutY="-1.0" prefHeight="468.0" prefWidth="289.0">
                             <children>
                                 <Pane prefHeight="60.0" prefWidth="289.0" />
@@ -179,7 +179,7 @@
                                 <Font size="40.0" />
                             </font>
                         </Text>
-                        <JFXButton text="Iniciar sesion" layoutX="60.0" layoutY="251.0" mnemonicParsing="false" styleClass="nav-button-log-reg" textFill="WHITE"/>
+                        <JFXButton text="Iniciar sesion" layoutX="60.0" layoutY="251.0" mnemonicParsing="false" styleClass="nav-button-log-reg" textFill="WHITE" onAction="#accionBotonInicioSNI"/>
 
                     </children>
                 </AnchorPane>

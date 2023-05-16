@@ -1,6 +1,8 @@
 package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
@@ -80,5 +82,10 @@ public class InicioSNI {
     /*
         Metodos de la interfaz
      */
+
+    public void accionBotonInicioSNI(ActionEvent actionEvent) {
+        System.out.println("Iniciar Sesion");
+    }
+
 
 }
