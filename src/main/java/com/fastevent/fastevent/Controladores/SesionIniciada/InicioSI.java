@@ -32,21 +32,21 @@ public class InicioSI extends Controlador {
         Variables
      */
 
+    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+    @FXML
+    public Button botonBorrarNotificaciones;
+    @FXML
+    public SearchableComboBox<String> barraDeBusqueda;
+    @FXML
+    ContextMenu notificaciones = new ContextMenu();
     @FXML
     private Button botonDeNotificacion;
     @FXML
     private ListView<Notificacion> listaDeNotificaciones;
     @FXML
-    ContextMenu notificaciones = new ContextMenu();
-    @FXML
     private ListView<Evento> listaMisEventos;
     @FXML
     private ListView<Boleta> listaMisBoletas;
-    @FXML
-    public Button botonBorrarNotificaciones;
-    @FXML
-    public SearchableComboBox<String> barraDeBusqueda;
-    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
 
     // Métodos de la barra de navegación
 

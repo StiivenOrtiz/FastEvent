@@ -2,27 +2,21 @@ package com.fastevent.fastevent.Controladores;
 
 // imports de FastEvent
 
-import com.fastevent.fastevent.Modelo.Boleta;
-import com.fastevent.fastevent.Modelo.Evento;
 import com.fastevent.fastevent.Modelo.Notificacion;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.geometry.Side;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import org.controlsfx.control.SearchableComboBox;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class TemplateSIController extends Controlador {
@@ -31,17 +25,17 @@ public class TemplateSIController extends Controlador {
         Variables
      */
 
-    @FXML
-    private Button botonDeNotificacion;
-    @FXML
-    private ListView<Notificacion> listaDeNotificaciones;
-    @FXML
-    ContextMenu notificaciones = new ContextMenu();
+    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
-    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+    @FXML
+    ContextMenu notificaciones = new ContextMenu();
+    @FXML
+    private Button botonDeNotificacion;
+    @FXML
+    private ListView<Notificacion> listaDeNotificaciones;
 
     // Métodos de la barra de navegación
 

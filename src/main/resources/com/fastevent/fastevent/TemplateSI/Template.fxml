@@ -8,8 +8,8 @@
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
             fx:controller="com.fastevent.fastevent.Controladores.TemplateSIController"
             style="-fx-background-color: black;"
             stylesheets="@style_Template.css">
@@ -26,9 +26,6 @@
                 <Pane minHeight="50"/>
 
                 <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
-
-
-
 
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->

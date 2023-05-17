@@ -3,8 +3,8 @@ package com.fastevent.fastevent.Modelo;
 import javafx.scene.image.Image;
 
 public class Evento {
-    private String nombre;
-    private Image imagen;
+    private final String nombre;
+    private final Image imagen;
 
     public Evento(String nombre, Image imagen) {
         this.imagen = imagen;

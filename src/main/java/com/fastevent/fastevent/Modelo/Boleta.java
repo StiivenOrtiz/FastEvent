@@ -8,7 +8,7 @@ public class Boleta {
     private Image imagen;
 
 
-    public Boleta(String nombre, String fecha , Image imagen) {
+    public Boleta(String nombre, String fecha, Image imagen) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.imagen = imagen;
@@ -18,20 +18,20 @@ public class Boleta {
         return nombre;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
-
-    public Image getImagen() {
-        return this.imagen;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public Image getImagen() {
+        return this.imagen;
     }
 
     public void setImagen(Image imagen) {

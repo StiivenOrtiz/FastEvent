@@ -438,7 +438,7 @@
 
 /* Configuracion del rippler */
 
-.boton-publicacion .jfx-rippler{
+.boton-publicacion .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
 
@@ -508,7 +508,7 @@
 
 /* Estilo para el botón de ordenar alfabeticamente Z->A */
 
-.boton-ordenar-alfabeticamente.ZA{
+.boton-ordenar-alfabeticamente.ZA {
     -fx-background-image: url("CategoriaPublicaciones/icono_ordenar-alfabeticamente-Z-A.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
@@ -529,7 +529,7 @@
 
 /* Configuracion del rippler */
 
-.boton-ordenar-alfabeticamente .jfx-rippler{
+.boton-ordenar-alfabeticamente .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
 
@@ -568,7 +568,7 @@
 
 /* Configuracion del rippler */
 
-.boton-filtro .jfx-rippler{
+.boton-filtro .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
 

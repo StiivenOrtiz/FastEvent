@@ -33,20 +33,19 @@ public class CategoriaPublicaciones extends Controlador {
         Variables
      */
 
-    @FXML
-    private Button botonDeNotificacion;
-    @FXML
-    private ListView<Notificacion> listaDeNotificaciones;
-    @FXML
-    ContextMenu notificaciones = new ContextMenu();
+    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
-    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
-
-    private String categoria;
-
+    @FXML
+    public Label resultados;
+    @FXML
+    public Label titulo;
+    @FXML
+    public JFXButton botonOrdenarAlf, botonMenorPrecio, botonMayorPrecio, botonMenorCalificacion, botonMayorCalificacion;
+    @FXML
+    ContextMenu notificaciones = new ContextMenu();
     @FXML
     Label paginaActual;
 
@@ -58,26 +57,18 @@ public class CategoriaPublicaciones extends Controlador {
 
     @FXML
     Label paginaMaxCopia;
-
-    @FXML
-    public Label resultados;
-
-    @FXML
-    public Label titulo;
-
     @FXML
     JFXButton botonPublicacion1, botonPublicacion2, botonPublicacion3, botonPublicacion4, botonPublicacion5,
             botonPublicacion6, botonPublicacion7, botonPublicacion8, botonPublicacion9, botonPublicacion10,
             botonPublicacion11, botonPublicacion12;
-
     ArrayList<Publicacion> publicaciones = new ArrayList<>();
-
-    @FXML
-    public JFXButton botonOrdenarAlf, botonMenorPrecio, botonMayorPrecio, botonMenorCalificacion, botonMayorCalificacion;
-
     boolean ordenarAlfabeticamente = false;
-
     int orden = 0; // 0 = Sin ordenar, 1 = Menor precio, 2 = Mayor precio, 3 = Menor calificacion, 4 = Mayor calificacion
+    @FXML
+    private Button botonDeNotificacion;
+    @FXML
+    private ListView<Notificacion> listaDeNotificaciones;
+    private String categoria;
 
     // Métodos de la barra de navegación
 
@@ -271,7 +262,7 @@ public class CategoriaPublicaciones extends Controlador {
             publicaciones.sort(Comparator.comparing(Publicacion::getTitulo).reversed());
             ordenarAlfabeticamente = true;
             botonOrdenarAlf.getStyleClass().add("ZA");
-        }else {
+        } else {
             publicaciones.sort(Comparator.comparing(Publicacion::getTitulo));
             ordenarAlfabeticamente = false;
             botonOrdenarAlf.getStyleClass().add("AZ");
@@ -317,28 +308,28 @@ public class CategoriaPublicaciones extends Controlador {
         Metodos de la interfaz
      */
 
-    private void ordenarPrecioMenorMayor(){
+    private void ordenarPrecioMenorMayor() {
         retirarFiltros();
         publicaciones.sort(Comparator.comparingDouble(Publicacion::getPrecio));
         botonMenorPrecio.getStyleClass().add("aplicado");
         estiloBotonesPublicaciones();
     }
 
-    private void ordenarPrecioMayorMenor(){
+    private void ordenarPrecioMayorMenor() {
         retirarFiltros();
         publicaciones.sort(Comparator.comparingDouble(Publicacion::getPrecio).reversed());
         botonMayorPrecio.getStyleClass().add("aplicado");
         estiloBotonesPublicaciones();
     }
 
-    private void ordenarCalifiacionMenorMayor(){
+    private void ordenarCalifiacionMenorMayor() {
         retirarFiltros();
         publicaciones.sort(Comparator.comparingDouble(Publicacion::getCalificacion));
         botonMenorCalificacion.getStyleClass().add("aplicado");
         estiloBotonesPublicaciones();
     }
 
-    private void ordenarCalifiacionMayorMenor(){
+    private void ordenarCalifiacionMayorMenor() {
         retirarFiltros();
         // Ordenar publicaciones por calificacion de mayor a menor
         publicaciones.sort(Comparator.comparingDouble(Publicacion::getCalificacion).reversed());
@@ -346,15 +337,15 @@ public class CategoriaPublicaciones extends Controlador {
         estiloBotonesPublicaciones();
     }
 
-    private void retirarFiltros(){
+    private void retirarFiltros() {
         botonMenorPrecio.getStyleClass().remove("aplicado");
         botonMayorPrecio.getStyleClass().remove("aplicado");
         botonMenorCalificacion.getStyleClass().remove("aplicado");
         botonMayorCalificacion.getStyleClass().remove("aplicado");
 
-        if(!ordenarAlfabeticamente){
+        if (!ordenarAlfabeticamente) {
             publicaciones.sort(Comparator.comparing(Publicacion::getTitulo));
-        }else{
+        } else {
             publicaciones.sort(Comparator.comparing(Publicacion::getTitulo).reversed());
         }
     }
@@ -510,7 +501,6 @@ public class CategoriaPublicaciones extends Controlador {
             } catch (Exception e) {
                 System.out.println("No hay mas categorias");
             }
-            ;
         });
     }
 

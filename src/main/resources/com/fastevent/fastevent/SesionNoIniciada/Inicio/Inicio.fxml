@@ -7,8 +7,8 @@
 <?import javafx.scene.text.*?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
             fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.InicioSNI"
             style="-fx-background-color: black;"
             stylesheets="@style_Inicio.css">
@@ -28,9 +28,9 @@
 
                 <Pane minHeight="20"/>
 
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="468.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/18"
-                            xmlns:fx="http://javafx.com/fxml/1">
+                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="468.0" prefWidth="912.0"
+                            xmlns="http://javafx.com/javafx/18">
                     <children>
                         <Text fill="WHITE" layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0"
                               style="-fx-font-weight: bold;" text="EL ÉXITO DE TU EVENTO ESTÁ ASEGURADO"
@@ -72,10 +72,10 @@
 
                 <Pane minHeight="50"/>
 
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="468.0" prefWidth="729.0"
-                            style="-fx-background-color: white; -fx-border-radius: 30;"
-                            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="468.0"
+                            prefWidth="729.0"
+                            style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
                     <children>
                         <Text layoutX="27.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0"
                               style="-fx-font-weight: bold;" text="¡lleva a cabo tu propio evento!"
@@ -143,10 +143,10 @@
                 <HBox>
                     <Pane prefHeight="12.0" prefWidth="100.0"/>
 
-                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                                prefHeight="220.0" prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;"
-                                xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                minWidth="-Infinity" prefHeight="220.0"
+                                prefWidth="332.0"
+                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
                         <children>
                             <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                   text="&quot;¡Me hice proveedor y logré aumentar mucho mis ventas!&quot;"
@@ -159,17 +159,18 @@
                                   text="Camilo Torres"/>
                             <Text fill="#949494" layoutX="165.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                   text="DJ"/>
-                            <Rating layoutX="84.0" layoutY="104.0" rating="5.0" disable="true" style="-fx-opacity: 1.0;"/>
+                            <Rating layoutX="84.0" layoutY="104.0" rating="5.0" disable="true"
+                                    style="-fx-opacity: 1.0;"/>
                         </children>
                     </AnchorPane>
 
                     <Pane prefHeight="12.0" prefWidth="50.0"/>
 
 
-                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                                prefHeight="220.0" prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;"
-                                xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                minWidth="-Infinity" prefHeight="220.0"
+                                prefWidth="332.0"
+                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
                         <children>
                             <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                   text="&quot;Logré organizar mi matrimonio tal como queria. Gracias FastEvent&quot;"
@@ -182,16 +183,16 @@
                                   text="Efrain Diaz"/>
                             <Text fill="#949494" layoutX="139.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                   text="Organizador"/>
-                            <Rating layoutX="83.0" layoutY="118.0" rating="5.0" disable="true" />
+                            <Rating layoutX="83.0" layoutY="118.0" rating="5.0" disable="true"/>
                         </children>
                     </AnchorPane>
 
                     <Pane prefHeight="12.0" prefWidth="50.0"/>
 
-                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                                prefHeight="220.0" prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;"
-                                xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                minWidth="-Infinity" prefHeight="220.0"
+                                prefWidth="332.0"
+                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
                         <children>
                             <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
                                   text="&quot;Valió totalmente la pena por el precio ofrecido.&quot;"
@@ -212,10 +213,10 @@
 
                 <Pane minHeight="200"/>
 
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="327.0" prefWidth="713.0"
-                            style="-fx-background-color: white; -fx-border-radius: 30;"
-                            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="327.0"
+                            prefWidth="713.0"
+                            style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
                     <children>
                         <Text layoutX="60.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0"
                               text="Inicia sesión para crear tu evento" wrappingWidth="385.515625">

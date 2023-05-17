@@ -31,35 +31,29 @@ public class InicioM extends Controlador {
         Variables
      */
 
-    @FXML
-    private Button botonDeNotificacion;
-    @FXML
-    private ListView<Notificacion> listaDeNotificaciones;
-    @FXML
-    ContextMenu notificaciones = new ContextMenu();
+    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
-    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
-
+    @FXML
+    ContextMenu notificaciones = new ContextMenu();
     @FXML
     JFXButton botonCategoria1;
-
     @FXML
     JFXButton botonCategoria2;
-
     @FXML
     JFXButton botonCategoria3;
-
     @FXML
     JFXButton botonCategoria4;
-
     @FXML
     JFXButton botonCategoria5;
-
     @FXML
     JFXButton botonCategoria6;
+    @FXML
+    private Button botonDeNotificacion;
+    @FXML
+    private ListView<Notificacion> listaDeNotificaciones;
 
     // Métodos de la barra de navegación
 
@@ -285,7 +279,7 @@ public class InicioM extends Controlador {
         });
     }
 
-    private void estiloBotonesCategoria(){
+    private void estiloBotonesCategoria() {
         ArrayList<JFXButton> botones = new ArrayList<>();
         botones.add(botonCategoria1);
         botones.add(botonCategoria2);
@@ -313,9 +307,9 @@ public class InicioM extends Controlador {
             try {
                 categoria = categorias.get(botones.indexOf(boton));
                 estiloBotonCategoria(boton, categoria.getDireccionImagen(), categoria.getDireccionImagenHover(), categoria.getTitulo(), categoria.getTexto());
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("No hay mas categorias");
-            };
+            }
         });
     }
 
@@ -335,7 +329,7 @@ public class InicioM extends Controlador {
         });
     }
 
-    private ImageView crearImagenCategoria(String direccionImagen){
+    private ImageView crearImagenCategoria(String direccionImagen) {
         ImageView imagenCategoria = new ImageView(new Image(direccionImagen));
 
         imagenCategoria.setFitWidth(200);
@@ -351,10 +345,10 @@ public class InicioM extends Controlador {
         return imagenCategoria;
     }
 
-    private Label crearTituloCategoria(String titulo, boolean hover){
+    private Label crearTituloCategoria(String titulo, boolean hover) {
         Label tituloCategoria = new Label(titulo);
 
-        if(hover)
+        if (hover)
             tituloCategoria.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #CFB14F;");
         else
             tituloCategoria.setStyle("-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;");
@@ -362,7 +356,7 @@ public class InicioM extends Controlador {
         return tituloCategoria;
     }
 
-    private Label crearTextoCategoria(String texto){
+    private Label crearTextoCategoria(String texto) {
         Label textoCategoria = new Label(texto);
 
         textoCategoria.setStyle("-fx-font-size: 14px; -fx-text-fill: white;");
@@ -370,14 +364,14 @@ public class InicioM extends Controlador {
         return textoCategoria;
     }
 
-    private VBox crearContenedorVBox(String titulo, String texto, boolean hover){
+    private VBox crearContenedorVBox(String titulo, String texto, boolean hover) {
         VBox contenedorVbox = new VBox(crearTituloCategoria(titulo, hover), crearTextoCategoria(texto));
         contenedorVbox.setAlignment(Pos.CENTER_LEFT);
 
         return contenedorVbox;
     }
 
-    private HBox crearContenedorHBox(String direccionImagen, String titulo, String texto, boolean hover){
+    private HBox crearContenedorHBox(String direccionImagen, String titulo, String texto, boolean hover) {
         HBox hHbox = new HBox(crearImagenCategoria(direccionImagen), crearContenedorVBox(titulo, texto, hover));
         hHbox.setSpacing(20);
         hHbox.setAlignment(Pos.CENTER_LEFT);

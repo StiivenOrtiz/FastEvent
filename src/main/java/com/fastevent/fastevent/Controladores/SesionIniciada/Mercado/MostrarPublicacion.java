@@ -26,43 +26,34 @@ public class MostrarPublicacion extends Controlador {
         Variables
      */
 
-    @FXML
-    private Button botonDeNotificacion;
-    @FXML
-    private ListView<Notificacion> listaDeNotificaciones;
-    @FXML
-    ContextMenu notificaciones = new ContextMenu();
+    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
-    private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
-
-    Publicacion publicacion;
-
-    @FXML
-    ImageView imageViewPublicacion;
-
     @FXML
     public Label tituloPublicacion;
-
     @FXML
     public Label descripcionPublicacion;
-
     @FXML
     public Rating ratingPublicacion;
-
     @FXML
     public Label precioPublicacion;
-
     @FXML
     public Label proveedorPublicacion;
-
     @FXML
     public Label categoriaPublicacion;
-
     @FXML
     public JFXButton botonComprar;
+    @FXML
+    ContextMenu notificaciones = new ContextMenu();
+    Publicacion publicacion;
+    @FXML
+    ImageView imageViewPublicacion;
+    @FXML
+    private Button botonDeNotificacion;
+    @FXML
+    private ListView<Notificacion> listaDeNotificaciones;
 
     // Métodos de la barra de navegación
 

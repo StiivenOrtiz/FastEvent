@@ -1,19 +1,16 @@
 package com.fastevent.fastevent;
 
 import com.fastevent.fastevent.Controladores.CargadorPantallas;
-import com.fastevent.fastevent.Controladores.Controlador;
-import com.fastevent.fastevent.Utilidades.Constantes;
-import com.jfoenix.controls.JFXDecorator;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class FastEvent extends Application {
+    public static void main(String[] args) {
+        launch();
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -117,9 +114,5 @@ public class FastEvent extends Application {
         // Mostrar la ventana
         nStage.show();
          */
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

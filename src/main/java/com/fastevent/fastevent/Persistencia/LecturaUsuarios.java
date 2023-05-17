@@ -39,7 +39,7 @@ public class LecturaUsuarios {
     }
 
 
-    public boolean verificarExistencia(String correo){
+    public boolean verificarExistencia(String correo) {
         return buscarUsuario(correo) != null;
     }
 }

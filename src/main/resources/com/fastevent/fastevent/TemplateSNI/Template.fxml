@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import org.controlsfx.control.textfield.CustomPasswordField?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
             fx:controller="com.fastevent.fastevent.Controladores.TemplateSNIController"
             style="-fx-background-color: black;"
             stylesheets="@style_Template.css">
@@ -24,9 +24,6 @@
                 <Pane minHeight="50"/>
 
                 <!-- CONTENIDO DE LA PAGINA (ESCRIBIR CODIGO DESDE AQUI) -->
-
-
-
 
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->

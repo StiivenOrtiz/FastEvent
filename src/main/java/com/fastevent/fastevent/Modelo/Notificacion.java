@@ -13,12 +13,12 @@ public class Notificacion {
         return descipcion;
     }
 
-    public String getAccion() {
-        return accion;
-    }
-
     public void setDescipcion(String descipcion) {
         this.descipcion = descipcion;
+    }
+
+    public String getAccion() {
+        return accion;
     }
 
     public void setAccion(String accion) {

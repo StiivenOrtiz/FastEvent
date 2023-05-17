@@ -98,6 +98,7 @@
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
+
 .nav-button-2 {
     -fx-background-color: transparent;
     -fx-text-fill: white;
@@ -108,6 +109,7 @@
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
+
 .nav-button-3 {
     -fx-background-color: transparent;
     -fx-text-fill: white;
@@ -118,6 +120,7 @@
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
+
 /* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
 
 .nav-button:hover {
@@ -388,6 +391,7 @@
     -fx-text-fill: #CFB14F;
     -fx-cursor: hand;
 }
+
 /* Estilo para el titulo de "Precios" */
 
 .text-without-backgroundv2-Titulo {
@@ -401,6 +405,7 @@
     -fx-text-fill: #CFB14F;
     -fx-cursor: hand;
 }
+
 /* Opacidad cuando se posiciona el mouse encima del botón de "Registrarse" en login */
 
 .button-without-backgroundv1:hover {

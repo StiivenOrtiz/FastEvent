@@ -23,12 +23,24 @@ public class Publicacion {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
 
+    void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public double getPrecio() {
         return precio;
+    }
+
+    void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public String getDireccionImagen() {
@@ -39,44 +51,32 @@ public class Publicacion {
         return categoria;
     }
 
-    public String getProveedor() {
-        return proveedor;
-    }
-
-    public double getCalificacion() {
-        return calificacion;
-    }
-
-    public String getDireccionimagen() {
-        return direccionimagen;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    void setDireccionimagen(String direccionimagen) {
-        this.direccionimagen = direccionimagen;
-    }
-
     void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public String getProveedor() {
+        return proveedor;
     }
 
     void setProveedor(String proveedor) {
         this.proveedor = proveedor;
     }
 
+    public double getCalificacion() {
+        return calificacion;
+    }
+
     void setCalificacion(double calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public String getDireccionimagen() {
+        return direccionimagen;
+    }
+
+    void setDireccionimagen(String direccionimagen) {
+        this.direccionimagen = direccionimagen;
     }
 
 }

@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
             fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.CrearPublicacion"
             style="-fx-background-color: black;"
             stylesheets="@style_CrearPublicacion.css">
@@ -84,7 +84,8 @@
                         </VBox>
                     </HBox>
                     <Pane VBox.vgrow="ALWAYS"/>
-                    <JFXButton fx:id="botonCrearPublicacion" styleClass="boton-crear-publicacion" maxHeight="33" minHeight="33"
+                    <JFXButton fx:id="botonCrearPublicacion" styleClass="boton-crear-publicacion" maxHeight="33"
+                               minHeight="33"
                                minWidth="110" maxWidth="110" alignment="CENTER"/>
                 </VBox>
 

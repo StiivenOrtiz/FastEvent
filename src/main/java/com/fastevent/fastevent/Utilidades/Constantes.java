@@ -11,7 +11,7 @@ public interface Constantes {
     String precios = "SesionIniciada/Precios/Precios.fxml";
     String icono = "icono.png";
 
-    public static String obtenerFXML(String nombrePantalla) {
+    static String obtenerFXML(String nombrePantalla) {
         switch (nombrePantalla) {
             case "IniciarSesion" -> {
                 return iniciarSesion;
