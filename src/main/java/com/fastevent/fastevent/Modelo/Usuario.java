@@ -3,10 +3,10 @@ package com.fastevent.fastevent.Modelo;
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
+    private final String contrasena;
     private String nombres;
     private String apellidos;
     private String correo;
-    private final String contrasena;
 
     public Usuario(String nombres, String apellidos, String correo, String contrasena) {
         this.nombres = nombres;
