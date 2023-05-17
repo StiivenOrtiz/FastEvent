@@ -3,6 +3,7 @@ package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Interfaces.IAutenticacion;
 import com.fastevent.fastevent.Logica.Autenticacion;
+import com.fastevent.fastevent.Utilidades.Constantes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -85,15 +86,32 @@ public class IniciarSesion extends Controlador {
     }
 
     public void botonIniciarSesion(ActionEvent actionEvent) {
-        if(!correoElectronico.getText().isEmpty() && !contrasena.getText().isEmpty()){
+        boolean error = false;
+        String mensajeError = "";
+        String instrucciones = "";
+
+        if (!correoElectronico.getText().isEmpty() && !contrasena.getText().isEmpty()) {
             IAutenticacion autenticacion = new Autenticacion();
-            autenticacion.iniciarSesion(correoElectronico.getText(), contrasena.getText());
-        }else{
-            System.out.println("Campos vacios");
+            if (autenticacion.iniciarSesion(correoElectronico.getText(), contrasena.getText())) {
+                mostrarMensajeInformativo("Bienvenido", "Bienvenido a FastEvent", "Inicio de sesión exitoso");
+                // Cuando cierre el mensaje informativo cambia de pantalla
+                cargarPantalla("Inicio", Constantes.obtenerFXML("InicioSI"));
+            } else {
+                error = true;
+                mensajeError = "Credenciales incorrectas";
+                instrucciones = "Por favor, ingrese sus credenciales nuevamente";
+            }
+        } else {
+            error = true;
+            mensajeError = "Campos vacíos";
+            instrucciones = "Por favor, ingrese su correo electrónico y contraseña";
         }
+
+        if (error)
+            mostrarMensajeError(mensajeError, instrucciones);
     }
 
     public void botonRegistrarse(ActionEvent actionEvent) {
-        System.out.println("Registrarse");
+        cargarPantalla("Registrarse", Constantes.obtenerFXML("Registrarse"));
     }
 }
