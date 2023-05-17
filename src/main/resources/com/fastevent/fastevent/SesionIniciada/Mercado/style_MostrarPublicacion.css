@@ -409,6 +409,27 @@
     -fx-background-color: transparent;
 }
 
+/* Botón de ser proveedor */
+
+.nav-vertical-boton-ser-proveedor {
+    -fx-background-image: url("nav-bar-vertical/icono_ser_proveedor.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón de mis-finanzas seleccionado */
+
+.nav-vertical-boton-ser-proveedor:hover {
+    -fx-background-image: url("nav-bar-vertical/icono_ser_proveedor_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
 /**
     ***********************************
     * Estilos del contenido de la página

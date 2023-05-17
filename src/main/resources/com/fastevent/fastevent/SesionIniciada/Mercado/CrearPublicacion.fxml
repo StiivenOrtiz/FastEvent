@@ -86,7 +86,7 @@
                     <Pane VBox.vgrow="ALWAYS"/>
                     <JFXButton fx:id="botonCrearPublicacion" styleClass="boton-crear-publicacion" maxHeight="33"
                                minHeight="33"
-                               minWidth="110" maxWidth="110" alignment="CENTER"/>
+                               minWidth="180" maxWidth="180" alignment="CENTER"/>
                 </VBox>
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->

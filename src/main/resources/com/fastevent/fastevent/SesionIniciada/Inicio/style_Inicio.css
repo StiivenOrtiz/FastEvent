@@ -380,7 +380,7 @@
 /* Botón de mis-finanzas */
 
 .nav-vertical-boton-mis-finanzas {
-    -fx-background-image: url("main/resources/Ejemplo.png");
+    -fx-background-image: url("nav-bar-vertical/icono_finanzas.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 26px 26px;
     -fx-background-position: center;

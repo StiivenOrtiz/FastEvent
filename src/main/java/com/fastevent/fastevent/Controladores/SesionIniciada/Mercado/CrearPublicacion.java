@@ -366,11 +366,7 @@ public class CrearPublicacion extends Controlador {
 
         if (mostrarError) {
             // Mostramos un mensaje de error
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error");
-            alerta.setHeaderText(mensajeError);
-            alerta.setContentText(instrucciones);
-            alerta.showAndWait();
+            mostrarMensajeError(mensajeError, instrucciones);
             return false;
         }
         return true;
@@ -402,10 +398,7 @@ public class CrearPublicacion extends Controlador {
             if (validarPublicacion()) {
                 System.out.println("Guardar");
                 // mostramos un mensaje de exito
-                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                alerta.setTitle("Éxito");
-                alerta.setHeaderText("Publicación se ha creado con éxito");
-                alerta.showAndWait();
+                mostrarMensajeInformativo("Publicación se ha creado con éxito", "Podrá ver sus publicación en la sección de mis publicaciones", "Éxito");
             }
         });
 
