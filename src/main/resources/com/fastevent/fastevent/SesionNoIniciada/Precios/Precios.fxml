@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1957.0" prefWidth="918.0" style="-fx-background-color: black;" stylesheets="@style_Precios.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fastevent.fastevent.Controladores.SesionNoIniciada.Precios">
+
+<!-- Margen del contenido de la pantalla -->
+<VBox prefHeight="1362.0" prefWidth="918.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+    <!-- ScrollBar -->
+    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="1979.0" prefWidth="916.0" styleClass="scroll-bar">
+        <VBox alignment="CENTER" prefHeight="1361.0" prefWidth="897.0" spacing="10" style="-fx-background-color: transparent;">
+            <HBox alignment="CENTER" prefHeight="243.0" prefWidth="883.0">
+               <children>
+                  <Line endX="-97.70710754394531" endY="242.2928924560547" startX="-100.0" />
+                  <Pane prefHeight="156.0" prefWidth="891.0">
+                     <children>
+                        <Text fill="#cfb14f" layoutX="333.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" styleClass="button-without-backgroundv3" text="PRECIOS" wrappingWidth="214.9830722808838">
+                           <font>
+                              <Font name="Courier New" size="60.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="266.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="¡Tenemos distintos precios para las necesidades de todos!" wrappingWidth="349.001953125">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="338.0" prefWidth="821.0">
+               <children>
+                  <Line endX="287.81695556640625" endY="-369.56903076171875" startX="285.565185546875" startY="-729.761962890625" />
+                     <Pane prefHeight="239.0" prefWidth="655.0" style="">
+                         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="276.0" layoutX="204.0" layoutY="12.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" width="263.0" />
+                         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="232.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="230.0" />
+                         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="238.0" layoutX="447.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" strokeType="INSIDE" width="239.0" />
+                         <Text layoutX="237.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licencia de organizador mensual" />
+                         <Text layoutX="237.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$170.000 ">
+                             <font>
+                                 <Font size="26.0" />
+                             </font>
+                         </Text>
+                         <Text fill="#4d4949" layoutX="348.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/al mes" />
+                         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="243.0" layoutY="213.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #CFB14F;" styleClass="button-login" text="Comprar Licencia de Organizador Mensual" textAlignment="CENTER" wrapText="true">
+                             <font>
+                                 <Font name="Courier New" size="18.0" />
+                             </font>
+                             <rotationAxis>
+                                 <Point3D />
+                             </rotationAxis>
+                         </Button>
+      
+                         <Text layoutX="242.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con esta licencia puedes realizar u organizar cuantos eventos desees al mes." wrappingWidth="196.65628051757812" />
+                         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="340.0" layoutY="2.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" styleClass="button-login" text="El más comprado" textAlignment="CENTER" wrapText="true">
+                             <font>
+                                 <Font name="Courier New" size="18.0" />
+                             </font>
+                         </Button>
+                         <Text layoutX="17.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organizar evento" />
+                         <Text fill="#807f7f" layoutX="17.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desde" />
+                         <Text layoutX="17.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$140.000 ">
+                             <font>
+                                 <Font size="26.0" />
+                             </font>
+                         </Text>
+                         <Text layoutX="19.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organización casual de un evento, el precio varia según la magnitud del evento." wrappingWidth="196.65628051757812" />
+                         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="193.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" styleClass="button-login-2" text="Comprar Organización de un evento" textAlignment="CENTER" wrapText="true">
+                             <font>
+                                 <Font name="Courier New" size="18.0" />
+                             </font>
+                         </Button>
+                         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="470.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" styleClass="button-login-2" text="Convertirme en proveedor" textAlignment="CENTER" wrapText="true">
+                             <font>
+                                 <Font name="Courier New" size="18.0" />
+                             </font>
+                         </Button>
+                         <Text layoutX="472.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puedes asistenciar eventos en los que los organizadores deseen que estés, el precio varía según la magnitud del evento." wrappingWidth="196.65628051757812" />
+                         <Text layoutX="470.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$100.000 ">
+                             <font>
+                                 <Font size="26.0" />
+                             </font>
+                         </Text>
+                         <Text fill="#807f7f" layoutX="470.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desde" />
+                         <Text layoutX="472.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comisión proveedor" />
+                         <opaqueInsets>
+                             <Insets />
+                         </opaqueInsets>
+                     </Pane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="329.0" prefWidth="655.0">
+               <children>
+                    <!-- Espacio antes del contenido -->
+                    <Pane minHeight="10" prefHeight="166.0" prefWidth="707.0">
+                        <children>
+                            <Text fill="WHITE" layoutX="56.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-2" text="Organizar evento">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Text>
+                            <Line endX="520.0" endY="-3.0517578125E-5" layoutX="237.0" layoutY="89.0" startX="-174.0" startY="-3.0517578125E-5" stroke="WHITE" />
+                            <Text fill="WHITE" layoutX="312.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-2" text="Licencia de Organizador mensual" wrappingWidth="198.984375">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Text>
+                            <Text fill="WHITE" layoutX="559.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-2" text="Comisión proveedor">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="541.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="541.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="56.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="Perfecto para organizar un evento de manera casual." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <Text fill="WHITE" layoutX="563.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="El precio puede variar según la magnitud del evento." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="284.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="56.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="Acceso a catologo de miles de proveedores." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="284.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="317.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="Licencia válida para organizar cualquier cantidad eventos dentro del margen de un mes entero." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="30.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="317.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="No hay costes por variación de magnitud del evento." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="30.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="563.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="Aumenta tus ventas por medio de la exposición en el mercado de FastEvent." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="30.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@contenido/check.png" />
+                                </image>
+                            </ImageView>
+                            <Text fill="WHITE" layoutX="56.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-button-3" text="El precio de la comisión varía según la magnitud del evento." wrappingWidth="187.805908203125">
+                                <font>
+                                    <Font size="15.0" />
+                                </font>
+                            </Text>
+                            <!-- Relleno -->
+                            <Pane layoutX="-383.0" layoutY="-50.0" minHeight="75" />
+                        </children>
+                    </Pane>
+                  <Line endX="-45.56483459472656" endY="-362.15948486328125" startX="-127.2547607421875" startY="-43.966552734375" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="656.0" prefWidth="916.0">
+               <children>
+                  <Line endX="-102.12240600585938" endY="516.2929077148438" startX="-98.82951354980469" startY="-111.8409652709961" />
+                  <Pane prefHeight="517.0" prefWidth="942.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="364.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@contenido/preguntas.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="357.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-text-alignment: center;" text="Preguntas Frecuentes" wrappingWidth="202.44140625">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                        </Text>
+                        <Accordion layoutX="189.0" layoutY="305.0" prefHeight="226.0" prefWidth="523.0">
+                          <panes>
+                            <TitledPane animated="false" text="¿Cómo puedo crear una cuenta en FastEvent como organizador de eventos?">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" layoutX="4.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para crear una cuenta como organizador de eventos en FastEvent, sigue estos pasos: 1.Accede al sitio web de FastEvent.Haz clic en el botón de registro. 2. Proporciona la información requerida, como tu nombre, dirección de correo electrónico y contraseña. 3. Lee y acepta los términos y condiciones de la plataforma. 4. Completa el proceso de registro y confirma tu cuenta." wrappingWidth="512.9830722808838" />
+                                       </children></AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" prefHeight="134.0" prefWidth="523.0" text="¿Cómo puedo crear un evento en FastEvent y qué información debo proporcionar?">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="132.0" prefWidth="521.0">
+                                       <children>
+                                          <Text fill="WHITE" layoutX="1.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para crear un evento en FastEvent, sigue estos pasos: 1. Inicia sesión en tu cuenta de organizador. 2. Ve al panel de control o al apartado correspondiente para crear un evento. 3. Completa los detalles del evento, como el nombre, tipo de evento, fecha, hora, proveedores necesarios, presupuesto, entre otros. 4. Asegúrate de proporcionar información suficiente para que los proveedores y los asistentes puedan entender los detalles del evento." wrappingWidth="520.9830722808838" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" prefHeight="160.0" prefWidth="523.0" text="¿Cómo puedo buscar y seleccionar proveedores para mi evento en FastEvent?">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para buscar y seleccionar proveedores en FastEvent, sigue estos pasos: 1. Accede al catálogo de proveedores desde tu cuenta de organizador. 2. Explora las opciones disponibles y utiliza los filtros para encontrar proveedores que se ajusten a tus necesidades, como tipo de servicio, ubicación o precios. 3. Revisa las calificaciones, comentarios y la información detallada de cada proveedor para tomar una decisión informada. 4. Una vez que encuentres los proveedores deseados, añádelos a tu evento y establece acuerdos o contratos." wrappingWidth="520.9830722808838" />
+                                       </children></AnchorPane>
+                              </content>
+                            </TitledPane>
+                              <TitledPane animated="false" text="¿Puedo promocionar mi evento en FastEvent y cómo funciona?">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puedes promocionar tu evento en FastEvent para alcanzar a un público más amplio. 1. Accede a tu cuenta de organizador en FastEvent. 2. Busca la opción de promoción o publicidad de eventos. 3. Sigue las instrucciones y proporciona los detalles necesarios, como el presupuesto de publicidad y la duración de la promoción. 4. FastEvent mostrará tu evento destacado a otros usuarios que puedan estar interesados en asistir. 5. Los usuarios verán tu evento destacado en la plataforma y podrán obtener más información y comprar boletos si es necesario" wrappingWidth="520.9830722808838" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+
+            <!-- Línea separadora -->
+            <Pane maxWidth="1000" minHeight="1" styleClass="separator" />
+
+            <!-- Espacio antes del footer -->
+            <Pane minHeight="20" />
+
+            <!-- Footer -->
+            <HBox alignment="CENTER" maxWidth="900" spacing="50">
+
+                <!-- Derechos de autor -->
+                <VBox alignment="TOP_CENTER" prefHeight="0" style="-fx-background-color: transparent; -fx-max-width: 275px;">
+
+                    <!-- Logo -->
+                    <ImageView id="logo" fitHeight="100" fitWidth="100">
+                        <Image url="@footer/logo2.png" />
+                    </ImageView>
+
+                    <!-- Texto de derechos de autor -->
+                    <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="© 2023 FastEvent" />
+                    <Label style="-fx-text-fill: white;" text="Todos los derechos reservados." />
+
+                </VBox>
+
+                <!-- Navegación -->
+                <VBox spacing="25" style="-fx-background-color: transparent; -fx-max-width: 275px;">
+
+                    <!-- Botones de navegación -->
+                    <Button onAction="#accionBotonInicio" styleClass="nav-button" text="Inicio" />
+                    <Button onAction="#accionBotonPrecios" styleClass="nav-button" text="Precios" />
+                    <Button onAction="#accionBotonNosotros" styleClass="nav-button" text="Nosotros" />
+                    <Button onAction="#accionBotonContactenos" styleClass="nav-button" text="Contáctenos" />
+                    <Button onAction="#accionBotonBoleteria" styleClass="nav-button" text="Boletería" />
+
+                </VBox>
+
+                <!-- Redes sociales -->
+                <VBox spacing="25" style="-fx-background-color: transparent; -fx-max-width: 275px;">
+
+                    <!-- Botones de redes sociales -->
+                    <Button onAction="#accionBotonFacebook" styleClass="nav-button" text="Facebook" />
+                    <Button onAction="#accionBotonInstagram" styleClass="nav-button" text="Instagram" />
+                    <Button onAction="#accionBotonTwitter" styleClass="nav-button" text="Twitter" />
+                    <Button onAction="#accionBotonLinkedin" styleClass="nav-button" text="Linkedin" />
+
+                </VBox>
+
+                <!-- Información -->
+                <VBox spacing="25" style="-fx-background-color: transparent; -fx-max-width: 275px;">
+
+                    <!-- Botones de información -->
+                    <Button onAction="#botonTerminos" styleClass="nav-button" text="Términos y Condiciones" />
+                    <Button onAction="#botonPrivacidad" styleClass="nav-button" text="Políticas de Privacidad" />
+                    <Button onAction="#accionBotonPreguntasFrecuentes" styleClass="nav-button" text="Preguntas Frecuentes" />
+
+                </VBox>
+            </HBox>
+
+            <!-- Relleno -->
+            <Pane minHeight="100" minWidth="100" style="-fx-background-color: transparent;" />
+
+        </VBox>
+    </ScrollPane>
+
+</VBox>
+
+<!-- Barra de navegación -->
+<HBox alignment="CENTER" styleClass="nav-bar" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+    <!-- Botón invisible encima del logo rectangular -->
+    <Button onAction="#botonLogoRectangularPresionado" styleClass="nav-invisible-button">
+
+        <!-- Logo rectangular en la barra de navegación -->
+        <graphic>
+            <ImageView fitHeight="40" fitWidth="165" HBox.hgrow="ALWAYS">
+                <Image url="@nav-bar/logo_rectangular.png" />
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <!-- Botones de la barra de navegación -->
+
+    <!-- Botón "Inicio" -->
+    <Button onAction="#accionBotonInicio" styleClass="nav-button" text="Inicio" />
+    <!-- Botón "Precios" -->
+    <Button onAction="#accionBotonPrecios" styleClass="nav-button" text="Precios" />
+    <!-- Botón "Nosotros" -->
+    <Button onAction="#accionBotonNosotros" styleClass="nav-button" text="Nosotros" />
+    <!-- Botón "Contáctenos" -->
+    <Button onAction="#accionBotonContactenos" styleClass="nav-button" text="Contáctenos" />
+    <!-- Botón "Boletería" -->
+    <Button onAction="#accionBotonBoleteria" styleClass="nav-button" text="Boletería" />
+
+    <!-- Elemento de relleno -->
+    <Pane HBox.hgrow="ALWAYS" />
+
+
+
+</HBox>
+
+</AnchorPane>
