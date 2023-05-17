@@ -3,15 +3,16 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.Rating?>
 <?import org.controlsfx.control.SearchableComboBox?>
+
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.CategoriaPublicaciones"
+            fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.Mercado.MostrarPublicacion"
             style="-fx-background-color: black;"
-            stylesheets="@style_CategoriaPublicaciones.css">
+            stylesheets="@style_MostrarPublicacion.css">
 
     <!-- Margen del contenido de la pantalla -->
     <VBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
@@ -26,88 +27,68 @@
 
                 <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
 
-                <!-- Publicaciones -->
+                <VBox alignment="TOP_CENTER" maxWidth="1000" spacing="10" minHeight="500">
+                    <HBox alignment="CENTER_LEFT">
+                        <JFXButton styleClass="boton-volver" onAction="#accionBotonVolver" minWidth="26" minHeight="26"
+                                   maxWidth="26" maxHeight="26"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="tituloPublicacion" style="-fx-text-fill: white; -fx-font-size: 24px;"
+                               wrapText="true"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                    </HBox>
 
-                <HBox alignment="CENTER" spacing="10">
-                    <VBox alignment="TOP_CENTER" spacing="5">
+                    <Pane style="-fx-background-color: #CFB14F" minHeight="1" minWidth="900"/>
 
-                        <Pane minHeight="36"/>
+                    <Pane minHeight="5"/>
 
-                        <!-- Titulo: Publicaciones -->
-                        <Label fx:id="titulo" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
-                        <HBox alignment="CENTER">
+                    <HBox alignment="TOP_CENTER" spacing="10">
+                        <VBox alignment="CENTER">
+                            <ImageView fx:id="imageViewPublicacion"/>
+                        </VBox>
 
-                            <Label fx:id="resultados" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Label text=" resultados" style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                        <VBox alignment="TOP_CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                            <Label text="Calificación"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
-                        </HBox>
+                            <Rating fx:id="ratingPublicacion"/>
 
-                        <Pane minHeight="10"/>
+                            <Label fx:id="precioPublicacion"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
-                        <Label text="Filtrar y" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                        <Label text="ordenar por:" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                            <HBox alignment="CENTER">
+                                <Label text="Proveedor: "
+                                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                <Label fx:id="proveedorPublicacion" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                            </HBox>
 
-                        <Pane minHeight="10"/>
+                            <Label text="Descripción"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
-                        <JFXButton fx:id="botonOrdenarAlf" styleClass="boton-ordenar-alfabeticamente" onAction="#botonOrdenarAlfabeticamente" minWidth="26"
-                                   minHeight="26" maxWidth="26" maxHeight="26"/>
+                            <Label fx:id="descripcionPublicacion"
+                                   style="-fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 0px 10px 0px 10px;"
+                                   wrapText="true" alignment="CENTER"/>
 
-                        <JFXButton fx:id="botonMenorPrecio" styleClass="boton-filtro" text="Menor precio" onAction="#botonOrdenarPrecioMenorMayor"/>
+                            <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 0px 10px 0px 10px;">
+                                <HBox alignment="CENTER">
+                                    <Label text="Categoria: "
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                    <Label fx:id="categoriaPublicacion"
+                                           style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                                    <Pane minWidth="10"/>
+                                </HBox>
+                            </HBox>
 
-                        <JFXButton fx:id="botonMayorPrecio" styleClass="boton-filtro" text="Mayor precio" onAction="#botonOrdenarPrecioMayorMenor"/>
-
-                        <JFXButton fx:id="botonMenorCalificacion" styleClass="boton-filtro" text="Menor calificación" onAction="#botonOrdenarCalifiacionMenorMayor"/>
-
-                        <JFXButton fx:id="botonMayorCalificacion" styleClass="boton-filtro" text="Mayor calificación" onAction="#botonOrdenarCalifiacionMayorMenor"/>
-
-                        <JFXButton styleClass="boton-retirar-filtros" onAction="#botonRetirarFiltros" minWidth="26"
-                                   minHeight="26" maxWidth="26" maxHeight="26"/>
-
-                    </VBox>
-                    <VBox spacing="15" alignment="CENTER" maxWidth="700">
-                        <HBox alignment="CENTER">
-                            <JFXButton styleClass="boton-anterior" onAction="#accionBotonAnterior" minWidth="26"
-                                       minHeight="26" maxWidth="26" maxHeight="26"/>
-                            <Pane HBox.hgrow="ALWAYS"/>
-                            <Label fx:id="paginaActual" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Label text="/" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Label fx:id="paginaMax" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Pane HBox.hgrow="ALWAYS"/>
-                            <JFXButton styleClass="boton-siguiente" onAction="#accionBotonSiguiente" minWidth="26"
-                                       minHeight="26" maxWidth="26" maxHeight="26"/>
-                        </HBox>
-
-                        <JFXButton fx:id="botonPublicacion1" styleClass="boton-publicacion" onAction="#botonPublicacion1"/>
-                        <JFXButton fx:id="botonPublicacion2" styleClass="boton-publicacion" onAction="#botonPublicacion2"/>
-                        <JFXButton fx:id="botonPublicacion3" styleClass="boton-publicacion" onAction="#botonPublicacion3"/>
-                        <JFXButton fx:id="botonPublicacion4" styleClass="boton-publicacion" onAction="#botonPublicacion4"/>
-                        <JFXButton fx:id="botonPublicacion5" styleClass="boton-publicacion" onAction="#botonPublicacion5"/>
-                        <JFXButton fx:id="botonPublicacion6" styleClass="boton-publicacion" onAction="#botonPublicacion6"/>
-                        <JFXButton fx:id="botonPublicacion7" styleClass="boton-publicacion" onAction="#botonPublicacion7"/>
-                        <JFXButton fx:id="botonPublicacion8" styleClass="boton-publicacion" onAction="#botonPublicacion8"/>
-                        <JFXButton fx:id="botonPublicacion9" styleClass="boton-publicacion" onAction="#botonPublicacion9"/>
-                        <JFXButton fx:id="botonPublicacion10" styleClass="boton-publicacion" onAction="#botonPublicacion10"/>
-                        <JFXButton fx:id="botonPublicacion11" styleClass="boton-publicacion" onAction="#botonPublicacion11"/>
-                        <JFXButton fx:id="botonPublicacion12" styleClass="boton-publicacion" onAction="#botonPublicacion12"/>
-
-                        <HBox alignment="CENTER">
-                            <JFXButton styleClass="boton-anterior" onAction="#accionBotonAnterior" minWidth="26"
-                                       minHeight="26" maxWidth="26" maxHeight="26"/>
-                            <Pane HBox.hgrow="ALWAYS"/>
-                            <Label fx:id="paginaActualCopia" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Label text="/" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Label fx:id="paginaMaxCopia" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                            <Pane HBox.hgrow="ALWAYS"/>
-                            <JFXButton styleClass="boton-siguiente" onAction="#accionBotonSiguiente" minWidth="26"
-                                       minHeight="26" maxWidth="26" maxHeight="26"/>
-                        </HBox>
-                    </VBox>
-                </HBox>
+                        </VBox>
+                    </HBox>
+                    <Pane VBox.vgrow="ALWAYS"/>
+                    <JFXButton fx:id="botonComprar" styleClass="boton-comprar" maxHeight="33" minHeight="33"
+                               minWidth="110" maxWidth="110" alignment="CENTER"/>
+                </VBox>
 
                 <!-- NO ESCRIBIR A PARTIR DE AQUI -->
 
                 <!-- Espacio antes de la linea separadora -->
-                <Pane minHeight="75"/>
+                <Pane minHeight="110"/>
 
                 <!-- Línea separadora -->
                 <Pane minHeight="1" styleClass="separator" maxWidth="1000"/>

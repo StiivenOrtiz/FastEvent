@@ -319,7 +319,7 @@
 
 /* Estilo para el botón de "Registrarse con Twitter" en login efecto rippler */
 
-.twitter-button .jfx-rippler {
+.google-button .jfx-rippler {
     -jfx-rippler-fill: white;
     -jfx-rippler-size: 80;
 }

@@ -1,19 +1,22 @@
 package com.fastevent.fastevent.Logica;
 
-public class ManejoRegistrarse {/*
+import com.fastevent.fastevent.Interfaces.IPersistenciaUsuarios;
+import com.fastevent.fastevent.Persistencia.PersistenciaUsuarios;
+import com.fastevent.fastevent.Utilidades.Sesion;
+
+public class ManejoRegistrarse {
 
     public boolean registrarse(String nombres, String apellidos, String correo, String contrasena){
-        System.out.println("Datos guardados: " + nombres + " " + apellidos + " " + correo + " " + contrasena);
+        IPersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
 
-        EscrituraUsuarios escrituraUsuarios = new EscrituraUsuarios();
-        Usuario usuario = lecturaUsuarios.buscarUsuario(correo);
-
-        if(usuario != null){
-            escrituraUsuarios.registrarUsuario(nombres, apellidos, correo, contrasena);
-            return true;
+        if(!persistenciaUsuarios.verificarExistencia(correo)){
+            if(persistenciaUsuarios.registrarUsuario(nombres, apellidos, correo, contrasena)) {
+                Sesion.setUsuarioActual(persistenciaUsuarios.buscarUsuario(correo));
+                System.out.println("Datos guardados: " + nombres + " " + apellidos + " " + correo + " " + contrasena);
+                return true;
+            }
         }
-
         return false;
     }
-*/
+
 }

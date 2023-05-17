@@ -1,5 +1,6 @@
 package com.fastevent.fastevent;
 
+import com.fastevent.fastevent.Controladores.CargadorPantallas;
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Utilidades.Constantes;
 import com.jfoenix.controls.JFXDecorator;
@@ -63,6 +64,9 @@ public class FastEvent extends Application {
          ****************************************************************************************
          */
 
+        CargadorPantallas.cargarPantalla(nombrePantalla, direccionFXML, stage, true);
+
+        /*
         // Obtener el nombre del archivo FXML
 
         // Cargar el archivo FXML
@@ -112,6 +116,7 @@ public class FastEvent extends Application {
 
         // Mostrar la ventana
         nStage.show();
+         */
     }
 
     public static void main(String[] args) {
