@@ -169,11 +169,11 @@
  .text1{
      -fx-text-fill: white;
      -fx-weight: bold;
-     -fx-size: 32sp;
+     -fx-size: 32;
  }
   .text2{
       -fx-text-fill: white;
-      -fx-size: 16sp;
+      -fx-size: 16;
   }
 
  .boton{

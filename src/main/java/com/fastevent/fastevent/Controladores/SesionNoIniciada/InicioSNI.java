@@ -1,14 +1,10 @@
 package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 
+import com.fastevent.fastevent.Controladores.Controlador;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
 
-import java.util.List;
-
-public class InicioSNI {
+public class InicioSNI extends Controlador {
 
     /*
         Variables
