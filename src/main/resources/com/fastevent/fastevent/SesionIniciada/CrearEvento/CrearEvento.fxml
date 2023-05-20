@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import com.jfoenix.skins.JFXTimePickerContent?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.CrearEvento"
+            style="-fx-background-color: black;"
+            stylesheets="@style_CrearEvento.css">
+
+    <!-- Margen del contenido de la pantalla -->
+    <VBox AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          style="-fx-background-color: transparent; -fx-border-color: transparent;">
+
+        <!-- ScrollBar -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-bar">
+            <VBox alignment="CENTER" spacing="10" style="-fx-background-color: transparent;">
+
+                <!-- Espacio antes del contenido -->
+                <Pane minHeight="50"/>
+
+                <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
+
+
+                <VBox alignment="TOP_CENTER" maxWidth="1000" spacing="10" minHeight="1000">
+                    <HBox alignment="CENTER_LEFT">
+                        <JFXButton styleClass="boton-volver" onAction="#accionBotonVolver" minWidth="26" minHeight="26"
+                                   maxWidth="26" maxHeight="26"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="nombreEvento"
+                                   style="-fx-text-fill: black; -fx-font-size: 24px; -fx-background-color: white; -fx-padding: 1px;"
+                                   minWidth="700"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <Pane style="-fx-background-color: #CFB14F" minHeight="1" minWidth="900"/>
+
+                    <Pane minHeight="5"/>
+
+                    <HBox alignment="TOP_CENTER" spacing="30">
+                        <VBox alignment="CENTER">
+                            <StackPane minWidth="404" minHeight="284" maxWidth="404" maxHeight="284"
+                                       style="-fx-border-width: 2; -fx-border-color: #CFB14F;">
+                                <ImageView fx:id="imageViewEvento"/>
+                                <JFXButton fx:id="botonSubirImagen" styleClass="boton-subir-imagen"
+                                           onAction="#accionBotonSubirImagen" minWidth="400" minHeight="280"
+                                           maxWidth="400" maxHeight="280"/>
+                            </StackPane>
+
+                        </VBox>
+
+                        <VBox alignment="TOP_CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                            <HBox alignment="CENTER">
+                                <VBox alignment="CENTER_LEFT">
+                                    <Label text="Fecha de inicio"
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                    <DatePicker fx:id="fechaInicio"/>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Label text="HH "
+                                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                        <Spinner fx:id="horaInicio" min="0" max="23" initialValue="0" styleClass="spinner"/>
+                                        <Label text=" MM "
+                                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                        <Spinner fx:id="minutoInicio" min="0" max="59" initialValue="0" styleClass="spinner"/>
+                                    </HBox>
+
+                                </VBox>
+
+                                <Pane minWidth="30"/>
+
+                                <VBox alignment="CENTER_LEFT">
+                                    <Label text="Fecha de finalización"
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                    <DatePicker fx:id="fechaFinalizacion"/>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Label text="HH "
+                                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                        <Spinner fx:id="horaFin" min="0" max="23" initialValue="0" styleClass="spinner"/>
+                                        <Label text=" MM "
+                                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                        <Spinner fx:id="minutoFin" min="0" max="59" initialValue="0" styleClass="spinner"/>
+                                    </HBox>
+                                </VBox>
+                            </HBox>
+
+                            <HBox alignment="CENTER">
+                                <Label text="¿Evento publico? "
+                                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                <CheckBox fx:id="eventoPublico" styleClass="check-box-evento-publico"/>
+
+                                <Pane minWidth="30"/>
+
+                                <VBox fx:id="vBoxAgregarPrecio" alignment="CENTER" visible="false">
+                                    <Label text="Precio de entrada"
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                    <HBox alignment="CENTER">
+                                        <Label text="\$"
+                                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                        <TextField fx:id="precioEvento"
+                                                   style="-fx-text-fill: black; -fx-font-size: 14px; -fx-background-color: white; -fx-padding: 1px;" visible="false" disable="true"/>
+                                    </HBox>
+                                </VBox>
+                            </HBox>
+
+                            <Label text="Descripción"
+                                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                            <TextArea fx:id="descripcionEvento"
+                                      style="-fx-text-fill: black; -fx-font-size: 14px; -fx-background-color: white;"
+                                      wrapText="true" maxHeight="100"/>
+
+                            <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 0px 10px 0px 10px;">
+                                <HBox alignment="CENTER">
+                                    <Label text="Tipo: "
+                                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                                    <JFXComboBox fx:id="tipoEvento" styleClass="tipoEvento"/>
+                                    <Pane minWidth="10"/>
+                                </HBox>
+                            </HBox>
+
+                        </VBox>
+                    </HBox>
+
+                    <!-- Titulo: Proveedores -->
+                    <Label text="Proveedores" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+
+                    <!-- Lista de eventos realizados por el usuario -->
+                    <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
+                          AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
+                        <ListView fx:id="listaProveedores"  minHeight="200" HBox.hgrow="ALWAYS"
+                                  maxWidth="800" maxHeight="400" onMouseClicked="#accionSeleccionarProveedor"
+                                  styleClass="lista-proveedores"/>
+                    </HBox>
+
+                    <Pane VBox.vgrow="ALWAYS"/>
+                    <JFXButton fx:id="botonCrearEvento" styleClass="boton-crear-evento" maxHeight="33"
+                               minHeight="33"
+                               minWidth="180" maxWidth="180" alignment="CENTER"/>
+                </VBox>
+
+
+                <!-- NO ESCRIBIR A PARTIR DE AQUI -->
+
+                <!-- Espacio antes de la linea separadora -->
+                <Pane minHeight="75"/>
+
+                <!-- Línea separadora -->
+                <Pane minHeight="1" styleClass="separator" maxWidth="1000"/>
+
+                <!-- Espacio antes del footer -->
+                <Pane minHeight="20"/>
+
+                <!-- Footer -->
+                <HBox alignment="CENTER" maxWidth="900" spacing="50">
+
+                    <!-- Derechos de autor -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" prefHeight="0"
+                          alignment="TOP_CENTER">
+
+                        <!-- Logo -->
+                        <ImageView id="logo" fitWidth="100" fitHeight="100">
+                            <Image url="@footer/logo2.png"/>
+                        </ImageView>
+
+                        <!-- Texto de derechos de autor -->
+                        <Label text="© 2023 FastEvent" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                        <Label text="Todos los derechos reservados." style="-fx-text-fill: white;"/>
+
+                    </VBox>
+
+                    <!-- Navegación -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de navegación -->
+                        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+                        <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
+                        <Button text="Nosotros" styleClass="nav-button" onAction="#accionBotonNosotros"/>
+                        <Button text="Contáctenos" styleClass="nav-button" onAction="#accionBotonContactenos"/>
+                        <Button text="Boletería" styleClass="nav-button" onAction="#accionBotonBoleteria"/>
+
+                    </VBox>
+
+                    <!-- Redes sociales -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de redes sociales -->
+                        <Button text="Facebook" styleClass="nav-button" onAction="#accionBotonFacebook"/>
+                        <Button text="Instagram" styleClass="nav-button" onAction="#accionBotonInstagram"/>
+                        <Button text="Twitter" styleClass="nav-button" onAction="#accionBotonTwitter"/>
+                        <Button text="Linkedin" styleClass="nav-button" onAction="#accionBotonLinkedin"/>
+
+                    </VBox>
+
+                    <!-- Información -->
+                    <VBox style="-fx-background-color: transparent; -fx-max-width: 275px;" spacing="25">
+
+                        <!-- Botones de información -->
+                        <Button text="Términos y Condiciones" styleClass="nav-button" onAction="#botonTerminos"/>
+                        <Button text="Políticas de Privacidad" styleClass="nav-button" onAction="#botonPrivacidad"/>
+                        <Button text="Preguntas Frecuentes" styleClass="nav-button"
+                                onAction="#accionBotonPreguntasFrecuentes"/>
+
+                    </VBox>
+                </HBox>
+
+                <!-- Relleno -->
+                <Pane style="-fx-background-color: transparent;" minWidth="100" minHeight="100"/>
+
+            </VBox>
+        </ScrollPane>
+
+    </VBox>
+
+    <!-- Barra de navegación vertical -->
+
+    <VBox styleClass="nav-bar-vertical" alignment="TOP_CENTER" maxWidth="38" minWidth="38" AnchorPane.leftAnchor="0"
+          AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0">
+
+        <!-- Botones de la barra de navegación -->
+
+        <!-- Botón Inicio -->
+        <JFXButton styleClass="nav-vertical-boton-inicio" onAction="#accionBotonInicio" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
+        <!-- Botón Usuarios -->
+        <JFXButton styleClass="nav-vertical-boton-usuarios" onAction="#accionBotonUsuarios" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
+        <!-- Botón Mercado -->
+        <JFXButton styleClass="nav-vertical-boton-mercado" onAction="#accionBotonMercado" minWidth="26" minHeight="26"
+                   maxWidth="26" maxHeight="26"/>
+        <!-- Botón Mis boletas -->
+        <JFXButton styleClass="nav-vertical-boton-mis-boletas" onAction="#accionBotonMisBoletas" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
+        <!-- Botón Mis eventos -->
+        <JFXButton styleClass="nav-vertical-boton-mis-eventos" onAction="#accionBotonMisEventos" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
+        <!-- Botón Mis finanzas -->
+        <JFXButton styleClass="nav-vertical-boton-mis-finanzas" onAction="#accionBotonMisFinanzas" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
+
+    </VBox>
+
+    <!-- Barra de navegación -->
+    <HBox styleClass="nav-bar" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- Botón invisible encima del logo rectangular -->
+        <Button styleClass="nav-invisible-button" onAction="#botonLogoRectangularPresionado">
+
+            <!-- Logo rectangular en la barra de navegación -->
+            <graphic>
+                <ImageView fitWidth="165" fitHeight="40" HBox.hgrow="ALWAYS">
+                    <Image url="@nav-bar/logo_rectangular.png"/>
+                </ImageView>
+            </graphic>
+
+        </Button>
+
+        <!-- Relleno -->
+        <Pane minWidth="100"/>
+
+        <!-- Barra de busqueda -->
+        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+            <HBox spacing="10" styleClass="barra-de-busqueda" alignment="CENTER">
+                <SearchableComboBox fx:id="barraDeBusqueda" promptText="Buscar en FastEvent" HBox.hgrow="ALWAYS"
+                                    maxWidth="700" styleClass="searchable-combo-box"/>
+                <JFXButton styleClass="nav-boton-buscar" onAction="#accionBuscarBarraDeBusqueda" minWidth="20"
+                           minHeight="20" maxWidth="20" maxHeight="20"/>
+                <Pane minWidth="90"/>
+            </HBox>
+        </VBox>
+
+        <!-- Relleno para ajustar la barra de navegación y quede central-->
+        <Pane minWidth="100"/>
+
+        <!-- Botón de notificaciones -->
+        <JFXButton fx:id="botonDeNotificacion" text="" styleClass="nav-bar-boton-notificacion"
+                   onAction="#mostrarNotificaciones" minHeight="26" minWidth="26" maxWidth="26" maxHeight="26">
+
+            <!-- Ventana que sale al presionar el botón de notificaciones -->
+            <ContextMenu fx:id="notificaciones"
+                         style="-fx-accent: transparent; -fx-border-color: white; -fx-background-color: black; -fx-border-radius: 30; -fx-background-radius: 30; -fx-pref-height: 250; -fx-pref-width: 300;">
+                <items>
+                    <CustomMenuItem>
+                        <content>
+                            <HBox alignment="CENTER">
+                                <Pane style="-fx-background-color: transparent;" minWidth="8"/>
+                                <VBox>
+                                    <Pane style="-fx-background-color: transparent;" minHeight="15"/>
+                                    <ListView fx:id="listaDeNotificaciones" prefWidth="270" prefHeight="182"
+                                              style="-fx-accent: transparent; -fx-background-color: black; -fx-progress-color: black; -fx-border-color: white; -fx-control-inner-background: black;"
+                                              onMouseClicked="#imprimirNotificacionSeleccionada"/>
+                                </VBox>
+                            </HBox>
+                        </content>
+                    </CustomMenuItem>
+                    <CustomMenuItem>
+                        <content>
+                            <HBox alignment="CENTER">
+                                <Pane style="-fx-background-color: transparent;" minWidth="130" minHeight="0"/>
+                                <Button fx:id="botonBorrarNotificaciones" onAction="#borrarNotificaciones"
+                                        minHeight="26" minWidth="26" maxWidth="26" maxHeight="26"
+                                        style="-fx-background-color: transparent; -fx-cursor: hand;"/>
+                            </HBox>
+                        </content>
+                    </CustomMenuItem>
+                </items>
+            </ContextMenu>
+        </JFXButton>
+
+        <!-- Botón "Perfil de Usuario" -->
+        <JFXButton styleClass="nav-vertical-boton-perfil-de-usuario" onAction="#accionPerfilDeUsuario" minWidth="26"
+                   minHeight="26" maxWidth="26" maxHeight="26"/>
+
+    </HBox>
+
+</AnchorPane>
