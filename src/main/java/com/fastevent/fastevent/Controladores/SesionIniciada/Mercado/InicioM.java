@@ -5,6 +5,9 @@ package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Modelo.Categoria;
 import com.fastevent.fastevent.Modelo.Notificacion;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESFXML;
+import com.fastevent.fastevent.Utilidades.DatosSistema;
+import com.fastevent.fastevent.Utilidades.NOMBRESPANTALLAS;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -23,6 +26,7 @@ import javafx.scene.layout.VBox;
 import org.controlsfx.control.SearchableComboBox;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class InicioM extends Controlador {
@@ -32,113 +36,102 @@ public class InicioM extends Controlador {
      */
 
     private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+    List<Categoria> categorias;
     @FXML
-    public Button botonBorrarNotificaciones;
+    public Button botonBorrarNotificaciones, botonDeNotificacion;
     @FXML
     public SearchableComboBox<String> barraDeBusqueda;
     @FXML
     ContextMenu notificaciones = new ContextMenu();
     @FXML
-    JFXButton botonCategoria1;
-    @FXML
-    JFXButton botonCategoria2;
-    @FXML
-    JFXButton botonCategoria3;
-    @FXML
-    JFXButton botonCategoria4;
-    @FXML
-    JFXButton botonCategoria5;
-    @FXML
-    JFXButton botonCategoria6;
-    @FXML
-    private Button botonDeNotificacion;
+    JFXButton botonCategoria1, botonCategoria2, botonCategoria3, botonCategoria4, botonCategoria5, botonCategoria6;
     @FXML
     private ListView<Notificacion> listaDeNotificaciones;
 
     // Métodos de la barra de navegación
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        System.out.println("Logo rectangular presionado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        System.out.println("Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        System.out.println("Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
-        System.out.println("Nosotros");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Nosotros");
     }
 
     public void accionBotonContactenos(ActionEvent actionEvent) {
-        System.out.println("Contactenos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contactenos");
     }
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
-        System.out.println("Boleteria");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Boleteria");
     }
 
     public void accionPerfilDeUsuario(ActionEvent actionEvent) {
-        System.out.println("Perfil de usuario");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Perfil de usuario");
     }
 
     // Métodos del footer
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Twitter");
     }
 
     public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Linkedin");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
-        System.out.println("Terminos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Terminos y condiciones");
     }
 
     public void botonPrivacidad(ActionEvent actionEvent) {
-        System.out.println("Privacidad");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Privacidad");
     }
 
     public void accionBotonFacebook(ActionEvent actionEvent) {
-        System.out.println("Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Facebook");
     }
 
     public void accionBotonInstagram(ActionEvent actionEvent) {
-        System.out.println("Instagram");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Instagram");
     }
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
-        System.out.println("Preguntas frecuentes");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Preguntas frecuentes");
     }
 
     // Métodos de la barra de navegación vertical
 
     public void accionBotonUsuarios(ActionEvent actionEvent) {
-        System.out.println("Usuarios");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Usuarios");
     }
 
     public void accionBotonMercado(ActionEvent actionEvent) {
-        System.out.println("Mercado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOMERCADO, DIRECCIONESFXML.INICIOMERCADO);
     }
 
     public void accionBotonMisBoletas(ActionEvent actionEvent) {
-        System.out.println("Mis boletas");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Comprar boletas");
     }
 
     public void accionBotonMisEventos(ActionEvent actionEvent) {
-        System.out.println("Mis eventos");
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREAREVENTO);
+    }
+
+    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Mis finanzas");
 
         /* Ejemplo de notificacioón */
         listaDeNotificaciones.getItems().add(new Notificacion("Se ha recibido una nueva notificación", "https://www.google.com/"));
         estadoDeNotifaciones.set(true);
-    }
-
-    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
-        System.out.println("Mis finanzas");
     }
 
     public void imprimirNotificacionSeleccionada(MouseEvent mouseEvent) {
@@ -163,40 +156,43 @@ public class InicioM extends Controlador {
     }
 
     public void accionBotonSerProveedor(ActionEvent actionEvent) {
-        System.out.println("Ser proveedor");
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREARPUBLICACION);
     }
 
     public void botonCategoria1(ActionEvent actionEvent) {
-        System.out.println("Categoria 1");
+        cargarPublicacionesCategoria(categorias.get(0).getTitulo());
     }
 
     public void botonCategoria2(ActionEvent actionEvent) {
-        System.out.println("Categoria 2");
+        cargarPublicacionesCategoria(categorias.get(1).getTitulo());
     }
 
 
     public void botonCategoria3(ActionEvent actionEvent) {
-        System.out.println("Categoria 3");
+        cargarPublicacionesCategoria(categorias.get(2).getTitulo());
     }
 
 
     public void botonCategoria4(ActionEvent actionEvent) {
-        System.out.println("Categoria 4");
+        cargarPublicacionesCategoria(categorias.get(3).getTitulo());
     }
 
 
     public void botonCategoria5(ActionEvent actionEvent) {
-        System.out.println("Categoria 5");
+        cargarPublicacionesCategoria(categorias.get(4).getTitulo());
     }
 
     public void botonCategoria6(ActionEvent actionEvent) {
-        System.out.println("Categoria 6");
+        cargarPublicacionesCategoria(categorias.get(5).getTitulo());
     }
 
 
     /*
         Metodos de la interfaz
      */
+
+    public void accionBotonVolver(ActionEvent actionEvent) {
+    }
 
     private void buscarBarraDeBusqueda() {
         System.out.println("Busqueda de: " + barraDeBusqueda.getSelectionModel().getSelectedItem());
@@ -289,18 +285,8 @@ public class InicioM extends Controlador {
         botones.add(botonCategoria6);
 
         // Ejemplo
-        String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
-        String direccionImagenHover = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones_seleccionado.png";
-
-        // Ejemplo
-        ArrayList<Categoria> categorias = new ArrayList<>();
-        categorias.add(new Categoria("Categoria 1", "Texto de la categoria 1", direccionImagen, direccionImagenHover));
-        categorias.add(new Categoria("Categoria 2", "Texto de la categoria 2", direccionImagen, direccionImagenHover));
-        categorias.add(new Categoria("Categoria 3", "Texto de la categoria 3", direccionImagen, direccionImagenHover));
-        categorias.add(new Categoria("Categoria 4", "Texto de la categoria 4", direccionImagen, direccionImagenHover));
-        categorias.add(new Categoria("Categoria 5", "Texto de la categoria 5", direccionImagen, direccionImagenHover));
-        categorias.add(new Categoria("Categoria 6", "Texto de la categoria 6", direccionImagen, direccionImagenHover));
-
+        DatosSistema datosSistema = DatosSistema.getInstance();
+        categorias = datosSistema.getCategorias();
 
         botones.forEach(boton -> {
             Categoria categoria;
@@ -321,11 +307,10 @@ public class InicioM extends Controlador {
 
         // Agregar el listener para cambiar la imagen cuando el mouse entra y sale del botón
         boton.hoverProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
+            if (newValue)
                 boton.setGraphic(hboxHover);
-            } else {
+            else
                 boton.setGraphic(hbox);
-            }
         });
     }
 
@@ -406,5 +391,4 @@ public class InicioM extends Controlador {
         estiloBotonesCategoria();
 
     }
-
 }

@@ -27,9 +27,15 @@
 
                 <!-- Contenido (ESCRIBIR EL CODIGO AQUI) -->
 
+                <HBox alignment="CENTER_LEFT">
+                    <JFXButton styleClass="boton-volver" onAction="#accionBotonVolver" minWidth="26" minHeight="26"
+                               maxWidth="26" maxHeight="26"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <!-- Titulo: Categorias -->
+                    <Label text="Categorias" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                </HBox>
 
-                <!-- Titulo: Categorias -->
-                <Label text="Categorias" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
 
                 <!-- Categorias -->
                 <HBox alignment="CENTER">

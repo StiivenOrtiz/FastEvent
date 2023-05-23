@@ -1,31 +1,29 @@
-package com.fastevent.fastevent.Persistencia;
+package com.fastevent.fastevent.Persistencia.Usuarios;
 
 import com.fastevent.fastevent.Modelo.Usuario;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESEXTRA;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class EscrituraUsuarios {
     public boolean registrarUsuario(String nombres, String apellidos, String correo, String contrasena) {
         try {
-            Usuario usuario = new Usuario(nombres, apellidos, correo, contrasena);
+            Usuario usuario = new Usuario(nombres, apellidos, correo, contrasena, 0, 0);
 
             FileOutputStream fileOutputStream;
             ObjectOutputStream objectOutputStream;
 
-            if (Files.exists(Paths.get("Base de Datos/Usuarios.dat"))) {
-                fileOutputStream = new FileOutputStream("Base de Datos/Usuarios.dat", true);
+            if (Files.exists(Paths.get(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS))) {
+                fileOutputStream = new FileOutputStream(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS, true);
                 objectOutputStream = new ObjectOutputStream(fileOutputStream) {
                     protected void writeStreamHeader() throws IOException {
                         reset();
                     }
                 };
             } else {
-                fileOutputStream = new FileOutputStream("Base de Datos/Usuarios.dat");
+                fileOutputStream = new FileOutputStream(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS);
                 objectOutputStream = new ObjectOutputStream(fileOutputStream);
             }
 
@@ -34,12 +32,21 @@ public class EscrituraUsuarios {
             objectOutputStream.close();
             fileOutputStream.close();
 
+            File carpetaUsuario = new File(DIRECCIONESEXTRA.BASEDEDATOS + correo);
+
+            try {
+                carpetaUsuario.mkdir();
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
+
+
             return true;
         } catch (FileNotFoundException e) {
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream("Base de Datos/Usuarios.dat");
+                FileOutputStream fileOutputStream = new FileOutputStream(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-                Usuario usuario = new Usuario(nombres, apellidos, correo, contrasena);
+                Usuario usuario = new Usuario(nombres, apellidos, correo, contrasena, 0, 0);
                 objectOutputStream.writeObject(usuario);
                 objectOutputStream.close();
                 fileOutputStream.close();
@@ -52,6 +59,4 @@ public class EscrituraUsuarios {
         }
         return false;
     }
-
-
 }

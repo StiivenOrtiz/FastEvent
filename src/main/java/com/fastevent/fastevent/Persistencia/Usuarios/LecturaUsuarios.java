@@ -1,6 +1,7 @@
-package com.fastevent.fastevent.Persistencia;
+package com.fastevent.fastevent.Persistencia.Usuarios;
 
 import com.fastevent.fastevent.Modelo.Usuario;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESEXTRA;
 
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -12,8 +13,8 @@ public class LecturaUsuarios {
 
     public Usuario buscarUsuario(String correo) {
         try {
-            if (Files.exists(Paths.get("Base de Datos/Usuarios.dat"))) {
-                FileInputStream fileInputStream = new FileInputStream("Base de Datos/Usuarios.dat");
+            if (Files.exists(Paths.get(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS))) {
+                FileInputStream fileInputStream = new FileInputStream(DIRECCIONESEXTRA.BASEDEDATOSUSUARIOS);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
                 while (true) {

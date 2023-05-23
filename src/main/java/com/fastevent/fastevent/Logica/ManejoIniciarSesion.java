@@ -2,7 +2,7 @@ package com.fastevent.fastevent.Logica;
 
 import com.fastevent.fastevent.Interfaces.IPersistenciaUsuarios;
 import com.fastevent.fastevent.Modelo.Usuario;
-import com.fastevent.fastevent.Persistencia.PersistenciaUsuarios;
+import com.fastevent.fastevent.Persistencia.Usuarios.PersistenciaUsuarios;
 import com.fastevent.fastevent.Utilidades.Sesion;
 
 import java.util.Objects;

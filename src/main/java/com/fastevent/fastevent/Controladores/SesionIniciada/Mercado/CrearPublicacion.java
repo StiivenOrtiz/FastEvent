@@ -3,8 +3,13 @@ package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 // imports de FastEvent
 
 import com.fastevent.fastevent.Controladores.Controlador;
+import com.fastevent.fastevent.Interfaces.IPersistenciaPublicaciones;
+import com.fastevent.fastevent.Interfaces.IPersistenciaUsuarios;
 import com.fastevent.fastevent.Modelo.Notificacion;
 import com.fastevent.fastevent.Modelo.Publicacion;
+import com.fastevent.fastevent.Persistencia.Publicaciones.PersistenciaPublicaciones;
+import com.fastevent.fastevent.Persistencia.Usuarios.PersistenciaUsuarios;
+import com.fastevent.fastevent.Utilidades.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.beans.property.BooleanProperty;
@@ -35,6 +40,7 @@ public class CrearPublicacion extends Controlador {
      */
 
     private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+    String direccionImagen = "";
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
@@ -61,87 +67,87 @@ public class CrearPublicacion extends Controlador {
     // Métodos de la barra de navegación
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        System.out.println("Logo rectangular presionado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        System.out.println("Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        System.out.println("Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
-        System.out.println("Nosotros");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Nosotros");
     }
 
     public void accionBotonContactenos(ActionEvent actionEvent) {
-        System.out.println("Contactenos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contactenos");
     }
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
-        System.out.println("Boleteria");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Boleteria");
     }
 
     public void accionPerfilDeUsuario(ActionEvent actionEvent) {
-        System.out.println("Perfil de usuario");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Perfil de usuario");
     }
 
     // Métodos del footer
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Twitter");
     }
 
     public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Linkedin");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
-        System.out.println("Terminos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Terminos y condiciones");
     }
 
     public void botonPrivacidad(ActionEvent actionEvent) {
-        System.out.println("Privacidad");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Privacidad");
     }
 
     public void accionBotonFacebook(ActionEvent actionEvent) {
-        System.out.println("Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Facebook");
     }
 
     public void accionBotonInstagram(ActionEvent actionEvent) {
-        System.out.println("Instagram");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Instagram");
     }
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
-        System.out.println("Preguntas frecuentes");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Preguntas frecuentes");
     }
 
     // Métodos de la barra de navegación vertical
 
     public void accionBotonUsuarios(ActionEvent actionEvent) {
-        System.out.println("Usuarios");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Usuarios");
     }
 
     public void accionBotonMercado(ActionEvent actionEvent) {
-        System.out.println("Mercado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOMERCADO, DIRECCIONESFXML.INICIOMERCADO);
     }
 
     public void accionBotonMisBoletas(ActionEvent actionEvent) {
-        System.out.println("Mis boletas");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Comprar boletas");
     }
 
     public void accionBotonMisEventos(ActionEvent actionEvent) {
-        System.out.println("Mis eventos");
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREAREVENTO);
+    }
+
+    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Mis finanzas");
 
         /* Ejemplo de notificacioón */
         listaDeNotificaciones.getItems().add(new Notificacion("Se ha recibido una nueva notificación", "https://www.google.com/"));
         estadoDeNotifaciones.set(true);
-    }
-
-    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
-        System.out.println("Mis finanzas");
     }
 
     public void imprimirNotificacionSeleccionada(MouseEvent mouseEvent) {
@@ -166,7 +172,7 @@ public class CrearPublicacion extends Controlador {
     }
 
     public void accionBotonSerProveedor(ActionEvent actionEvent) {
-        System.out.println("Ser proveedor");
+        //System.out.println("Ser proveedor");
     }
 
 
@@ -186,17 +192,20 @@ public class CrearPublicacion extends Controlador {
 
         if (selectedFile != null) {
             try {
-                String nuevaCarpeta = "Base De Datos/" + "Test" + "/"; // Ruta de la nueva carpeta donde se guardará la imagen
+                String nuevaCarpeta = DIRECCIONESEXTRA.BASEDEDATOS + Sesion.getUsuarioActual().getCorreo() + CONSTANTES.SLASH; // Ruta de la nueva carpeta donde se guardará la imagen
                 Path origen = selectedFile.toPath();
 
-                String nuevoNombre = "imagen_publicacion" + ".png"; // Generar un nuevo nombre de archivo
+                String nuevoNombre = CONSTANTES.NOMBREIMAGENPUBLICACION + Sesion.getUsuarioActual().getPublicacionesCreadas() + CONSTANTES.PUNTOPNG; // Generar un nuevo nombre de archivo
                 Path destino = Path.of(nuevaCarpeta, nuevoNombre);
 
                 Files.createDirectories(Path.of(nuevaCarpeta));
                 Files.copy(origen, destino, StandardCopyOption.REPLACE_EXISTING);
 
-                String rutaRelativa = "Base De Datos/" + "Test" + "/" + "imagen_publicacion" + ".png";
-                Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(rutaRelativa);
+                direccionImagen = DIRECCIONESEXTRA.BASEDEDATOS + Sesion.getUsuarioActual().getCorreo() +
+                        CONSTANTES.SLASH + CONSTANTES.NOMBREIMAGENPUBLICACION +
+                        Sesion.getUsuarioActual().getPublicacionesCreadas() + CONSTANTES.PUNTOPNG;
+
+                Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(direccionImagen);
                 String direccion = rutaAbsoluta.toUri().toURL().toString();
 
                 System.out.println("Imagen copiada y guardada como: " + direccion);
@@ -229,8 +238,8 @@ public class CrearPublicacion extends Controlador {
         barraDeBusqueda.getItems().addAll("Manzana", "Banana", "Cereza", "Durazno", "Uva");
 
         String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
-        Publicacion publicacionEJ = new Publicacion("Publicacion a", "Descripcion a", 0.0, direccionImagen, "Categoria a", "Proveedor a", 0.0);
-        categoriaPublicacion.getItems().addAll("Categoria a", "Categoria b", "Categoria c", "Categoria d", "Categoria e");
+        DatosSistema datosSistema = DatosSistema.getInstance();
+        categoriaPublicacion.getItems().addAll(datosSistema.getCategoriasString());
     }
 
     private void configurarEstadoNotificaciones() {
@@ -396,11 +405,38 @@ public class CrearPublicacion extends Controlador {
         botonCrearPublicacion.setText("Crear Publicación");
         botonCrearPublicacion.setOnAction(e -> {
             if (validarPublicacion()) {
-                System.out.println("Guardar");
-                // mostramos un mensaje de exito
-                mostrarMensajeInformativo("Publicación se ha creado con éxito", "Podrá ver sus publicación en la sección de mis publicaciones", "Éxito");
+                // creamos la publicacion
+                Publicacion publicacion = new Publicacion(tituloPublicacion.getText(), descripcionPublicacion.getText(),
+                        Double.parseDouble(precioPublicacion.getText()), direccionImagen,
+                        categoriaPublicacion.getSelectionModel().getSelectedItem(),
+                        Sesion.getUsuarioActual().getCorreo(), Sesion.getUsuarioActual().getNombres() +
+                        " " + Sesion.getUsuarioActual().getApellidos(), 0.0,
+                        Sesion.getUsuarioActual().getPublicacionesCreadas());
+
+                Sesion.getUsuarioActual().setPublicacionesCreadas(Sesion.getUsuarioActual().getPublicacionesCreadas() + 1);
+                IPersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
+                if (!persistenciaUsuarios.actualizarUsuario()) {
+                    // Mensaje de error
+                    mostrarMensajeError("No se pudo actualizar el usuario", "Vuelvalo a intentar más tarde");
+                    Sesion.getUsuarioActual().setPublicacionesCreadas(Sesion.getUsuarioActual().getPublicacionesCreadas() - 1);
+                } else {
+                    IPersistenciaPublicaciones persistenciaPublicaciones = new PersistenciaPublicaciones();
+                    if(!persistenciaPublicaciones.registrarPublicacion(publicacion)) {
+                        mostrarMensajeError("No se pudo registrar la publicación", "Vuelvalo a intentar por favor");
+                        Sesion.getUsuarioActual().setPublicacionesCreadas(Sesion.getUsuarioActual().getPublicacionesCreadas() - 1);
+                    }else {
+                        mostrarMensajeInformativo("Publicación se ha creado con éxito", "Podrá ver sus publicación en la sección de mis publicaciones", "Éxito");
+                        cargarPantalla(NOMBRESPANTALLAS.INICIOMERCADO, DIRECCIONESFXML.INICIOMERCADO);
+                    }
+                }
             }
         });
 
+    }
+
+    public void setPublicacionEnDesarrollo(Publicacion publicacion) {
+    }
+
+    public void cargarPublicacionEnDesarrollo(Publicacion publicacion) {
     }
 }

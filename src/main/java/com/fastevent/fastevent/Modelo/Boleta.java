@@ -1,40 +1,39 @@
 package com.fastevent.fastevent.Modelo;
 
-import javafx.scene.image.Image;
+import java.io.Serializable;
 
-public class Boleta {
-    private String nombre;
-    private String fecha;
-    private Image imagen;
+public class Boleta implements Serializable {
+    private final String comprador;
+    private final long idEvento;
+    private final String creadorCorreo;
+    private final long idBoleta;
+    private final String creadorNombre;
 
-
-    public Boleta(String nombre, String fecha, Image imagen) {
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.imagen = imagen;
+    public Boleta(String comprador, long idEvento, String creadorCorreo, long idBoleta , String creadorNombre) {
+        this.comprador = comprador;
+        this.idEvento = idEvento;
+        this.creadorCorreo = creadorCorreo;
+        this.idBoleta = idBoleta;
+        this.creadorNombre = creadorNombre;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getComprador() {
+        return comprador;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public long getIdEvento() {
+        return idEvento;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getCreadorCorreo() {
+        return creadorCorreo;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public long getIdBoleta() {
+        return idBoleta;
     }
 
-    public Image getImagen() {
-        return this.imagen;
-    }
-
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
+    public String getCreadorNombre() {
+        return creadorNombre;
     }
 }

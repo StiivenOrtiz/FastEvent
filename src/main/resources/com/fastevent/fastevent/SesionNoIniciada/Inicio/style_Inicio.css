@@ -104,6 +104,25 @@
     -fx-text-fill: #CFB14F;
 }
 
+/* Estilo para los botones de la barra de navegación actual */
+
+.nav-button-actual {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CFB14F;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 0px;
+    -fx-font-family: "Arial";
+    -fx-border-width: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+/* Cambio de color cuando los botones de navegación se les coloca encima el mouse */
+
+.nav-button-actual:hover {
+    -fx-text-fill: #CFB14F;
+}
+
 /* Estilo para el botón de invisible que tiene la imagen de "FastEvent" en navegación */
 
 .nav-invisible-button {
@@ -197,8 +216,14 @@
     -fx-background-color: white;
 }
 
-.imagenes {
-    -fx-border-radius: 10px;
+.imagen1 {
+    -fx-border-radius: 30px;
+    -fx-image: url("contenido/imagen1.jpg");
+}
+
+.imagen2 {
+    -fx-border-radius: 30px;
+    -fx-image: url("contenido/imagen2.jpg");
 }
 
 .separatorG {

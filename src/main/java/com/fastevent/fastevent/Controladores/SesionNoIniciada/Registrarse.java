@@ -3,7 +3,8 @@ package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Interfaces.IAutenticacion;
 import com.fastevent.fastevent.Logica.Autenticacion;
-import com.fastevent.fastevent.Utilidades.Constantes;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESFXML;
+import com.fastevent.fastevent.Utilidades.NOMBRESPANTALLAS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -22,15 +23,15 @@ public class Registrarse extends Controlador {
     public CheckBox checkBoxAceptarTerminos;
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSNI, DIRECCIONESFXML.INICIOSNI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSNI, DIRECCIONESFXML.INICIOSNI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
@@ -87,8 +88,7 @@ public class Registrarse extends Controlador {
     }
 
     public void botonIniciarSesion(ActionEvent actionEvent) {
-        System.out.println("Boton iniciar sesion");
-        cargarPantalla("IniciarSesion", Constantes.obtenerFXML("IniciarSesion"));
+        cargarPantalla(NOMBRESPANTALLAS.INICIARSESION, DIRECCIONESFXML.INICIARSESION);
     }
 
     public void botonRegistrarse(ActionEvent actionEvent) {
@@ -117,9 +117,10 @@ public class Registrarse extends Controlador {
                 error = true;
             } else {
                 IAutenticacion autenticacion = new Autenticacion();
-                if (autenticacion.registrarse(nombres.getText(), apellidos.getText(), correoElectronico.getText(), contrasena.getText()))
+                if (autenticacion.registrarse(nombres.getText(), apellidos.getText(), correoElectronico.getText(), contrasena.getText())) {
                     mostrarMensajeInformativo("Se ha registrado correctamente", "Se ha registrado correctamente", "Registro exitoso");
-                else
+                    cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
+                } else
                     mostrarMensajeError("No se ha podido registrar", "Intente nuevamente con otro correo");
             }
 

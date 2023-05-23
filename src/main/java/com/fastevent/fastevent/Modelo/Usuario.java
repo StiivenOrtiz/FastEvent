@@ -7,14 +7,17 @@ public class Usuario implements Serializable {
     private String nombres;
     private String apellidos;
     private String correo;
+    private long eventosCreados;
+    private long publicacionesCreadas;
 
-    public Usuario(String nombres, String apellidos, String correo, String contrasena) {
+    public Usuario(String nombres, String apellidos, String correo, String contrasena, int eventosCreados, int publicacionesCreadas) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
         this.contrasena = contrasena;
+        this.eventosCreados = eventosCreados;
+        this.publicacionesCreadas = publicacionesCreadas;
     }
-
 
     public String getNombres() {
         return nombres;
@@ -46,6 +49,22 @@ public class Usuario implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.correo = contrasena;
+    }
+
+    public long getEventosCreados() {
+        return eventosCreados;
+    }
+
+    public void setEventosCreados(long eventosCreados) {
+        this.eventosCreados = eventosCreados;
+    }
+
+    public long getPublicacionesCreadas() {
+        return publicacionesCreadas;
+    }
+
+    public void setPublicacionesCreadas(long publicacionesCreadas) {
+        this.publicacionesCreadas = publicacionesCreadas;
     }
 
 }

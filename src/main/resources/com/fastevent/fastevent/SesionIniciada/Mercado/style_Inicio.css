@@ -439,3 +439,30 @@
 .boton-categoria .jfx-rippler {
     -jfx-rippler-fill: #CFB14F;
 }
+
+/* Botón volver */
+
+.boton-volver {
+    -fx-background-image: url("CrearPublicacion/icono_volver.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Botón volver */
+
+.boton-volver:hover {
+    -fx-background-image: url("CrearPublicacion/icono_volver_seleccionado.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 26px 26px;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+
+/* Configurar rippler */
+
+.boton-volver .jfx-rippler {
+    -jfx-rippler-fill: #CFB14F;
+}

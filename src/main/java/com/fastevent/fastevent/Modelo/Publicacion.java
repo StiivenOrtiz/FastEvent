@@ -1,22 +1,29 @@
 package com.fastevent.fastevent.Modelo;
 
-public class Publicacion {
-    String titulo;
-    String descripcion;
-    double precio;
-    String direccionimagen;
-    String categoria;
-    String proveedor;
-    double calificacion;
+import java.io.Serializable;
 
-    public Publicacion(String titulo, String descripcion, double precio, String direccionimagen, String categoria, String proveedor, double calificacion) {
+public class Publicacion implements Serializable {
+    private String titulo;
+    private String descripcion;
+    private double precio;
+    private String direccionimagen;
+    private String categoria;
+    private String proveedorCorreo;
+    private String proveedorNombre;
+    private double calificacion;
+    private long idPublicacion;
+
+
+    public Publicacion(String titulo, String descripcion, double precio, String direccionimagen, String categoria, String proveedorCorreo, String proveedorNombre, double calificacion, long idPublicacion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.direccionimagen = direccionimagen;
         this.categoria = categoria;
-        this.proveedor = proveedor;
+        this.proveedorCorreo = proveedorCorreo;
+        this.proveedorNombre = proveedorNombre;
         this.calificacion = calificacion;
+        this.idPublicacion = idPublicacion;
     }
 
     public String getTitulo() {
@@ -55,16 +62,32 @@ public class Publicacion {
         this.categoria = categoria;
     }
 
-    public String getProveedor() {
-        return proveedor;
+    public String getProveedorCorreo() {
+        return proveedorCorreo;
     }
 
-    void setProveedor(String proveedor) {
-        this.proveedor = proveedor;
+    void setProveedorCorreo(String proveedorCorreo) {
+        this.proveedorCorreo = proveedorCorreo;
+    }
+
+    public String getProveedorNombre() {
+        return proveedorNombre;
+    }
+
+    void setProveedorNombre(String proveedorNombre) {
+        this.proveedorNombre = proveedorNombre;
     }
 
     public double getCalificacion() {
         return calificacion;
+    }
+
+    public long getIdPublicacion() {
+        return idPublicacion;
+    }
+
+    public void setIdPublicacion(long idPublicacion) {
+        this.idPublicacion = idPublicacion;
     }
 
     void setCalificacion(double calificacion) {
@@ -78,5 +101,4 @@ public class Publicacion {
     void setDireccionimagen(String direccionimagen) {
         this.direccionimagen = direccionimagen;
     }
-
 }

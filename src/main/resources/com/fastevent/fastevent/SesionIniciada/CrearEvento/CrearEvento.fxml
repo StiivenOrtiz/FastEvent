@@ -3,13 +3,10 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<?import com.sun.javafx.scene.control.IntegerField?>
-<?import com.jfoenix.skins.JFXTimePickerContent?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             xmlns="http://javafx.com/javafx"
             fx:controller="com.fastevent.fastevent.Controladores.SesionIniciada.CrearEvento"
@@ -66,10 +63,12 @@
                                     <HBox alignment="CENTER_LEFT">
                                         <Label text="HH "
                                                style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                                        <Spinner fx:id="horaInicio" min="0" max="23" initialValue="0" styleClass="spinner"/>
+                                        <Spinner fx:id="horaInicio" min="0" max="23" initialValue="0"
+                                                 styleClass="spinner"/>
                                         <Label text=" MM "
                                                style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                                        <Spinner fx:id="minutoInicio" min="0" max="59" initialValue="0" styleClass="spinner"/>
+                                        <Spinner fx:id="minutoInicio" min="0" max="59" initialValue="0"
+                                                 styleClass="spinner"/>
                                     </HBox>
 
                                 </VBox>
@@ -83,10 +82,12 @@
                                     <HBox alignment="CENTER_LEFT">
                                         <Label text="HH "
                                                style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                                        <Spinner fx:id="horaFin" min="0" max="23" initialValue="0" styleClass="spinner"/>
+                                        <Spinner fx:id="horaFin" min="0" max="23" initialValue="0"
+                                                 styleClass="spinner"/>
                                         <Label text=" MM "
                                                style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
-                                        <Spinner fx:id="minutoFin" min="0" max="59" initialValue="0" styleClass="spinner"/>
+                                        <Spinner fx:id="minutoFin" min="0" max="59" initialValue="0"
+                                                 styleClass="spinner"/>
                                     </HBox>
                                 </VBox>
                             </HBox>
@@ -106,7 +107,8 @@
                                         <Label text="\$"
                                                style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
                                         <TextField fx:id="precioEvento"
-                                                   style="-fx-text-fill: black; -fx-font-size: 14px; -fx-background-color: white; -fx-padding: 1px;" visible="false" disable="true"/>
+                                                   style="-fx-text-fill: black; -fx-font-size: 14px; -fx-background-color: white; -fx-padding: 1px;"
+                                                   visible="false" disable="true"/>
                                     </HBox>
                                 </VBox>
                             </HBox>
@@ -131,20 +133,27 @@
                     </HBox>
 
                     <!-- Titulo: Proveedores -->
-                    <Label text="Proveedores" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
+                    <Label text="Proveedores"
+                           style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;"/>
 
                     <!-- Lista de eventos realizados por el usuario -->
                     <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
                           AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
-                        <ListView fx:id="listaProveedores"  minHeight="200" HBox.hgrow="ALWAYS"
+                        <ListView fx:id="listaProveedores" minHeight="200" HBox.hgrow="ALWAYS"
                                   maxWidth="800" maxHeight="400" onMouseClicked="#accionSeleccionarProveedor"
                                   styleClass="lista-proveedores"/>
+                    </HBox>
+                    <HBox alignment="CENTER" style="-fx-padding: 0px 200px; -fx-background-color: transparent;"
+                          AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
+                        <JFXButton text="Agregar proveedor" styleClass="boton-agregar-proveedor" maxHeight="33"
+                                   minHeight="33"
+                                   minWidth="180" maxWidth="180" alignment="CENTER" onAction="#agregarProveedor"/>
                     </HBox>
 
                     <Pane VBox.vgrow="ALWAYS"/>
                     <JFXButton fx:id="botonCrearEvento" styleClass="boton-crear-evento" maxHeight="33"
                                minHeight="33"
-                               minWidth="180" maxWidth="180" alignment="CENTER"/>
+                               minWidth="130" maxWidth="130" alignment="CENTER"/>
                 </VBox>
 
 

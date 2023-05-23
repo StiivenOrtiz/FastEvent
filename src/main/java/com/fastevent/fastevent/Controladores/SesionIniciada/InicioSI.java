@@ -3,9 +3,16 @@ package com.fastevent.fastevent.Controladores.SesionIniciada;
 // imports de FastEvent
 
 import com.fastevent.fastevent.Controladores.Controlador;
+import com.fastevent.fastevent.Interfaces.IPersistenciaBoletas;
+import com.fastevent.fastevent.Interfaces.IPersistenciaEventos;
 import com.fastevent.fastevent.Modelo.Boleta;
 import com.fastevent.fastevent.Modelo.Evento;
 import com.fastevent.fastevent.Modelo.Notificacion;
+import com.fastevent.fastevent.Persistencia.Boletas.PersistenciaBoletas;
+import com.fastevent.fastevent.Persistencia.Eventos.PersistenciaEventos;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESFXML;
+import com.fastevent.fastevent.Utilidades.NOMBRESPANTALLAS;
+import com.fastevent.fastevent.Utilidades.Sesion;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
@@ -22,8 +29,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import org.controlsfx.control.SearchableComboBox;
 
-import java.util.ArrayList;
+import java.net.MalformedURLException;
+import java.nio.file.Path;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 
 public class InicioSI extends Controlador {
@@ -33,6 +43,7 @@ public class InicioSI extends Controlador {
      */
 
     private final BooleanProperty estadoDeNotifaciones = new SimpleBooleanProperty(false);
+    private List<Evento> eventosBoletas;
     @FXML
     public Button botonBorrarNotificaciones;
     @FXML
@@ -51,101 +62,107 @@ public class InicioSI extends Controlador {
     // Métodos de la barra de navegación
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        System.out.println("Logo rectangular presionado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        System.out.println("Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        System.out.println("Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
-        System.out.println("Nosotros");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Nosotros");
     }
 
     public void accionBotonContactenos(ActionEvent actionEvent) {
-        System.out.println("Contactenos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contactenos");
     }
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
-        System.out.println("Boleteria");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Boleteria");
     }
 
     public void accionPerfilDeUsuario(ActionEvent actionEvent) {
-        System.out.println("Perfil de usuario");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Perfil de usuario");
     }
 
     // Métodos del footer
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Twitter");
     }
 
     public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Linkedin");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
-        System.out.println("Terminos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Terminos y condiciones");
     }
 
     public void botonPrivacidad(ActionEvent actionEvent) {
-        System.out.println("Privacidad");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Privacidad");
     }
 
     public void accionBotonFacebook(ActionEvent actionEvent) {
-        System.out.println("Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Facebook");
     }
 
     public void accionBotonInstagram(ActionEvent actionEvent) {
-        System.out.println("Instagram");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Instagram");
     }
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
-        System.out.println("Preguntas frecuentes");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Preguntas frecuentes");
     }
 
     // Métodos de la barra de navegación vertical
 
     public void accionBotonUsuarios(ActionEvent actionEvent) {
-        System.out.println("Usuarios");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Usuarios");
     }
 
     public void accionBotonMercado(ActionEvent actionEvent) {
-        System.out.println("Mercado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOMERCADO, DIRECCIONESFXML.INICIOMERCADO);
     }
 
     public void accionBotonMisBoletas(ActionEvent actionEvent) {
-        System.out.println("Mis boletas");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Comprar boletas");
     }
 
     public void accionBotonMisEventos(ActionEvent actionEvent) {
-        System.out.println("Mis eventos");
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREAREVENTO);
+    }
+
+    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Mis finanzas");
 
         /* Ejemplo de notificacioón */
         listaDeNotificaciones.getItems().add(new Notificacion("Se ha recibido una nueva notificación", "https://www.google.com/"));
         estadoDeNotifaciones.set(true);
     }
 
-    public void accionBotonMisFinanzas(ActionEvent actionEvent) {
-        System.out.println("Mis finanzas");
-    }
-
     public void accionSeleccionarMiEventos(MouseEvent mouseEvent) {
-        // Obtener el índice del elemento seleccionado
-        int indice = listaMisEventos.getSelectionModel().getSelectedIndex();
-        // Imprimir el número del índice del elemento seleccionado
-        System.out.println("Elemento seleccionado: " + listaMisEventos.getItems().get(indice).getNombre());
+        try {
+            // Obtener el índice del elemento seleccionado
+            int indice = listaMisEventos.getSelectionModel().getSelectedIndex();
+            // Imprimir el número del índice del elemento seleccionado
+            System.out.println("Elemento seleccionado: " + listaMisEventos.getItems().get(indice).getNombre());
+        } catch (Exception ignored) {
+        }
     }
 
     public void accionSeleccionarMiBoletas(MouseEvent mouseEvent) {
-        // Obtener el índice del elemento seleccionado
-        int indice = listaMisBoletas.getSelectionModel().getSelectedIndex();
-        // Imprimir el número del índice del elemento seleccionado
-        System.out.println("Elemento seleccionado: " + listaMisBoletas.getItems().get(indice).getNombre() + " " + listaMisBoletas.getItems().get(indice).getFecha());
+        try {
+            // Obtener el índice del elemento seleccionado
+            int indice = listaMisBoletas.getSelectionModel().getSelectedIndex();
+            // Imprimir el número del índice del elemento seleccionado
+            System.out.println("Elemento seleccionado: " + listaMisBoletas.getItems().get(indice).getIdEvento() + " " + listaMisBoletas.getItems().get(indice).getCreadorNombre());
+        } catch (Exception ignored) {
+        }
     }
 
     public void imprimirNotificacionSeleccionada(MouseEvent mouseEvent) {
@@ -186,18 +203,16 @@ public class InicioSI extends Controlador {
     }
 
     private void generarEjemplo() {
-        // Crear objetos de ejemplo
-        List<Boleta> boletas = new ArrayList<>();
-        List<Evento> eventos = new ArrayList<>();
+        IPersistenciaEventos persistenciaEventos = new PersistenciaEventos();
+        IPersistenciaBoletas persistenciaBoletas = new PersistenciaBoletas();
 
-        for (int i = 0; i < 12; i++) {
-            boletas.add(new Boleta("Boleta " + i, "23/12/2003", new Image("Ejemplo.png")));
-            eventos.add(new Evento("Evento " + i, new Image("Ejemplo.png")));
-        }
+        List<Boleta> boletas = persistenciaBoletas.obtenerBoletasUsuario();
 
         // Agregar la lista de usuarios al ListView
-        listaMisEventos.getItems().addAll(eventos);
+        listaMisEventos.getItems().addAll(persistenciaEventos.obtenerEventosUsuario());
         listaMisBoletas.getItems().addAll(boletas);
+
+        eventosBoletas = persistenciaEventos.obtenerEventosBoletas(boletas);
 
         // Agregar elementos a la lista de busqueda
         barraDeBusqueda.getItems().addAll("Manzana", "Banana", "Cereza", "Durazno", "Uva");
@@ -293,8 +308,14 @@ public class InicioSI extends Controlador {
                     setGraphic(null);
                 } else {
                     // graficamos el contenedor
-                    HBox contenedor = generarContenedorHboxImpresion(boleta);
-                    setGraphic(contenedor);
+                    Optional<Evento> eventoCorrespondiente = eventosBoletas.stream()
+                            .filter(evento ->
+                                    boleta.getIdEvento() == evento.getId() && boleta.getCreadorCorreo().equals(evento.getCreadorCorreo()))
+                            .findFirst();
+                    if (eventoCorrespondiente.isPresent()) {
+                        HBox contenedor = generarContenedorHboxImpresion(boleta, eventoCorrespondiente.get());
+                        setGraphic(contenedor);
+                    }
                 }
             }
         });
@@ -320,9 +341,18 @@ public class InicioSI extends Controlador {
         return label;
     }
 
-    private HBox generarContenedorHboxImpresion(Boleta boleta) {
+    private HBox generarContenedorHboxImpresion(Boleta boleta, Evento evento) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String label = evento.getFechaInicio().format(formatter) + " - " + evento.getFechaFin().format(formatter) + " - " + boleta.getIdBoleta() + " - " + boleta.getCreadorNombre();
         // añadimos los elementos al contenedor HBox
-        HBox hbox = new HBox(generarContenedorDeImagen(boleta.getImagen()), generarLabel(boleta.getNombre()), generarLabel(boleta.getFecha()));
+
+        Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(evento.getDireccionImagen());
+        String direccion = "";
+        try {
+            direccion = rutaAbsoluta.toUri().toURL().toString();
+        } catch (MalformedURLException ignored) {}
+
+        HBox hbox = new HBox(generarContenedorDeImagen(new Image(direccion)), generarLabel(evento.getNombre()), generarLabel(label));
         // le damos un espaciado de 15 entre los elementos
         hbox.setSpacing(15);
         // alineamos los elementos a la izquierda
@@ -334,8 +364,13 @@ public class InicioSI extends Controlador {
     }
 
     private HBox generarContenedorHboxImpresion(Evento evento) {
+        Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(evento.getDireccionImagen());
+        String direccion = "";
+        try {
+            direccion = rutaAbsoluta.toUri().toURL().toString();
+        } catch (MalformedURLException ignored) {}
         // añadimos los elementos al contenedor HBox
-        HBox hbox = new HBox(generarContenedorDeImagen(evento.getImagen()), generarLabel(evento.getNombre()));
+        HBox hbox = new HBox(generarContenedorDeImagen(new Image(direccion)), generarLabel(evento.getNombre()));
         // le damos un espaciado de 15 entre los elementos
         hbox.setSpacing(15);
         // alineamos los elementos a la izquierda

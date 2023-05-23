@@ -32,6 +32,11 @@
                 <HBox alignment="CENTER" spacing="10">
                     <VBox alignment="TOP_CENTER" spacing="5">
 
+                        <HBox alignment="CENTER">
+                            <JFXButton styleClass="boton-volver" onAction="#accionBotonVolver" minWidth="26"
+                                       minHeight="26" maxWidth="26" maxHeight="26"/>
+                        </HBox>
+
                         <Pane minHeight="36"/>
 
                         <!-- Titulo: Publicaciones -->

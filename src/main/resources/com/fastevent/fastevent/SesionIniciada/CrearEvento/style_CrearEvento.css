@@ -626,3 +626,27 @@
 .date-picker-popup .day-cell {
     -fx-text-fill: black;
 }
+
+.boton-agregar-proveedor {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-color: #CFB14F;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-padding: 0 0 5 0;
+    -fx-cursor: hand;
+}
+
+/* Estilo boton comprar seleccionado */
+
+.boton-agregar-proveedor:hover {
+    -fx-background-color: transparent;
+}
+
+/* Configurar rippler */
+
+.boton-agregar-proveedor .jfx-rippler {
+    -jfx-rippler-fill: #CFB14F;
+}

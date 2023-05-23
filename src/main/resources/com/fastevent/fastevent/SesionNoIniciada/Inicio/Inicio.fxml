@@ -28,41 +28,32 @@
 
                 <Pane minHeight="20"/>
 
-                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                            minWidth="-Infinity" prefHeight="468.0" prefWidth="912.0"
-                            xmlns="http://javafx.com/javafx/18">
-                    <children>
-                        <Text fill="WHITE" layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                              style="-fx-font-weight: bold;" text="EL ÉXITO DE TU EVENTO ESTÁ ASEGURADO"
-                              wrappingWidth="344.8466796875">
-                            <font>
-                                <Font size="44.0"/>
-                            </font>
-                        </Text>
-                        <Text fill="WHITE" layoutX="26.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                              text="Organiza eventos mediante la seleccion y coordinacion de uno o varios proveedores"
-                              wrappingWidth="273.212890625">
-                            <font>
-                                <Font size="15.0"/>
-                            </font>
-                        </Text>
-                        <JFXButton text="Organizar evento" layoutX="36.0" layoutY="358.0"
-                                   styleClass="nav-button-log-reg" textFill="WHITE" onAction="#accionBotonInicioSNI"/>
-                        <!-- <Button layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="Organizar evento" textFill="WHITE" /> -->
-                        <Pane HBox.hgrow="ALWAYS"/>
-                        <ImageView styleClass="imagenes" fitHeight="300.0" fitWidth="400.0" layoutX="398.0"
-                                   layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="https://wallpapercave.com/wp/wp2848043.jpg"/>
-                            </image>
-                        </ImageView>
-                        <ImageView styleClass="imagenes" fitHeight="300.0" fitWidth="400.0" layoutX="428.0"
-                                   layoutY="168.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="https://wallpaper-house.com/data/out/7/wallpaper2you_155333.jpg"/>
-                            </image>
-                        </ImageView>
-                    </children>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="468.0" prefWidth="912.0">
+                    <Text fill="WHITE" layoutX="26.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          style="-fx-font-weight: bold; -fx-font-size: 44" text="EL ÉXITO DE TU EVENTO ESTÁ ASEGURADO"
+                          wrappingWidth="344.8466796875">
+                        <font>
+                            <Font size="44.0"/>
+                        </font>
+                    </Text>
+                    <Text fill="WHITE" layoutX="26.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          text="Organiza eventos mediante la seleccion y coordinacion de uno o varios proveedores"
+                          wrappingWidth="273.212890625">
+                        <font>
+                            <Font size="15.0"/>
+                        </font>
+                    </Text>
+                    <JFXButton text="Organizar evento" layoutX="36.0" layoutY="358.0"
+                               styleClass="nav-button-log-reg" textFill="WHITE" onAction="#botonIniciarSesion"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <ImageView styleClass="imagen1" fitHeight="300.0" fitWidth="400.0" layoutX="398.0"
+                               layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
+                    <ImageView styleClass="imagen2" fitHeight="300.0" fitWidth="400.0" layoutX="428.0"
+                               layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                    </ImageView>
                 </AnchorPane>
 
                 <Pane minHeight="30"/>
@@ -72,64 +63,62 @@
 
                 <Pane minHeight="50"/>
 
-                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity"
                             minWidth="-Infinity" prefHeight="468.0"
                             prefWidth="729.0"
-                            style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
-                    <children>
-                        <Text layoutX="27.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                              style="-fx-font-weight: bold;" text="¡lleva a cabo tu propio evento!"
-                              wrappingWidth="344.8466796875">
+                            style="-fx-background-color: white; -fx-border-radius: 30;"
+                            xmlns="http://javafx.com/javafx/18">
+                    <Text layoutX="27.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          style="-fx-font-weight: bold; -fx-font-size: 24" text="¡Lleva a cabo tu propio evento!"
+                          wrappingWidth="344.8466796875">
+                        <font>
+                            <Font size="24.0"/>
+                        </font>
+                    </Text>
+                    <Text layoutX="27.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          text="La mejor manera de llevar a cabo tu evento" wrappingWidth="273.212890625">
+                        <font>
+                            <Font size="11.0"/>
+                        </font>
+                    </Text>
+                    <JFXButton text="Crear Evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg"
+                               textFill="WHITE" onAction="#botonIniciarSesion"/>
+                    <VBox layoutX="440.0" layoutY="-1.0" prefHeight="468.0" prefWidth="289.0">
+                        <Pane prefHeight="60.0" prefWidth="289.0"/>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 1">
                             <font>
-                                <Font size="24.0"/>
+                                <Font size="18.0"/>
                             </font>
                         </Text>
-                        <Text layoutX="27.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                              text="La mejor manera de llevar a cabo tu evento" wrappingWidth="273.212890625">
+                        <Pane prefHeight="12.0" prefWidth="289.0"/>
+                        <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Llena el formulario de datos basicos para tu evento"
+                              wrappingWidth="192.6796875"/>
+                        <Pane prefHeight="51.0" prefWidth="289.0"/>
+                        <Pane minHeight="1" styleClass="separatorG" maxWidth="220"/>
+                        <Pane prefHeight="30.0" prefWidth="289.0"/>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 2">
                             <font>
-                                <Font size="11.0"/>
+                                <Font size="18.0"/>
                             </font>
                         </Text>
-                        <JFXButton text="Crear Evento" layoutX="36.0" layoutY="358.0" styleClass="nav-button-log-reg"
-                                   textFill="WHITE" onAction="#accionBotonInicioSNI"/>
-                        <VBox layoutX="440.0" layoutY="-1.0" prefHeight="468.0" prefWidth="289.0">
-                            <children>
-                                <Pane prefHeight="60.0" prefWidth="289.0"/>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 1">
-                                    <font>
-                                        <Font size="18.0"/>
-                                    </font>
-                                </Text>
-                                <Pane prefHeight="12.0" prefWidth="289.0"/>
-                                <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0"
-                                      text="Llena el formulario de datos basicos para tu evento"
-                                      wrappingWidth="192.6796875"/>
-                                <Pane prefHeight="51.0" prefWidth="289.0"/>
-                                <Pane minHeight="1" styleClass="separatorG" maxWidth="220"/>
-                                <Pane prefHeight="30.0" prefWidth="289.0"/>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 2">
-                                    <font>
-                                        <Font size="18.0"/>
-                                    </font>
-                                </Text>
-                                <Pane prefHeight="12.0" prefWidth="289.0"/>
-                                <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0"
-                                      text="Conectate y elige los proveedores para tu evento"
-                                      wrappingWidth="192.6796875"/>
-                                <Pane prefHeight="40.0" prefWidth="289.0"/>
-                                <Pane minHeight="1" styleClass="separatorG" maxWidth="220"/>
-                                <Pane prefHeight="30.0" prefWidth="289.0"/>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 3">
-                                    <font>
-                                        <Font size="18.0"/>
-                                    </font>
-                                </Text>
-                                <Pane prefHeight="12.0" prefWidth="289.0"/>
-                                <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0" text="Disfruta!"
-                                      wrappingWidth="192.6796875"/>
-                            </children>
-                        </VBox>
-                    </children>
+                        <Pane prefHeight="12.0" prefWidth="289.0"/>
+                        <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Conectate y elige los proveedores para tu evento"
+                              wrappingWidth="192.6796875"/>
+                        <Pane prefHeight="40.0" prefWidth="289.0"/>
+                        <Pane minHeight="1" styleClass="separatorG" maxWidth="220"/>
+                        <Pane prefHeight="30.0" prefWidth="289.0"/>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Paso 3">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Pane prefHeight="12.0" prefWidth="289.0"/>
+                        <Text fill="#909090" strokeType="OUTSIDE" strokeWidth="0.0" text="Disfruta!"
+                              wrappingWidth="192.6796875"/>
+                    </VBox>
                 </AnchorPane>
 
                 <Pane minHeight="50"/>
@@ -143,91 +132,91 @@
                 <HBox>
                     <Pane prefHeight="12.0" prefWidth="100.0"/>
 
-                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity"
+                                minHeight="-Infinity"
                                 minWidth="-Infinity" prefHeight="220.0"
                                 prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
-                        <children>
-                            <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="&quot;¡Me hice proveedor y logré aumentar mucho mis ventas!&quot;"
-                                  textAlignment="CENTER" wrappingWidth="229.724609375">
-                                <font>
-                                    <Font size="20.0"/>
-                                </font>
-                            </Text>
-                            <Text layoutX="135.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Camilo Torres"/>
-                            <Text fill="#949494" layoutX="165.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="DJ"/>
-                            <Rating layoutX="84.0" layoutY="104.0" rating="5.0" disable="true"
-                                    style="-fx-opacity: 1.0;"/>
-                        </children>
+                                style="-fx-background-color: white; -fx-border-radius: 30;"
+                                xmlns="http://javafx.com/javafx/18">
+                        <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="&quot;¡Me hice proveedor y logré aumentar mucho mis ventas!&quot;"
+                              textAlignment="CENTER" wrappingWidth="229.724609375">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Text>
+                        <Text layoutX="135.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Camilo Torres"/>
+                        <Text fill="#949494" layoutX="165.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="DJ"/>
+                        <Rating layoutX="84.0" layoutY="104.0" rating="5.0" disable="true"
+                                style="-fx-opacity: 1.0;"/>
                     </AnchorPane>
 
                     <Pane prefHeight="12.0" prefWidth="50.0"/>
 
 
-                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity"
+                                minHeight="-Infinity"
                                 minWidth="-Infinity" prefHeight="220.0"
                                 prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
-                        <children>
-                            <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="&quot;Logré organizar mi matrimonio tal como queria. Gracias FastEvent&quot;"
-                                  textAlignment="CENTER" wrappingWidth="229.724609375">
-                                <font>
-                                    <Font size="20.0"/>
-                                </font>
-                            </Text>
-                            <Text layoutX="144.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Efrain Diaz"/>
-                            <Text fill="#949494" layoutX="139.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Organizador"/>
-                            <Rating layoutX="83.0" layoutY="118.0" rating="5.0" disable="true"/>
-                        </children>
+                                style="-fx-background-color: white; -fx-border-radius: 30;"
+                                xmlns="http://javafx.com/javafx/18">
+                        <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="&quot;Logré organizar mi matrimonio tal como queria. Gracias FastEvent&quot;"
+                              textAlignment="CENTER" wrappingWidth="229.724609375">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Text>
+                        <Text layoutX="144.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Efrain Diaz"/>
+                        <Text fill="#949494" layoutX="139.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Organizador"/>
+                        <Rating layoutX="83.0" layoutY="118.0" rating="5.0" disable="true"/>
                     </AnchorPane>
 
                     <Pane prefHeight="12.0" prefWidth="50.0"/>
 
-                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                    <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity"
+                                minHeight="-Infinity"
                                 minWidth="-Infinity" prefHeight="220.0"
                                 prefWidth="332.0"
-                                style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
-                        <children>
-                            <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="&quot;Valió totalmente la pena por el precio ofrecido.&quot;"
-                                  textAlignment="CENTER" wrappingWidth="229.724609375">
-                                <font>
-                                    <Font size="20.0"/>
-                                </font>
-                            </Text>
-                            <Text layoutX="135.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Valeria Salazar"/>
-                            <Text fill="#949494" layoutX="135.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                                  text="Organizadora"/>
-                            <Rating layoutX="84.0" layoutY="100.0" rating="5.0" disable="true"/>
-                        </children>
+                                style="-fx-background-color: white; -fx-border-radius: 30;"
+                                xmlns="http://javafx.com/javafx/18">
+                        <Text layoutX="57.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="&quot;Valió totalmente la pena por el precio ofrecido.&quot;"
+                              textAlignment="CENTER" wrappingWidth="229.724609375">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Text>
+                        <Text layoutX="135.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Valeria Salazar"/>
+                        <Text fill="#949494" layoutX="135.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Organizadora"/>
+                        <Rating layoutX="84.0" layoutY="100.0" rating="5.0" disable="true"/>
                     </AnchorPane>
 
                 </HBox>
 
                 <Pane minHeight="200"/>
 
-                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity"
                             minWidth="-Infinity" prefHeight="327.0"
                             prefWidth="713.0"
-                            style="-fx-background-color: white; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/18">
-                    <children>
-                        <Text layoutX="60.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                              text="Inicia sesión para crear tu evento" wrappingWidth="385.515625">
-                            <font>
-                                <Font size="40.0"/>
-                            </font>
-                        </Text>
-                        <JFXButton text="Iniciar sesion" layoutX="60.0" layoutY="251.0" mnemonicParsing="false"
-                                   styleClass="nav-button-log-reg" textFill="WHITE" onAction="#accionBotonInicioSNI"/>
+                            style="-fx-background-color: white; -fx-border-radius: 30;"
+                            xmlns="http://javafx.com/javafx/18">
+                    <Text layoutX="60.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          text="Inicia sesión para crear tu evento" wrappingWidth="385.515625">
+                        <font>
+                            <Font size="40.0"/>
+                        </font>
+                    </Text>
+                    <JFXButton text="Iniciar sesion" layoutX="60.0" layoutY="251.0" mnemonicParsing="false"
+                               styleClass="nav-button-log-reg" textFill="WHITE" onAction="#botonIniciarSesion"/>
 
-                    </children>
                 </AnchorPane>
 
 
@@ -320,7 +309,7 @@
         <!-- Botones de la barra de navegación -->
 
         <!-- Botón "Inicio" -->
-        <Button text="Inicio" styleClass="nav-button" onAction="#accionBotonInicio"/>
+        <Button text="Inicio" styleClass="nav-button-actual" onAction="#accionBotonInicio"/>
         <!-- Botón "Precios" -->
         <Button text="Precios" styleClass="nav-button" onAction="#accionBotonPrecios"/>
         <!-- Botón "Nosotros" -->
@@ -332,6 +321,9 @@
 
         <!-- Elemento de relleno -->
         <Pane HBox.hgrow="ALWAYS"/>
+
+        <!-- Botón "Iniciar sesión" -->
+        <Button text="Iniciar Sesión" styleClass="nav-button" onAction="#botonIniciarSesion"/>
 
         <!-- Botón "Registrarse" -->
         <JFXButton text="Registrarse" styleClass="nav-button-log-reg" onAction="#botonRegistrarse"/>

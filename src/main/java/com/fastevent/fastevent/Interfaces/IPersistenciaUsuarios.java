@@ -8,4 +8,6 @@ public interface IPersistenciaUsuarios {
     boolean verificarExistencia(String correo);
 
     Usuario buscarUsuario(String correo);
+
+    public boolean actualizarUsuario();
 }

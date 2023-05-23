@@ -5,6 +5,10 @@ package com.fastevent.fastevent.Controladores.SesionIniciada.Mercado;
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Modelo.Notificacion;
 import com.fastevent.fastevent.Modelo.Publicacion;
+import com.fastevent.fastevent.Modelo.PublicacionDeEvento;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESFXML;
+import com.fastevent.fastevent.Utilidades.NOMBRESPANTALLAS;
+import com.fastevent.fastevent.Utilidades.Sesion;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -18,6 +22,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.Rating;
 import org.controlsfx.control.SearchableComboBox;
+
+import java.net.MalformedURLException;
+import java.nio.file.Path;
 
 
 public class MostrarPublicacion extends Controlador {
@@ -58,87 +65,84 @@ public class MostrarPublicacion extends Controlador {
     // Métodos de la barra de navegación
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        System.out.println("Logo rectangular presionado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        System.out.println("Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSI, DIRECCIONESFXML.INICIOSI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        System.out.println("Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
-        System.out.println("Nosotros");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Nosotros");
     }
 
     public void accionBotonContactenos(ActionEvent actionEvent) {
-        System.out.println("Contactenos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contactenos");
     }
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
-        System.out.println("Boleteria");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Boleteria");
     }
 
     public void accionPerfilDeUsuario(ActionEvent actionEvent) {
-        System.out.println("Perfil de usuario");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Perfil de usuario");
     }
 
     // Métodos del footer
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Twitter");
     }
 
     public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Linkedin");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
-        System.out.println("Terminos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Terminos y condiciones");
     }
 
     public void botonPrivacidad(ActionEvent actionEvent) {
-        System.out.println("Privacidad");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Privacidad");
     }
 
     public void accionBotonFacebook(ActionEvent actionEvent) {
-        System.out.println("Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Facebook");
     }
 
     public void accionBotonInstagram(ActionEvent actionEvent) {
-        System.out.println("Instagram");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Instagram");
     }
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
-        System.out.println("Preguntas frecuentes");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Preguntas frecuentes");
     }
 
     // Métodos de la barra de navegación vertical
 
     public void accionBotonUsuarios(ActionEvent actionEvent) {
-        System.out.println("Usuarios");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Usuarios");
     }
 
     public void accionBotonMercado(ActionEvent actionEvent) {
-        System.out.println("Mercado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOMERCADO, DIRECCIONESFXML.INICIOMERCADO);
     }
 
     public void accionBotonMisBoletas(ActionEvent actionEvent) {
-        System.out.println("Mis boletas");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Comprar boletas");
     }
 
     public void accionBotonMisEventos(ActionEvent actionEvent) {
-        System.out.println("Mis eventos");
-
-        /* Ejemplo de notificacioón */
-        listaDeNotificaciones.getItems().add(new Notificacion("Se ha recibido una nueva notificación", "https://www.google.com/"));
-        estadoDeNotifaciones.set(true);
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREAREVENTO);
     }
 
     public void accionBotonMisFinanzas(ActionEvent actionEvent) {
-        System.out.println("Mis finanzas");
+        listaDeNotificaciones.getItems().add(new Notificacion("Se ha recibido una nueva notificación", "https://www.google.com/"));
+        estadoDeNotifaciones.set(true);
     }
 
     public void imprimirNotificacionSeleccionada(MouseEvent mouseEvent) {
@@ -163,7 +167,9 @@ public class MostrarPublicacion extends Controlador {
     }
 
     public void accionBotonSerProveedor(ActionEvent actionEvent) {
-        System.out.println("Ser proveedor");
+        Sesion.setNombrePantallaAnterior(NOMBRESPANTALLAS.MOSTRARPUBLICACION);
+        Sesion.setFXMLPantallaAnterior(DIRECCIONESFXML.MOSTRARPUBLICACION);
+        cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREARPUBLICACION);
     }
 
 
@@ -172,7 +178,7 @@ public class MostrarPublicacion extends Controlador {
      */
 
     public void accionBotonVolver(ActionEvent actionEvent) {
-        System.out.println("Volver");
+        cargarPublicacionesCategoria(publicacion.getCategoria());
     }
 
     public void setPublicacion(Publicacion publicacion) {
@@ -188,15 +194,6 @@ public class MostrarPublicacion extends Controlador {
             if (e.getCode() == KeyCode.ENTER)
                 buscarBarraDeBusqueda();
         });
-    }
-
-    private void generarEjemplo() {
-        // Agregar elementos a la lista de busqueda
-        barraDeBusqueda.getItems().addAll("Manzana", "Banana", "Cereza", "Durazno", "Uva");
-
-        String direccionImagen = "com/fastevent/fastevent/SesionIniciada/Mercado/nav-bar/icono_borrar-notificaciones.png";
-        Publicacion publicacionEJ = new Publicacion("Publicacion a", "Descripcion a", 0.0, direccionImagen, "Categoria a", "Proveedor a", 0.0);
-        setPublicacion(publicacionEJ);
     }
 
     private void configurarEstadoNotificaciones() {
@@ -264,8 +261,11 @@ public class MostrarPublicacion extends Controlador {
         });
     }
 
-    private void crearImagenPublicacion() {
-        imageViewPublicacion.setImage(new Image(publicacion.getDireccionImagen()));
+    private void crearImagenPublicacion() throws MalformedURLException {
+        Path rutaAbsoluta = Path.of(System.getProperty("user.dir")).resolve(publicacion.getDireccionImagen());
+        String direccion = rutaAbsoluta.toUri().toURL().toString();
+
+        imageViewPublicacion.setImage(new Image(direccion));
 
         imageViewPublicacion.setFitWidth(400);
         imageViewPublicacion.setFitHeight(280);
@@ -299,17 +299,22 @@ public class MostrarPublicacion extends Controlador {
     }
 
     private void crearProveedorPublicacion() {
-        proveedorPublicacion.setText(publicacion.getProveedor());
+        proveedorPublicacion.setText(publicacion.getProveedorNombre());
     }
 
-    private void configurarPublicacion() {
-        crearImagenPublicacion();
-        crearTituloPublicacion();
-        crearDescripcionPublicacion();
-        crearCalificacionPublicacion();
-        crearPrecioPublicacion();
-        crearCategoriaPublicacion();
-        crearProveedorPublicacion();
+    public void configurarPublicacion() {
+        barraDeBusqueda.getItems().addAll("Manzana", "Banana", "Cereza", "Durazno", "Uva");
+        try {
+            crearImagenPublicacion();
+            crearTituloPublicacion();
+            crearDescripcionPublicacion();
+            crearCalificacionPublicacion();
+            crearPrecioPublicacion();
+            crearCategoriaPublicacion();
+            crearProveedorPublicacion();
+        }catch (MalformedURLException e) {
+            System.out.println("Error al cargar la imagen de la publicación");
+        }
     }
 
     public void initialize() {
@@ -327,13 +332,21 @@ public class MostrarPublicacion extends Controlador {
         // Configurar el estilo de la barra de búsqueda
         configurarAccionEnterParaBarraDeBusqueda();
 
-        /* Ejemplo */
-        // Genera un ejemplo de la generación de listas y barra de búsqueda
-        generarEjemplo();
+        if(Sesion.getEventoEnDesarrollo() != null) {
+            botonComprar.setText("Agregar a la lista");
+            botonComprar.setMinWidth(200);
+        }else
+            botonComprar.setText("Contactar");
 
-        // añadido
-        configurarPublicacion();
-
-        botonComprar.setText("Comprar");
+        botonComprar.setOnAction(e -> {
+            if(Sesion.getEventoEnDesarrollo() != null) {
+                PublicacionDeEvento publicacionDeEvento = new PublicacionDeEvento(publicacion);
+                Sesion.getEventoEnDesarrollo().getPublicacionesDeEvento().add(publicacionDeEvento);
+                mostrarMensajeInformativo("Publicación agregada a la lista de compras", "Podrá ver su proveedor en la creación del evento", "Exito");
+                cargarPantalla(NOMBRESPANTALLAS.CREAREVENTO, DIRECCIONESFXML.CREAREVENTO);
+            }else {
+                mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contacte al proveedor");
+            }
+        });
     }
 }

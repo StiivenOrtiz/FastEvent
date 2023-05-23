@@ -1,5 +1,6 @@
 package com.fastevent.fastevent.Controladores;
 
+import com.fastevent.fastevent.Modelo.Publicacion;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
@@ -12,13 +13,34 @@ public class Controlador {
         this.stage = stage;
     }
 
-    public void cargarPantalla(String nombrePantalla, String direccionFXML) {
+    protected void cargarPantalla(String nombrePantalla, String direccionFXML) {
         try {
             CargadorPantallas.cargarPantalla(nombrePantalla, direccionFXML, this.stage, false);
-            //stage.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("No se pudo cargar la pantalla: " + nombrePantalla);
+            alert.setHeaderText("ERROR DE CARGADOR DE PANTALLAS");
+            alert.show();
+        }
+    }
+
+    protected void cargarPublicacionesCategoria(String categoria) {
+        try {
+            CargadorPantallas.cargarCategoria(this.stage, categoria);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No se pudo cargar la pantalla: " + categoria);
+            alert.setHeaderText("ERROR DE CARGADOR DE PANTALLAS");
+            alert.show();
+        }
+    }
+
+    protected void cargarPublicacion(Publicacion publicacion) {
+        try {
+            CargadorPantallas.cargarPublicacion(this.stage, publicacion);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No se pudo cargar la pantalla: " + publicacion);
             alert.setHeaderText("ERROR DE CARGADOR DE PANTALLAS");
             alert.show();
         }

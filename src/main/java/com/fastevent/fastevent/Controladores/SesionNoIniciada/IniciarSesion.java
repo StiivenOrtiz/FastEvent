@@ -1,9 +1,11 @@
 package com.fastevent.fastevent.Controladores.SesionNoIniciada;
 
+
 import com.fastevent.fastevent.Controladores.Controlador;
 import com.fastevent.fastevent.Interfaces.IAutenticacion;
 import com.fastevent.fastevent.Logica.Autenticacion;
-import com.fastevent.fastevent.Utilidades.Constantes;
+import com.fastevent.fastevent.Utilidades.DIRECCIONESFXML;
+import com.fastevent.fastevent.Utilidades.NOMBRESPANTALLAS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -18,71 +20,76 @@ public class IniciarSesion extends Controlador {
     private PasswordField contrasena;
 
     public void botonLogoRectangularPresionado(ActionEvent actionEvent) {
-        System.out.println("Logo rectangular presionado");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSNI, DIRECCIONESFXML.INICIOSNI);
     }
 
     public void accionBotonInicio(ActionEvent actionEvent) {
-        System.out.println("Inicio");
+        cargarPantalla(NOMBRESPANTALLAS.INICIOSNI, DIRECCIONESFXML.INICIOSNI);
     }
 
     public void accionBotonPrecios(ActionEvent actionEvent) {
-        System.out.println("Precios");
+        cargarPantalla(NOMBRESPANTALLAS.PRECIOS, DIRECCIONESFXML.PRECIOS);
     }
 
     public void accionBotonNosotros(ActionEvent actionEvent) {
-        System.out.println("Nosotros");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Nosotros");
+
     }
 
     public void accionBotonContactenos(ActionEvent actionEvent) {
-        System.out.println("Contactenos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Contactenos");
     }
 
     public void accionBotonBoleteria(ActionEvent actionEvent) {
-        System.out.println("Boleteria");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Boleteria");
     }
 
     public void accionBotonTwitter(ActionEvent actionEvent) {
-        System.out.println("Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Twitter");
     }
 
     public void accionBotonLinkedin(ActionEvent actionEvent) {
-        System.out.println("Linkedin");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Linkedin");
     }
 
     public void iniciarSesionConFacebook(ActionEvent actionEvent) {
-        System.out.println("Iniciar sesión con Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Iniciar sesión con Facebook");
     }
 
     public void iniciarSesionConTwitter(ActionEvent actionEvent) {
-        System.out.println("Iniciar sesión con Twitter");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Iniciar sesión con Twitter");
     }
 
     public void iniciarSesionConGoogle(ActionEvent actionEvent) {
-        System.out.println("Iniciar sesión con Google");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Iniciar sesión con Google");
     }
 
     public void botonNecesitasAyuda(ActionEvent actionEvent) {
-        System.out.println("Necesitas ayuda");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Necesitas ayuda");
     }
 
     public void botonTerminos(ActionEvent actionEvent) {
-        System.out.println("Terminos");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Terminos y condiciones");
     }
 
     public void botonPrivacidad(ActionEvent actionEvent) {
-        System.out.println("Privacidad");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Privacidad");
     }
 
     public void accionBotonFacebook(ActionEvent actionEvent) {
-        System.out.println("Facebook");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Facebook");
     }
 
     public void accionBotonInstagram(ActionEvent actionEvent) {
-        System.out.println("Instagram");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Instagram");
     }
 
     public void accionBotonPreguntasFrecuentes(ActionEvent actionEvent) {
-        System.out.println("Preguntas frecuentes");
+        mostrarMensajeInformativo("Esta funcionalidad no está disponible aún.", "Por favor intente en futuras actualizaciones.", "Preguntas frecuentes");
+    }
+
+    public void botonRegistrarse(ActionEvent actionEvent) {
+        cargarPantalla("Registrarse", DIRECCIONESFXML.REGISTRARSE);
     }
 
     public void botonIniciarSesion(ActionEvent actionEvent) {
@@ -95,7 +102,7 @@ public class IniciarSesion extends Controlador {
             if (autenticacion.iniciarSesion(correoElectronico.getText(), contrasena.getText())) {
                 mostrarMensajeInformativo("Bienvenido", "Bienvenido a FastEvent", "Inicio de sesión exitoso");
                 // Cuando cierre el mensaje informativo cambia de pantalla
-                cargarPantalla("Inicio", Constantes.obtenerFXML("InicioSI"));
+                cargarPantalla("Inicio", DIRECCIONESFXML.INICIOSI);
             } else {
                 error = true;
                 mensajeError = "Credenciales incorrectas";
@@ -109,9 +116,5 @@ public class IniciarSesion extends Controlador {
 
         if (error)
             mostrarMensajeError(mensajeError, instrucciones);
-    }
-
-    public void botonRegistrarse(ActionEvent actionEvent) {
-        cargarPantalla("Registrarse", Constantes.obtenerFXML("Registrarse"));
     }
 }
